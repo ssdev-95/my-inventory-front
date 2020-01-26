@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">MyInventory</string>
     <string name="from">FROM XSALLUS ©</string>
+    <string name="food">Mantimentos</string>
+    <string name="self_clean">Materiais de Higiene</string>
+    <string name="clean">Materiais de limpeza</string>
+    <string name="office">Suprimentos de escritorio</string>
+
+    <string name="vence">Vencerão: x</string>
+    <string name="quantity">Em estoque: x</string>
 </resources>

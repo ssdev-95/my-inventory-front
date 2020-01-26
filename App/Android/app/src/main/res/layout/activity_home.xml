@@ -17,9 +17,10 @@
         <RelativeLayout
             android:clickable="true"
             android:focusable="true"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="130dp"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/rounded_shape"
             android:backgroundTint="@color/softBlue"
             android:alpha="0.55">
@@ -29,22 +30,21 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginTop="7.5dp"
-                android:layout_marginStart="4dp"
                 android:background="@drawable/food_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mantimentos"
-                android:textSize="24sp"
+                android:text="@string/food"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginTop="14dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="36 itens"
+                android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -54,7 +54,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vencimentos: 0 itens"
+                android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -66,9 +66,10 @@
         <RelativeLayout
             android:clickable="true"
             android:focusable="true"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="130dp"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/rounded_shape"
             android:backgroundTint="@color/softBlue"
             android:alpha="0.55">
@@ -77,22 +78,21 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginTop="7.5dp"
-                android:layout_marginStart="4dp"
                 android:background="@drawable/higienis_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Materiais de Higiene"
-                android:textSize="24sp"
+                android:text="@string/self_clean"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginTop="14dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15 itens"
+                android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -102,7 +102,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vencimentos: 0 itens"
+                android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -114,9 +114,10 @@
         <RelativeLayout
             android:clickable="true"
             android:focusable="true"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="130dp"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/rounded_shape"
             android:backgroundTint="@color/softBlue"
             android:alpha="0.55">
@@ -125,23 +126,21 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginTop="7.5dp"
-                android:layout_marginStart="4dp"
                 android:background="@drawable/cleaning_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Materiais de limpeza"
-                android:textSize="24sp"
+                android:text="@string/clean"
+                android:textSize="22sp"
                 android:textStyle="bold"
-
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginTop="14dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="08 itens"
+                android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -151,7 +150,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vencimentos: 0 itens"
+                android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -163,9 +162,10 @@
         <RelativeLayout
             android:clickable="true"
             android:focusable="true"
-            android:layout_width="match_parent"
+            android:layout_width="375dp"
             android:layout_height="130dp"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
             android:background="@drawable/rounded_shape"
             android:backgroundTint="@color/softBlue"
             android:alpha="0.55">
@@ -174,22 +174,21 @@
                 android:layout_width="115dp"
                 android:layout_height="115dp"
                 android:layout_marginTop="7.5dp"
-                android:layout_marginStart="4dp"
                 android:background="@drawable/office_icon" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Suprimentos de escritorio"
-                android:textSize="24sp"
+                android:text="@string/office"
+                android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_marginStart="125dp"
+                android:layout_marginStart="110dp"
                 android:layout_marginTop="14dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="108 itens"
+                android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
@@ -199,7 +198,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Vencimentos: 0 itens"
+                android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
