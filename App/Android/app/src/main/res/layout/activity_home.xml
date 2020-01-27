@@ -47,7 +47,7 @@
                 android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="48dp"/>
 
@@ -57,7 +57,7 @@
                 android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="82dp"/>
 
@@ -95,7 +95,7 @@
                 android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="48dp"/>
 
@@ -105,7 +105,7 @@
                 android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="82dp"/>
 
@@ -143,7 +143,7 @@
                 android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="48dp"/>
 
@@ -153,7 +153,7 @@
                 android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="82dp"/>
 
@@ -191,7 +191,7 @@
                 android:text="@string/quantity"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="48dp"/>
 
@@ -201,7 +201,7 @@
                 android:text="@string/vence"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:fontFamily="monospace"
+                android:fontFamily="@font/noto_serif_bold"
                 android:layout_marginStart="125dp"
                 android:layout_marginTop="82dp"/>
 
