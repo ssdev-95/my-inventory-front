@@ -6,6 +6,6 @@
     <string name="clean">Materiais de limpeza</string>
     <string name="office">Suprimentos de escritorio</string>
 
-    <string name="vence">Vencerão: x</string>
-    <string name="quantity">Em estoque: x</string>
+    <string name="vence">Vencerão:</string>
+    <string name="quantity">Em estoque:</string>
 </resources>
