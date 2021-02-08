@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 :root {
+    --white: #fff;
+    --half-black: rgba(0,0,0,.68);
     --colorPrimary: #008577;
     --colorPrimaryDark: #00574B;
     --colorAccent: #D81B60;
@@ -8,6 +10,7 @@
     --softGray: #979797;
     --boldBlue: #3296FF;
     --softBlue: #32C5FF;
+    --reallySoftGray: #f0f2f5;
 }
 
 * {
@@ -19,7 +22,134 @@
 }
 
 body {
+    font-family: 'Red Hat Text', sans-serif;
     font-size: .75rem;
+    color: var(--white);
     background: linear-gradient(239.54deg, var(--softBlue) 0%, var(--softGray) 100%);
     opacity: .68;
+    font-weight: 500;
+}
+
+hr {
+    width: 95%;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--white);
+    transition: hover .5s ease;
+}
+
+a:hover {
+    color: var(--half-black);
+    border-bottom: 2px solid var(--half-black);
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: .15rem 2.8rem;
+}
+
+.logo {
+    height: 3rem;
+    width: 3rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    width: 13.5rem;
+    margin-right: .3rem;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 78vh;
+    width: 95%;
+    margin: auto;
+}
+
+.section {
+    display: grid;
+    justify-items: center;
+    height: 65vh;
+    width: 27vw;
+    margin: auto;
+    background: var(--half-black);
+    border-radius: 10px;
+}
+
+.headings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin-left: -9rem;
+    margin-top: 1rem;
+    padding: 0;
+
+    width: max-content;
+    height: max-content;
+}
+
+.headings img {
+    height: 72px;
+    width: 72px;
+}
+
+.headings p {
+    font-size: 1em;
+    font-weight: 700;
+}
+
+table {
+    margin-top: -6rem;
+    max-height: 65vh;
+
+    overflow-y: hidden;
+}
+
+table thead {
+    font-weight: 500;
+}
+
+table tbody {
+    font-weight: 400;
+}
+
+.title {
+    font-size: 1.015em;
+    text-align: left;
+}
+
+.product, .quantity, .expiration {
+    font-size: .78em;
+    text-align: center;
+}
+
+hr:last-of-type {
+    bottom: 0;
+}
+
+.foot {
+    display: flex;
+    margin: auto;
+    padding: .25rem 0;
+    height: 100%;
+    width: 100%;
+}
+
+.foot p {
+    align-self: center;
+    text-align: center;
+    margin: .56rem auto;
 }

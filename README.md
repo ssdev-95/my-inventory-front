@@ -2,13 +2,13 @@
 
 ## Sumary
 
->> - [What is it?](@-what-is-it)
->> - [Development Status](@-development-staus)
->> - [Features](@-what-is-it)
->> - [Tecnologies Embed](@-tecnologies-embed)
->> - [How to Run](@-how-to-run)
->> - [Contact](@-contact-the-dev)
->> - [Licensing](@-licensing)
+>> - [What is it?](#what-is-it)
+>> - [Development Status](#development-staus)
+>> - [Features](#what-is-it)
+>> - [Tecnologies Embed](#tecnologies-embed)
+>> - [How to Run](#how-to-run)
+>> - [Contact](#contact-the-dev)
+>> - [Licensing](#licensing)
 
 ## What is it?
 >> An app to handle and manage inventory and/or kitchens.
