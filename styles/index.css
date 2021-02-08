@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+:root {
+    --colorPrimary: #008577;
+    --colorPrimaryDark: #00574B;
+    --colorAccent: #D81B60;
+    --graphite: #6D7278;
+    --softGray: #979797;
+    --boldBlue: #3296FF;
+    --softBlue: #32C5FF;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+    font-size: 16pt;
+}
+
+body {
+    font-size: .75rem;
+    background: linear-gradient(239.54deg, var(--softBlue) 0%, var(--softGray) 100%);
+    opacity: .68;
+}
