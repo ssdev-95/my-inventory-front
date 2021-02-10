@@ -70,7 +70,7 @@ a:hover {
 .menu {
     display: flex;
     flex-direction: row;
-    width: 13.5rem;
+    width: 20rem;
     margin-right: .3rem;
     justify-content: space-between;
 }
@@ -177,7 +177,7 @@ hr:last-of-type {
     }
     .section {
         width: 80%;
-        margin: .75rem auto;/
+        margin: .75rem auto;
     }
     .section table tbody tr td {
         font-size: .77rem;
