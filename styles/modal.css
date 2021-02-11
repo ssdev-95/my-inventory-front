@@ -1,0 +1,135 @@
+@charset "UTF-8";
+
+:root {
+    --white: #fff;
+    --half-black: rgba(0,0,0,.68);
+    --softBlue: #32C5FF;
+    --softGray: #979797;
+}
+
+.add-btn {
+    z-index: 10;
+
+    height: 45px;
+    width: 45px;
+
+    position:absolute;
+
+    left: 3rem;
+
+    opacity: .78;
+}
+
+.add-btn:hover {
+    opacity: 1;
+}
+
+.modal-overlay.inactive {
+    display: none;
+}
+
+.modal-overlay {
+    background: var(--half-black);
+    z-index: 50;
+
+    position: fixed;
+
+    height: 100%;
+    width: 100%;
+
+    top: 0;
+    left: 0;
+}
+
+.modal.register {
+    background: var(--white);
+
+    /* ALTURA E LARGURA TERAO QUE VARIAR CONFORME CONTEUDO DO MODAL*/
+    height: 50vh;
+    width: 40vw;
+
+    border-radius: 12px;
+    
+    margin: 20vh auto;
+}
+
+#registry-form {
+    display: flex;
+
+    width: 80%;
+
+    margin: auto;
+}
+
+#registry-form label {
+    color: var(--half-black);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+#registry-form .div {
+    display: flex;
+    flex-direction: column;
+
+    margin: 0 auto;
+}
+
+#registry-form input {
+    border-radius: 6px;
+    border: 1px solid var(--white);
+    background: #f0f2f5;
+}
+
+#registry-form #product-name {
+    width: 18vw;
+}
+
+#registry-form #categories {
+    width: 12vw;
+}
+
+#registry-form #product-quantity {
+    width: 8vw;
+}
+
+#registry-form #product-expiration {
+    width: 12vw;
+}
+
+.modal .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    margin: 4rem auto;
+
+}
+
+.modal .actions .button {
+    height: 40px;
+    width: 120px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 2px;
+
+    border: 1px solid var(--half-black);
+    border-radius: 8px;
+
+    opacity: .68;
+}
+
+.modal .actions .button:hover {
+    opacity: 1;
+}
+
+.modal .actions .button.save {
+    border-color: green;    
+    color: green; 
+}
+
+.modal .actions .button.cancel {
+    border-color:red;  
+    color: red; 
+}

@@ -3,14 +3,8 @@
 :root {
     --white: #fff;
     --half-black: rgba(0,0,0,.68);
-    --colorPrimary: #008577;
-    --colorPrimaryDark: #00574B;
-    --colorAccent: #D81B60;
-    --graphite: #6D7278;
-    --softGray: #979797;
-    --boldBlue: #3296FF;
     --softBlue: #32C5FF;
-    --reallySoftGray: #f0f2f5;
+    --softGray: #979797;
 }
 
 * {
