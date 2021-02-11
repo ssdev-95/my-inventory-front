@@ -38,14 +38,14 @@ hr {
     margin: auto;
 }
 
-a {
+.menu a {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--white);
     transition: hover .5s ease;
 }
 
-a:hover {
+.menu a:hover {
     color: var(--half-black);
     border-bottom: .125em solid var(--half-black);
 }
