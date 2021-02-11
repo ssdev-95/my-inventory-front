@@ -96,6 +96,8 @@ a:hover {
     margin: auto;
     background: var(--half-black);
     border-radius: .625rem;
+
+    overflow-x: scroll;
 }
 
 .headings {
@@ -193,7 +195,7 @@ hr:last-of-type {
     .content {
         max-height: 80%;
         width: 100%;
-
+        display: inline-block;
         flex-direction: column;
         overflow-y: scroll;
     }
@@ -201,7 +203,9 @@ hr:last-of-type {
         height: 23.5rem;
         width: 80%;
 
-        margin: 0 auto 3rem;
+        margin: 1rem auto;
+
+        overflow-x: scroll;
 
         transition: scroll .2s linear;
     }
@@ -233,8 +237,7 @@ hr:last-of-type {
         border-bottom: 1px solid var(--white);
     }
     .nav-bar .menu {
-        width: 15rem;
-        margin-right: 1.25rem;
+        display: none;
     }
     .nav-bar .logo {
         margin-left: 1.15rem;
@@ -242,7 +245,7 @@ hr:last-of-type {
     .content {
         max-height: 80%;
         width: 100%;
-
+        display: inline-block;
         flex-direction: column;
         overflow-y: scroll;
     }
@@ -251,6 +254,8 @@ hr:last-of-type {
         width: 80%;
 
         margin: 0 auto 3rem;
+        
+        overflow-x: scroll;
 
         transition: scroll .2s linear;
     }
