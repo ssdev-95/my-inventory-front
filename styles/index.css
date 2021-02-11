@@ -34,7 +34,7 @@ body {
 }
 
 hr {
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 
@@ -56,22 +56,24 @@ a:hover {
 
     align-items: center;
     justify-content: space-between;
-
-    padding: .15rem 2.8rem;
+    padding: .15rem;
 
     height: 10%;
+    width: 99%;
 }
 
 .logo {
     height: 3rem;
     width: 3rem;
+
+    margin-left: 2.5rem;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     width: 20rem;
-    margin-right: .3rem;
+    margin-right: 1rem;
     justify-content: space-between;
 }
 
@@ -116,6 +118,7 @@ a:hover {
 .headings p {
     font-size: 1em;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 table {
@@ -123,7 +126,7 @@ table {
     max-height: 65vh;
     max-width: 100%;
 
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 table thead {
@@ -132,6 +135,20 @@ table thead {
 
 table tbody {
     font-weight: 400;
+}
+
+.section table thead tr td {
+    font-size: 1.05rem;
+}
+
+.section table tbody tr td {
+    font-size: .95rem;
+}
+
+.section table thead tr td,
+.section table tbody tr td {
+    text-align: left;
+    padding: 0 .25rem;
 }
 
 .title {
@@ -153,7 +170,7 @@ hr:last-of-type {
     margin: auto;
     padding: .25rem 0;
     height: 10%;
-    width: 100%;
+    width: 98%;
 }
 
 .foot p {
@@ -162,84 +179,99 @@ hr:last-of-type {
     margin: .56rem auto;
 }
 
-@media(max-width: 43.875rem) {
-    .nav-bar  {
-        height: 9%;
+@media(max-width: 25.875rem) {
+    /*cover smarthone*/
+    hr {
+        display: none;
+    }
+    .nav-bar {
+        border-bottom: 1px solid var(--white);
     }
     .nav-bar .menu {
         display: none;
     }
     .content {
-        height: 79%;
+        max-height: 80%;
         width: 100%;
+
         flex-direction: column;
         overflow-y: scroll;
     }
-    .section {
+    .content .section {
+        height: 23.5rem;
         width: 80%;
-        margin: .75rem auto;
+
+        margin: 0 auto 3rem;
+
+        transition: scroll .2s linear;
     }
-    .section table tbody tr td {
-        font-size: .77rem;
+    .content .section .headings .logo {
+        height: 27px;
+        width: 27px;
+    }
+    .content .section table tbody tr td {
+        font-size: .7rem;
         text-align: left;
+        padding: 0 6px;
     }
-    .section table thead tr td {
-        font-size: .9rem;
-    }
-    .foot p {
+    .content .section table thead tr td {
         font-size: .85rem;
-        height: 10%;
-    }
-}
-@media(min-width:43.875rem) and (max-width:50rem) {
-    body hr {
-        display: none;
+        text-align: left;
+        padding: 0 6px;
         overflow-x: hidden;
-    }
-    .nav-bar {
-        width: 100%;
-        height: 10%;
-        border-bottom: 1px solid var(--white);
-    }
-    .menu {
-        display: none;
-    }
-    .content {
-        flex-direction: column;
-        height: 80%;
-        width: 75vw;
-        overflow-y: scroll;
-        scroll-snap-stop: initial;
-        padding: 0;
-        margin: 0 auto;
-    }
-    .section {
-        width: 55vw;
-        height: 70vh;
-        margin: .7rem auto;
-        padding: 0;
-    }
-    .section table thead tr td,
-    .section table tbody tr td {
-        font-size: .9em;
     }
     .foot {
         border-top: 1px solid var(--white);
-        height: 10%;
+    }
+}
+@media(min-width:25.9375rem) and (max-width:64rem) {
+    /*cover tablets*/
+    hr {
+        display: none;
+    }
+    .nav-bar {
+        border-bottom: 1px solid var(--white);
+    }
+    .nav-bar .menu {
+        width: 15rem;
+        margin-right: 1.25rem;
+    }
+    .nav-bar .logo {
+        margin-left: 1.15rem;
+    }
+    .content {
+        max-height: 80%;
         width: 100%;
+
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .content .section {
+        height: 23.5rem;
+        width: 80%;
+
+        margin: 0 auto 3rem;
+
+        transition: scroll .2s linear;
+    }
+    .content .section .headings .logo {
+        height: 27px;
+        width: 27px;
+    }
+    .content .section table tbody tr td {
+        font-size: 1.2rem;
+        text-align: left;
+        padding: 0 6px;
+    }
+    .content .section table thead tr td {
+        font-size: 1.5rem;
+        text-align: left;
+        padding: 0 6px;
+    }
+    .foot {
+        border-top: 1px solid var(--white);
     }
 }
-@media(min-width:50rem) and (max-width:84.375rem) {
-    table {
-        width: 85%;
-        margin-left: .25rem;
-    }
-    .section table thead tr td {
-        font-size: .9rem;
-        text-align: left;
-    }
-    .section table tbody tr td {
-        font-size: .9rem;
-        text-align: left;
-    }
-}
+/*@media(min-width:64.0625rem) {
+    cover mostly everything else
+}*/
