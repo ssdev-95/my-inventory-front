@@ -1,4 +1,4 @@
-<h1 align="center">MyInventory</h1>
+<h1 align="center"><img src="./assets/drawable/app_logo.png" height="35" algin="center"/>&nbsp;&nbsp;MyInventory</h1>
 
 ## Sumary
 
@@ -6,6 +6,7 @@
 >> - [Development Status](#development-staus)
 >> - [Features](#what-is-it)
 >> - [Tecnologies Embed](#tecnologies-embed)
+>> - [Tools Used](#tools-used)
 >> - [How to Run](#how-to-run)
 >> - [Contact](#contact-the-dev)
 >> - [Licensing](#licensing)
@@ -31,11 +32,18 @@
 >>
 >> - Javascript <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnezP43GZwqlUjVNQ1LyyXnY7MzjhJn3NqKQ&usqp=CAU" height="12px"/> - [Documentation](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
 
+## Tools used
+
+>> - [Figma](https://www.figma.com/)
+>> - [Visual Studio Code](https://code.visualstudio.com/)
+
 ## How to run
 
->>   You'll ony need to clone/fork this repo,
+>> You'll ony need to clone/fork this repo,
 >> and deploy wherever ya'like, such as
->> on heroku&copy;, or Vercel&copy;... Enjoy!
+>> on heroku&copy;, or Vercel&copy;... </br>
+>> Enjoy! </br>
+>> You can see a live footage [here](https://xsallus.github.com/MyInventory).
 
 ## Contact the Dev
 
