@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+:root {
+    --white: #fff;
+    --half-black: rgba(0,0,0,.68);
+    --softBlue: #32C5FF;
+    --softGray: #979797;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.content div {
+    display: flex;
+    
+    align-items: center;
+    justify-items: space-around;
+    margin: auto 15vw;
+}
+
+.content div div {
+    display: flex;
+    flex-direction: column;
+    margin: auto .25rem;
+}
+
+.content img {
+    height: 200px;
+    width: 200px;
+    padding: 0;
+}
+
+.content h1 {
+    font-size: 32pt;
+}
+
+.content h2 {
+    align-self: flex-start;
+}

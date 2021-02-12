@@ -7,6 +7,23 @@
     --softGray: #979797;
 }
 
+/*Input Padrao*/
+input {
+    border-radius: 6px;
+    border: 1px solid var(--white);
+    background: #f0f2f5;
+
+    height: 2rem;
+}
+
+label {
+    color: var(--half-black);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    width: fit-content;
+}
+
+/*Botoes Padrao*/
 .add-btn {
     z-index: 10;
 
@@ -24,6 +41,44 @@
     opacity: 1;
 }
 
+.modal .actions {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+
+    margin: 4rem auto;
+}
+
+.button {
+    height: 40px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+
+    border: 1px solid var(--half-black);
+    border-radius: 8px;
+
+    opacity: .68;
+}
+
+.button:hover {
+    opacity: 1;
+}
+
+.button.save {
+    border-color: green;    
+    color: green; 
+    padding: 0 1rem;
+}
+
+.button.cancel {
+    border-color:red;  
+    color: red; 
+    width: 120px;
+}
+
+/*Overlay*/
 .modal-overlay.inactive {
     display: none;
 }
@@ -41,95 +96,103 @@
     left: 0;
 }
 
-.modal.register {
+/*Modal Padrao*/
+.modal {
     background: var(--white);
-
-    /* ALTURA E LARGURA TERAO QUE VARIAR CONFORME CONTEUDO DO MODAL*/
-    height: 50vh;
-    width: 40vw;
-
     border-radius: 12px;
-    
+    max-width: 75%;
     margin: 20vh auto;
+    color: var(--half-black);
 }
 
+/*Modal Registro*/
+.modal.register {
+    /* ALTURA E LARGURA TERAO QUE VARIAR CONFORME CONTEUDO DO MODAL*/
+    height: 300px;
+    width: 375px;
+}
+
+/*Formulario Refgistro*/
 #registry-form {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "tl tr",
+                        "ml mr";
 
     width: 80%;
 
-    margin: auto;
-}
-
-#registry-form label {
-    color: var(--half-black);
-    font-size: 0.8rem;
-    margin-top: 1rem;
-}
-
-#registry-form .div {
-    display: flex;
-    flex-direction: column;
-
-    margin: 0 auto;
-}
-
-#registry-form input {
-    border-radius: 6px;
-    border: 1px solid var(--white);
-    background: #f0f2f5;
+    margin: 1.75rem auto 0;
 }
 
 #registry-form #product-name {
-    width: 18vw;
+    max-width: 45%;
+    width: 18rem;
+    grid-area: 'tl';
 }
 
 #registry-form #categories {
-    width: 12vw;
+    max-width: 40%;
+    width: 14rem;
+    grid-area: 'tr';
 }
 
 #registry-form #product-quantity {
-    width: 8vw;
+    max-width: 15%;
+    width: 10rem;
+    grid-area: 'ml';
 }
 
 #registry-form #product-expiration {
-    width: 12vw;
+    max-width: 50%;
+    width: 12rem;
+    grid-area: 'mr';
 }
 
-.modal .actions {
+.modal.register .actions {
+    margin-top: .78rem;
+}
+
+/*Modal Login*/
+.modal.login {
     display: flex;
-    justify-content: space-between;
-    width: 50%;
+    flex-direction: column;
 
-    margin: 4rem auto;
+    background: var(--white);
 
+    width: 25vw;
+    max-width: 85vw;
+    height: 35vh;
+
+    align-items: center;
+    justify-content: center;
 }
 
-.modal .actions .button {
-    height: 40px;
-    width: 120px;
-
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    padding-top: 2px;
-
-    border: 1px solid var(--half-black);
-    border-radius: 8px;
-
-    opacity: .68;
+#login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.71rem;
 }
 
-.modal .actions .button:hover {
-    opacity: 1;
+.modal.login #login-form #user-name {
+    width: 78%;
 }
 
-.modal .actions .button.save {
-    border-color: green;    
-    color: green; 
+.modal.login div.actions {
+    margin-top: .85rem;
 }
 
-.modal .actions .button.cancel {
-    border-color:red;  
-    color: red; 
+#user-password {
+    margin-top: .15rem;
+    width: 58%;
+}
+
+@media(max-width: 1024px) {
+    .add-btn {
+        top: 78vh;
+        left: 82vw;
+
+        height: 65px;
+        width: 65px;
+    }
 }
