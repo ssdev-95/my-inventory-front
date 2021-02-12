@@ -14,9 +14,14 @@
 </head>
 <body>
     <header class="nav-bar">
-        <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
-            <img class="logo" src="./assets/drawable/app_logo.svg" alt="Logo">
-        </a>
+        <div class="drop-down">
+            <ul>
+                <li><a href="#" onclick="Modal.open('login')">login</a></li>
+                <li><a href="#" onclick="Modal.open('contact')">contact</a></li>
+                <li><a href="./about.html">about</a></li>
+            </ul>
+        </div>
+        <img class="logo" src="./assets/drawable/app_logo.svg" alt="Logo">
         <nav class="menu">
             <a href="#" onclick="Modal.open('login')">login</a>
             <a href="#" onclick="Modal.open('contact')">contact</a>
@@ -151,25 +156,17 @@
                 </tbody>
             </table>
         </section>
-        <div class="modal-overlay">
-            <div class="modal login">
-                <form action="#" id="login-form">
-                    <label for="user-name">Nickname</label>
-                    <input type="text" name="user-name" id="user-name" size="15" maxlength="30" placeholder="Nick or email"/>
-                    <label for="user-password">Password</label>
-                    <input type="password" name="user-password" id="user-password" maxlength="12" size="9" placeholder="Password"/>
-                </form>
-                <div class="actions">
-                    <a class="button cancel" href="#" onclick="Modal.close()">cancel</a>
-                    <a class="button save" href="#">save</a>
-                </div>
+        <div class="modal-overlay inactive">
+            <div class="modal">
             </div>
         </div>
         <img class="add-btn" src="./assets/drawable/add_button.png" alt="a sigle add button" onclick="Modal.open('prod-reg')"/>
     </main>
     <hr/>
     <footer class="foot">
-        <p>2021&nbsp;-&nbsp;xSallus&copy;</p>
+        <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
+            <p>2021&nbsp;-&nbsp;xSallus&copy;</p>
+        </a>
     </footer>
     <script src="./js/index.js"></script>
     <script src="./js/modals.js"></script>

@@ -2,6 +2,7 @@
 
 :root {
     --white: #fff;
+    --half-white: rgba(255,255,255,.95);
     --half-black: rgba(0,0,0,.68);
     --softBlue: #32C5FF;
     --softGray: #979797;
@@ -69,6 +70,37 @@ hr {
     width: 20rem;
     margin-right: 1rem;
     justify-content: space-between;
+}
+
+.drop-down {
+    display: flex;
+    z-index: 999;
+
+    position: absolute;
+    top: -180px;
+    left: 0;
+
+    width: 100vw;
+    height: 180px;
+
+    background: var(--half-white);
+    border-radius: 0 0 100% 100%;
+}
+
+.drop-down ul {
+    margin: 1rem auto;
+}
+
+.drop-down ul li {
+    margin-top: .5rem;
+}
+
+.drop-down ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+
+    color: var(--half-black);
+    font-weight: 500;
 }
 
 .content {
@@ -163,6 +195,9 @@ hr:last-of-type {
 
 .foot {
     display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin: auto;
     padding: .25rem 0;
     height: 10%;
@@ -172,7 +207,11 @@ hr:last-of-type {
 .foot p {
     align-self: center;
     text-align: center;
-    margin: .56rem auto;
+}
+
+.foot a {
+    text-decoration: none;
+    color: var(--white);
 }
 
 @media(max-width: 25.875rem) {
@@ -271,6 +310,8 @@ hr:last-of-type {
         border-top: 1px solid var(--white);
     }
 }
-/*@media(min-width:64.0625rem) {
-    cover mostly everything else
-}*/
+@media(min-width:64.0625rem) {
+    .drop-down {
+        display: none;
+    }
+}

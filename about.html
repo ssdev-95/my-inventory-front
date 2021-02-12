@@ -15,9 +15,14 @@
 </head>
 <body>
     <header class="nav-bar">
-        <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
-            <img class="logo" src="./assets/drawable/app_logo.svg" alt="Logo">
-        </a>
+        <div class="drop-down">
+            <ul>
+                <li><a href="#" onclick="Modal.open('login')">login</a></li>
+                <li><a href="#" onclick="Modal.open('contact')">contact</a></li>
+                <li><a href="./about.html">about</a></li>
+            </ul>
+        </div>
+        <img class="logo" src="./assets/drawable/app_logo.svg" alt="Logo">
         <nav class="menu">
             <a href="#" onclick="Modal.open('login')">login</a>
             <a href="#" onclick="Modal.open('contact')">contact</a>
@@ -36,7 +41,9 @@
     </main>
     <hr/>
     <footer class="foot">
-        <p>2021&nbsp;-&nbsp;xSallus&copy;</p>
+        <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
+            <p>2021&nbsp;-&nbsp;xSallus&copy;</p>
+        </a>
     </footer>
     <script src="./js/index.js"></script>
     <script src="./js/modals.js"></script>
