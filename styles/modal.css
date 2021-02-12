@@ -20,7 +20,9 @@ label {
     color: var(--half-black);
     font-size: 0.8rem;
     margin-top: 1rem;
-    width: fit-content;
+    width: 0;
+    height: 0;
+    opacity: 0;
 }
 
 /*Botoes Padrao*/
@@ -44,7 +46,7 @@ label {
 .modal .actions {
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 80%;
 
     margin: 4rem auto;
 }
@@ -96,76 +98,74 @@ label {
     left: 0;
 }
 
-/*Modal Padrao*/
+/*Modais*/
 .modal {
     background: var(--white);
     border-radius: 12px;
-    max-width: 75%;
     margin: 20vh auto;
     color: var(--half-black);
 }
 
-/*Modal Registro*/
 .modal.register {
-    /* ALTURA E LARGURA TERAO QUE VARIAR CONFORME CONTEUDO DO MODAL*/
-    height: 300px;
-    width: 375px;
-}
+    display: flex;
+    flex-direction: column;
 
-/*Formulario Refgistro*/
-#registry-form {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "tl tr",
-                        "ml mr";
+    position: relative;
 
-    width: 80%;
-
-    margin: 1.75rem auto 0;
-}
-
-#registry-form #product-name {
-    max-width: 45%;
+    height: 16rem;
     width: 18rem;
-    grid-area: 'tl';
 }
 
-#registry-form #categories {
-    max-width: 40%;
-    width: 14rem;
-    grid-area: 'tr';
-}
-
-#registry-form #product-quantity {
-    max-width: 15%;
-    width: 10rem;
-    grid-area: 'ml';
-}
-
-#registry-form #product-expiration {
-    max-width: 50%;
-    width: 12rem;
-    grid-area: 'mr';
-}
-
-.modal.register .actions {
-    margin-top: .78rem;
-}
-
-/*Modal Login*/
 .modal.login {
     display: flex;
     flex-direction: column;
 
     background: var(--white);
 
-    width: 25vw;
-    max-width: 85vw;
+    width: 18rem;
+    max-width: 85%;
     height: 35vh;
 
     align-items: center;
     justify-content: center;
+}
+
+/*Formulario Refgistro*/
+#registry-form {
+    display: grid;
+    /*grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);*/
+    grid-template-areas: "tl tl tr"
+                        "ml ml mr";
+    justify-content: center;
+    width: 80%;
+
+    gap: 10px;
+    margin: 1.75rem auto 0;
+}
+
+#registry-form #product-name {
+    width: 8rem;
+    grid-area: tl;
+}
+
+#registry-form #categories {
+    width: 8rem;
+    grid-area: ml;
+}
+
+#registry-form #product-quantity {
+    width: 3rem;
+    grid-area: tr;
+}
+
+#registry-form #product-expiration {
+    width: 8rem;
+    grid-area: mr;
+}
+
+.modal.register .actions {
+    margin-top: .78rem;
 }
 
 #login-form {
