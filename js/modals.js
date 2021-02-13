@@ -40,7 +40,9 @@ const Modal = {
     <img class="logo" id="logo-twitter" src="./assets/drawable/twitter.svg" alt="twitter logo">
     <img class="logo" id="logo-linkedin" src="./assets/drawable/linkedin.svg" alt="linkedin logo">
     <img class="logo" id="logo-mail" src="./assets/drawable/mail.svg" alt="email logo">
-    <img class="logo" id="logo-git" src="./assets/drawable/github.svg" alt="github logo">
+    <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
+        <img class="logo" id="logo-git" src="./assets/drawable/github.svg" alt="github logo">
+    </a>
     <img class="logo" id="logo-paypal" src="./assets/drawable/paypal.svg" alt="paypal logo">
     <img class="logo" id="logo-behance" src="./assets/drawable/behance.svg" alt="behance logo">
     `,
