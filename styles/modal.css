@@ -130,6 +130,24 @@ label {
     justify-content: center;
 }
 
+.modal.contact {
+    display: grid;
+    grid-template-areas: " burg h3 h3 h3"
+                         " inst inst twtr twtr"
+                         "link link mail mail"
+                         "git git pypl pypl"
+                         " beha beha beha heha";
+
+    justify-items: center;
+
+    position: relative;
+
+    stroke: var(--half-black);
+
+    height: 16rem;
+    width: 18rem;
+}
+
 /*Formulario Refgistro*/
 #registry-form {
     display: grid;
@@ -168,6 +186,7 @@ label {
     margin-top: .78rem;
 }
 
+/*Formulario Login*/
 #login-form {
     display: flex;
     flex-direction: column;
@@ -185,6 +204,81 @@ label {
 #user-password {
     margin-top: .15rem;
     width: 58%;
+}
+
+/*Contate o desenvolvedor*/
+.modal.contact .burger {
+    height: 3.8rem;
+    width: 3.8rem;
+
+    grid-area: burg;
+}
+  
+.modal.contact .burger .rect {
+    background: var(--half-black);
+      
+    width: 40px;
+    height: 5px;
+      
+    margin: 1rem auto;
+      
+    border-radius: 8px;
+}
+  
+.modal.contact .burger .rect#top {
+    transform: rotate(45deg) translate(17px, 8px);
+}
+  
+.modal.contact .burger .rect#bot {
+    transform: rotate(-45deg) translateX(10px);
+}
+
+.modal.contact h3 {
+    padding: .5rem;
+    margin-right: 5rem;
+    margin-top: .665rem;
+    text-align: center;
+
+    color: var(--half-black);
+
+    grid-area: h3;
+}
+
+.modal.contact .logo {
+    height: 50px;
+    width: 50px;
+}
+
+#logo-insta {
+    grid-area: inst;
+}
+#logo-twitter {
+    grid-area: twtr;
+}
+#logo-linkedin {
+    grid-area: link;
+}
+#logo-mail {
+    grid-area: mail;
+}
+#logo-git {
+    grid-area: git;
+}
+#logo-paypal {
+    grid-area: pypl;
+}
+#logo-behance {
+    grid-area: beha;
+    justify-self: center;
+    margin-left: 5rem;
+}
+
+#logo-insta, #logo-linkedin, #logo-git {
+    justify-self: right;
+}
+#logo-twitter, #logo-mail, #logo-paypal {
+    margin-right: 2rem;
+    justify-self: left;
 }
 
 @media(max-width: 1024px) {

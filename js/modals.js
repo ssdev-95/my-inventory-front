@@ -30,6 +30,20 @@ const Modal = {
         <a class="button save" href="#">save</a>
     </div>
     `,
+    contact: `
+    <div class="burger" onclick="Modal.close()">
+        <div class="rect" id="top"></div>
+        <div class="rect" id="bot"></div>
+    </div>
+    <h3>Contact</h3>
+    <img class="logo" id="logo-insta" src="./assets/drawable/instagram.svg" alt="instagram logo">
+    <img class="logo" id="logo-twitter" src="./assets/drawable/twitter.svg" alt="twitter logo">
+    <img class="logo" id="logo-linkedin" src="./assets/drawable/linkedin.svg" alt="linkedin logo">
+    <img class="logo" id="logo-mail" src="./assets/drawable/mail.svg" alt="email logo">
+    <img class="logo" id="logo-git" src="./assets/drawable/github.svg" alt="github logo">
+    <img class="logo" id="logo-paypal" src="./assets/drawable/paypal.svg" alt="paypal logo">
+    <img class="logo" id="logo-behance" src="./assets/drawable/behance.svg" alt="behance logo">
+    `,
     open(modality) {
         const overlay = document
                                .querySelector('.modal-overlay')
@@ -58,8 +72,11 @@ const Modal = {
                 modal.innerHTML = Modal.userLogin
                 modal.classList.toggle('login')
                 break
-            case 'user-reg':
             case 'contact':
+                modal.innerHTML = Modal.contact
+                modal.classList.toggle('contact')
+                break
+            case 'user-reg':
             default:
                 Alert('404: Option not available!')
                 break

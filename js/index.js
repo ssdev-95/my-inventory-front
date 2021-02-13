@@ -3,7 +3,7 @@ const logo = document
 const dropDownMenu = document
                             .querySelector('.drop-down')
 const burger = document
-                      .querySelector('.burger')
+                      .querySelector('.drop-down .burger')
 
 
 function dropUpDown() {
