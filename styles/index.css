@@ -72,7 +72,7 @@ hr {
     justify-content: space-between;
 }
 
-drop-down {
+.drop-down {
     display: flex;
     z-index: 999;
 
