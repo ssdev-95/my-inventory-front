@@ -13,7 +13,7 @@ const Modal = {
         </form>
         <div class="actions">
             <a class="button cancel" href="#" onclick="Modal.close()">cancel</a>
-            <a class="button save" href="#">save</a>
+            <a class="button save" href="#" onclick="pushData()">save</a>
         </div>
     `,
 
