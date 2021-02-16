@@ -153,7 +153,7 @@ hr {
     background: var(--half-black);
     border-radius: .625rem;
 
-    overflow-x: scroll;
+    overflow-x: hidden;
 }
 
 .headings {
