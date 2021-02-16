@@ -8,6 +8,7 @@ const Modal = {
             <input type="number" name="product-quantity" id="product-quantity" size="9" aria-valuemax="999" placeholder="10"/>
             <label for="categories">Category</label>
             <input type="text" name="categories" id="categories" placeholder="Category"/>
+            <p><small>Categories includes Food, Hygiene and Cleaning</br>and it's case variants</small></p>
             <label for="product-expiration">Expiration Date</label>
             <input type="date" name="product-expiration" id="product-expiration"/>
         </form>
@@ -20,10 +21,11 @@ const Modal = {
     userLogin:`
     <!--with class="login"-->
     <form action="#" id="login-form">
-        <label for="user-name">Product Name</label>
+        <label for="user-name">Username</label>
         <input type="text" name="user-name" id="user-name" size="15" maxlength="30" placeholder="Nick or email"/>
         <label for="user-password">Password</label>
         <input type="password" name="user-password" id="user-password" maxlength="12" size="9" placeholder="Password"/>
+        <a href="./signin.html"><p><small>Sign up now!</small></p></a>
     </form>
     <div class="actions">
         <a class="button cancel" href="#" onclick="Modal.close()">cancel</a>
@@ -36,15 +38,27 @@ const Modal = {
         <div class="rect" id="bot"></div>
     </div>
     <h3>Contact</h3>
-    <img class="logo" id="logo-insta" src="./assets/drawable/instagram.svg" alt="instagram logo">
-    <img class="logo" id="logo-twitter" src="./assets/drawable/twitter.svg" alt="twitter logo">
-    <img class="logo" id="logo-linkedin" src="./assets/drawable/linkedin.svg" alt="linkedin logo">
-    <img class="logo" id="logo-mail" src="./assets/drawable/mail.svg" alt="email logo">
+    <a href="https://www.instagram.com/xsallus.dev/" target="_blank" rel="external">
+        <img class="logo" id="logo-insta" src="./assets/drawable/instagram.svg" alt="instagram logo">
+    </a>
+    <a href="https://twitter.com/xSallus_dev" target="_blank" rel="external">
+        <img class="logo" id="logo-twitter" src="./assets/drawable/twitter.svg" alt="twitter logo">
+    </a>
+    <a href="https://www.linkedin.com/in/salomao-vasconcelos/" target="_blank" rel="external">
+        <img class="logo" id="logo-linkedin" src="./assets/drawable/linkedin.svg" alt="linkedin logo">
+    </a>
+    <a href="#">
+        <img class="logo" id="logo-mail" src="./assets/drawable/mail.svg" alt="email logo">
+    </a>
     <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external">
         <img class="logo" id="logo-git" src="./assets/drawable/github.svg" alt="github logo">
     </a>
-    <img class="logo" id="logo-paypal" src="./assets/drawable/paypal.svg" alt="paypal logo">
-    <img class="logo" id="logo-behance" src="./assets/drawable/behance.svg" alt="behance logo">
+    <a href="#">
+        <img class="logo" id="logo-paypal" src="./assets/drawable/paypal.svg" alt="paypal logo">
+    </a>
+    <a href="https://www.behance.net/salomaosouza">
+        <img class="logo" id="logo-behance" src="./assets/drawable/behance.svg" alt="behance logo">
+    </a>
     `,
     open(modality) {
         const overlay = document
@@ -78,7 +92,6 @@ const Modal = {
                 modal.innerHTML = Modal.contact
                 modal.classList.toggle('contact')
                 break
-            case 'user-reg':
             default:
                 Alert('404: Option not available!')
                 break

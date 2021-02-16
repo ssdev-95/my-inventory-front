@@ -132,11 +132,11 @@ label {
 
 .modal.contact {
     display: grid;
-    grid-template-areas: " burg h3 h3 h3"
-                         " inst inst twtr twtr"
-                         "link link mail mail"
-                         "git git pypl pypl"
-                         " beha beha beha heha";
+    grid-template-areas: " burg h3 h3 h3 "
+                         " . . . ."
+                         " . . . . "
+                         " . . . . "
+                         " . . . . ";
 
     justify-items: center;
 
@@ -186,6 +186,14 @@ label {
     margin-top: .78rem;
 }
 
+#registry-form p small {
+    position: absolute;
+    top: 6.75rem;
+
+    font-size: .7rem !important;
+    color: rgb(167, 167, 167);
+}
+
 /*Formulario Login*/
 #login-form {
     display: flex;
@@ -204,6 +212,17 @@ label {
 #user-password {
     margin-top: .15rem;
     width: 58%;
+}
+
+#login-form a p small {
+    position: absolute;
+    top: 9.5rem;
+    left: 35rem;
+
+    font-size: .7rem !important;
+    color: rgb(167, 167, 167);
+
+    text-decoration: none;
 }
 
 /*Contate o desenvolvedor*/
@@ -244,41 +263,43 @@ label {
     grid-area: h3;
 }
 
-.modal.contact .logo {
-    height: 50px;
-    width: 50px;
+.modal.contact a {
+    position: absolute;
+
+    height: 45px;
+    width: 45px;
 }
 
 #logo-insta {
-    grid-area: inst;
-}
-#logo-twitter {
-    grid-area: twtr;
-}
-#logo-linkedin {
-    grid-area: link;
-}
-#logo-mail {
-    grid-area: mail;
-}
-#logo-git {
-    grid-area: git;
-}
-#logo-paypal {
-    grid-area: pypl;
-}
-#logo-behance {
-    grid-area: beha;
-    justify-self: center;
-    margin-left: 5rem;
+    margin-top:  3rem;
+    margin-left: -3rem;
 }
 
-#logo-insta, #logo-linkedin, #logo-git {
-    justify-self: right;
+#logo-twitter {
+    margin-top:  3rem;
 }
-#logo-twitter, #logo-mail, #logo-paypal {
-    margin-right: 2rem;
-    justify-self: left;
+
+#logo-linkedin{
+    margin-top: 6rem;
+    margin-left: -3rem;
+}
+
+#logo-mail{
+    margin-top: 6rem;
+}
+
+#logo-behance{
+    margin-top: 9rem;
+    margin-left: -3rem;
+}
+
+#logo-paypal{
+    margin-top: 9rem;
+}
+
+#logo-git{
+    margin-top:  12rem;
+    margin-left: -.5rem;
 }
 
 @media(max-width: 1024px) {
