@@ -147,21 +147,33 @@ hr {
 .section {
     display: grid;
     justify-items: center;
+
     height: 65vh;
     width: 27vw;
+
     margin: auto;
+
     background: var(--half-black);
     border-radius: .625rem;
 
+    position: relative;
+
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .headings {
     display: flex;
     flex-direction: row;
+
     align-items: center;
     justify-self: center;
-    margin-top: 1rem;
+
+    position: absolute;
+    top: 40%;
+
+    opacity: .48;
+
     padding: 0;
 
     width: max-content;
@@ -180,11 +192,9 @@ hr {
 }
 
 table {
-    margin-top: -6rem;
+    margin-top: 0;
     max-height: 65vh;
     max-width: 100%;
-
-    overflow-y: scroll;
 }
 
 table thead {
@@ -193,6 +203,7 @@ table thead {
 
 table tbody {
     font-weight: 400;
+    overflow-y: scroll;
 }
 
 .section table thead tr td {
@@ -208,6 +219,10 @@ table tbody {
     text-align: left;
     padding: 0 .25rem;
 }
+
+/*.food-table .body {
+    overflow-y: scroll;
+}*/
 
 .title {
     font-size: 1.015em;

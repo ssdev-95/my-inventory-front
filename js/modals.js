@@ -67,6 +67,7 @@ const Modal = {
         overlay.classList.toggle('inactive')
 
         this.config(modality)
+        document.querySelector('.drop-down').classList.remove('selected')
         //console.log('oba!')
     },
     close(event) {
