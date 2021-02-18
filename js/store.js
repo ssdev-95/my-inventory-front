@@ -1,91 +1,163 @@
-const Utils= {
-   formatUnity(pName){
-     return `${pName} und`
-   },
-   formatDate(pDate){
-     let date = pDate.split('-')
-
-     return `${date[2]}/${date[1]}/${date[0]}`
-   },
-   formatCategory( value ) {
-     value = value.replace(/([A-Z])/, '$1').toLowerCase()
-     //console.log(value)
-     return value
-   }
+const Toast = {
+  show() {
+    var x = document.getElementById("toast")
+    x.className = "show"
+    setTimeout(function () {
+      x.className = x.className.replace("show", "")
+    }, 3000);
+  },
 }
 
-const getData = () => {
+const Utils = {
+  formatUnity(pQtd) {
+    return `${pQtd} und`
+  },
+  formatDate(pDate) {
+    pDate = pDate.split("-");
+    let date = `${pDate[1]}/${pDate[0]}/${pDate[2]}`
 
-    let name = document.querySelector('#product-name')
-    let quantity = document.querySelector('#product-quantity')
-    let expiration = document.querySelector('#product-expiration')
-    let category = document.querySelector('#categories')
-    
-    let product = {
-     name: name.value,
-     qtd: Utils.formatUnity(quantity.value),
-     valiDate: Utils.formatDate(expiration.value),
-     categ: Utils.formatCategory(category.value)
-   }
-
-   return product
-}
-
-const validare = field => {
-  !field ? alert('Fill every field you must young padawan..') : console.log('segue o baile')
-}
-
-function pushData() {
-  try {
-    let { name, qtd, valiDate, categ } = getData()
-  
-    const table = document.querySelector(`.${categ}-table .body`)
-
-    let tr = document.createElement('tr')
-    tr.innerHTML = `
-      <td>${name}</td>
-      <td>${qtd}</td>
-      <td>${valiDate}</td>
-      <td><img onclick="removeData('${categ}')" class="delete-btn" src="./assets/drawable/minus.svg" alt="Image minus"/></td>
-   `
-    table.appendChild(tr)
-
-    document.querySelector('.modal-overlay').classList.toggle('inactive')
-    document.querySelector('.modal').innerHTML = ""
-    document.querySelector('.modal').classList.toggle('register')
-  } catch (e) {
-    console.log(e.message)
-    /*alert(`
-      404 - Something went wrong...
-               Please try again...
-      Please remember, categories are Food, Hygiene and Cleaning,
-      or it's case variants, like food, FOOD, FoOd...
-    `)*/
+    //let date = String(pDate).replace(/\D/g,"/")
+    return date
+  },
+  formatCategory(value) {
+    value = value.replace(/([A-Z])/, "$1").toLowerCase()
+    //console.log(value)
+    return value
+  },
+  formatId(category, index) {
+     return `${Utils.formatCategory(category)}0${index}`
   }
 }
 
-function removeData(category) {
-   //console.log(`${category}`)
-   const tbody = document.querySelector(`.${category}-table .body`)
-   //console.log(tbody)
-   let node
-
-      tbody.addEventListener('click', el => {
-      if(el.target != el.currentTaget) {
-        try {
-          node = el.target.parentNode.parentNode
-          //console.log(node)
-          tbody.removeChild(node)
-        } catch (e) {
-            console.log(e.message)
-            alert(`
-            409 - Calm down buddy!
-                  The Bigbang occurred in a fraction of a second,
-                  but the dev don't work in that pace.
-                  I'll fix things soon, trust me i'm an engineer! :/
-            `)
+const Product = {
+    all: [
+        { 
+            id: "food-01",
+            name: "sunday",
+            quantity: 50,
+            expiration: "25/05/2025",
+            category: "food"
         }
-      }
-      //alert(`${category}-table:[${index}]`)
-   })
+    ],
+    add(product) {
+        Product.all.push(product)
+    },
+    remove(id) {
+        let index
+        Product.all.forEach(product => {
+            product.id === id ? index=Product.all.indexOf(product) : alert(`
+                459 - Cannot resolve element!
+                [Unable to retrieve data from Database]
+            `)
+        })
+        Product.all.splice(index, 1)
+        Toast.show()
+        App.reload()
+    }
 }
+
+const Form = {
+    getValues() {
+        pName = document.querySelector('#product-name'),
+        pQuantity = document.querySelector('#product-quantity')
+        pDate = document.querySelector('#product-expiration')
+        pCategory = document.querySelector('#categories')
+
+        return {
+            name: pName.value,
+            quantity: pQuantity.value,
+            expiration: pDate.value,
+            category: pCategory.value
+        }
+    },
+    validateData()  {
+        let truth = false
+        let { pName, pQuantity, pDate, pCategory } = Form.getValues()
+
+        if( pName==!null ||
+            pQuantity==!null ||
+            pDate==!null ||
+            pCategory==!null
+        ) {
+            truth = true
+        } else {
+            truth = false
+        }
+
+        console.log(truth)
+        return truth
+    },
+    submit(event) {
+        event.preventDefault()
+        try {
+            let { name, quantity, expiration, category } = Form.getValues()
+            let product = {
+                id: Utils.formatId(category, Product.all.length),
+                name: name,
+                quantity: Utils.formatUnity(quantity),
+                expiration: Utils.formatDate(expiration),
+                category: Utils.formatCategory(category)
+            }
+
+            Product.add(product)
+            App.reload()
+        } catch(e) {
+            alert('Something went wrong, try again!')
+            console.log(e.message)
+        }
+        Form.closeModal()
+    },
+    closeModal() {
+        document
+               .querySelector('.modal-overlay')
+               .classList.toggle('inactive')
+        document
+               .querySelector('.modal')
+               .classList.toggle('register')
+        document
+                .querySelector('.modal')
+                .innerHTML = ""
+    }
+}
+
+const DOM = {
+    innerHTMLContainer(product) {
+        let html = `
+            <td>${product.name}</td>
+            <td>${product.quantity}</td>
+            <td>${product.expiration}</td>
+            <td onclick="Product.remove('${product.id}')">
+                <img src="./assets/drawable/minus.svg"/>
+            </td>
+        `
+
+        return html
+    },
+    addRegistry(product) {
+        let table = document.querySelector(`.${product.category}-table .body`)
+        let tr = document.createElement('tr')
+        tr.innerHTML = DOM.innerHTMLContainer(product)
+        table.append(tr)
+    },
+    clearRegistry() {
+        let tables = document.querySelectorAll('table .body')
+
+        tables.forEach(table => {
+            table.innerHTML = ""
+        })
+    }
+}
+
+const App = {
+    init() {
+        Product.all.forEach(product => {
+            DOM.addRegistry(product)
+        })
+    },
+    reload() {
+        DOM.clearRegistry()
+        App.init()
+    }
+}
+
+App.init()

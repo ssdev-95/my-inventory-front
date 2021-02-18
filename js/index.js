@@ -17,4 +17,3 @@ logo.addEventListener('click',
 burger.addEventListener('click',
                         dropUpDown,
                         false)
-

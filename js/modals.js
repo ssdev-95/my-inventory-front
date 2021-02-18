@@ -13,8 +13,8 @@ const Modal = {
             <input type="date" name="product-expiration" id="product-expiration"/>
         </form>
         <div class="actions">
-            <a class="button cancel" href="#" onclick="Modal.close()">cancel</a>
-            <a class="button save" href="#" onclick="pushData()">save</a>
+            <a class="button cancel" href="#" onclick="Modal.close(event)">cancel</a>
+            <a class="button save" href="#"onclick="Form.submit(event)">save</a>
         </div>
     `,
 
@@ -28,12 +28,12 @@ const Modal = {
         <a href="./signin.html"><p><small>Sign up now!</small></p></a>
     </form>
     <div class="actions">
-        <a class="button cancel" href="#" onclick="Modal.close()">cancel</a>
-        <a class="button save" href="#">save</a>
+        <a class="button cancel" href="#" onclick="Modal.close(event)">cancel</a>
+        <a class="button save" href="#" >save</a>
     </div>
     `,
     contact: `
-    <div class="burger" onclick="Modal.close()">
+    <div class="burger" onclick="Modal.close(event)">
         <div class="rect" id="top"></div>
         <div class="rect" id="bot"></div>
     </div>
@@ -60,7 +60,8 @@ const Modal = {
         <img class="logo" id="logo-behance" src="./assets/drawable/behance.svg" alt="behance logo">
     </a>
     `,
-    open(modality) {
+    open(modality, event) {
+        event.preventDefault()
         const overlay = document
                                .querySelector('.modal-overlay')
         overlay.classList.toggle('inactive')
@@ -68,7 +69,8 @@ const Modal = {
         this.config(modality)
         //console.log('oba!')
     },
-    close() {
+    close(event) {
+        event.preventDefault()
         const overlay = document
                                .querySelector('.modal-overlay')
         const secondClass = document.querySelector('.modal').classList[1]

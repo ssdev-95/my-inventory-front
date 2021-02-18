@@ -16,8 +16,8 @@
     <header class="nav-bar">
         <div class="drop-down">
             <ul>
-                <li><a href="#" onclick="Modal.open('login')">login</a></li>
-                <li><a href="#" onclick="Modal.open('contact')">contact</a></li>
+                <li><a href="#" onclick="Modal.open('login', event)">login</a></li>
+                <li><a href="#" onclick="Modal.open('contact', event)">contact</a></li>
                 <li><a href="./about.html">about</a></li>
             </ul>
             <div class="burger">
@@ -27,8 +27,8 @@
         </div>
         <img class="logo" src="./assets/drawable/app_logo.svg" alt="Logo">
         <nav class="menu">
-            <a href="#" onclick="Modal.open('login')">login</a>
-            <a href="#" onclick="Modal.open('contact')">contact</a>
+            <a href="#" onclick="Modal.open('login', event)">login</a>
+            <a href="#" onclick="Modal.open('contact', event)">contact</a>
             <a href="./about.html">about</a>
         </nav>
     </header>
@@ -93,6 +93,7 @@
     <div class="modal-overlay inactive">
         <div class="modal"></div>
     </div>
+    <div id="toast"><p>Removed!</p></div>
     <hr/>
     <footer class="foot">
         <p>2021&nbsp;-&nbsp;xSallus&copy;</p>

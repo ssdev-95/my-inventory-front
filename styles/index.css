@@ -223,6 +223,38 @@ hr:last-of-type {
     bottom: 0;
 }
 
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+    border-radius: 24px;
+    height: 16px;
+    opacity: .48;
+}
+
+#toast p {
+    align-self: center;
+    justify-content: center;
+}
+
+#toast.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
 .foot {
     display: flex;
     align-items: center;
