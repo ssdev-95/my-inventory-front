@@ -8,6 +8,15 @@ const Toast = {
   },
 }
 
+const Storager = {
+    get() {
+        return JSON.parse(localStorage.getItem("Products")) || []
+    },
+    set(products) {
+        localStorage.setItem("Products",JSON.stringify(products))
+    }
+}
+
 const Utils = {
   formatUnity(pQtd) {
     return `${pQtd} und`
@@ -30,7 +39,7 @@ const Utils = {
 }
 
 const Product = {
-    all: [],
+    all: Storager.get(),
     add(product) {
         Product.all.push(product)
     },
@@ -145,6 +154,8 @@ const App = {
         Product.all.forEach(product => {
             DOM.addRegistry(product)
         })
+
+        Storager.set(Product.all)
     },
     reload() {
         DOM.clearRegistry()
