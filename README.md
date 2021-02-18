@@ -45,6 +45,10 @@
 >> Enjoy! </br>
 >> You can see a live footage [here](https://xsallus.github.com/MyInventory).
 
+## Known bugs
+
+>> [] When there has more than one element stored(counting all tables), if one is removed from database, an alert will pop-up. [Status: Not fixed]
+
 ## Contact the Dev
 
 >> - [Github&nbsp;&nbsp;<img src="./assets/drawable/github.svg" height="10px">](https://github.com/xSallus)
