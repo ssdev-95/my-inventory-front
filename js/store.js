@@ -30,15 +30,7 @@ const Utils = {
 }
 
 const Product = {
-    all: [
-        { 
-            id: "food-01",
-            name: "sunday",
-            quantity: 50,
-            expiration: "25/05/2025",
-            category: "food"
-        }
-    ],
+    all: [],
     add(product) {
         Product.all.push(product)
     },
