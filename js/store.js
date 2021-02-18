@@ -14,7 +14,7 @@ const Utils = {
   },
   formatDate(pDate) {
     pDate = pDate.split("-");
-    let date = `${pDate[1]}/${pDate[0]}/${pDate[2]}`
+    let date = `${pDate[2]}/${pDate[1]}/${pDate[0]}`
 
     //let date = String(pDate).replace(/\D/g,"/")
     return date
