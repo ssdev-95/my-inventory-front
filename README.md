@@ -47,7 +47,7 @@
 
 ## Known bugs
 
->> [] When there has more than one element stored(counting all tables), if one is removed from database, an alert will pop-up. [Status: Not fixed]
+>> - When there has more than one element stored(counting all tables), if one is removed from database, an alert will pop-up.</br>&nbsp;&nbsp;&nbsp;[Status: Not fixed]
 
 ## Contact the Dev
 
