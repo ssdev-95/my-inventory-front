@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import styles from '../styles/components/Menu.module.css';
 
 export function Menu() {
@@ -11,6 +11,7 @@ export function Menu() {
         } else {
             setMarginTop(0)
         }
+        console.log(marginTop)
     }
 
     return (

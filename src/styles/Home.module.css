@@ -25,3 +25,9 @@
     height: 75px;
     width: 75px;
 }
+
+@media (max-width: 800px) {
+    .container header {
+        padding: .05rem 1.5rem;
+    }
+}

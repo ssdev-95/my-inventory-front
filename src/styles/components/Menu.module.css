@@ -63,6 +63,8 @@
         height: 225px;
 
         border-radius: 0 0 50% 50%;
+
+        transition: margin-top .2s;
     }
 
     .navBar ul {
