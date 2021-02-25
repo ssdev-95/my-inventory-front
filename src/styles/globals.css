@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --white: #fff;
+  --half-white: rgba(255,255,255,.88);
+  --half-black: rgba(0, 0, 0, 0.58);
+  --softBlue: #32C5FF;
+  --softGray: #979797;
+  --gradiento :linear-gradient(239.54deg, var(--softBlue) 0%, var(--softGray) 100%);
+}
+
+html,
+body {
+  font-family: 'Red Hat Text', monospace;
+
+  background: var(--gradiento) no-repeat;
+
+  color: var(--half-white);
+
+  height: 100vh;
+  width: 100vw;
+}
+
+a {
+  text-decoration: none;
+}
