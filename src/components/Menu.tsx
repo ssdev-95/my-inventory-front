@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from '../styles/components/Menu.module.css';
 
 export function Menu() {
@@ -6,22 +6,19 @@ export function Menu() {
     const [marginTop, setMarginTop] = useState(-225)
 
     const dropDown = () => {
-        if(marginTop == 0) {
-            setIsDropdown(false)
-        } else {
-            setIsDropdown(true)
-        }
         console.log(isDropdown)
+        setIsDropdown(!isDropdown)
+        useEffect(isDropdown)
     }
 
-    useEffect(() => {
-        isDropdown ? (setMarginTop(-225)) : (setMarginTop(0))
+    const useEffect = (state: Boolean) => {
+        state ? (setMarginTop(-225)) : (setMarginTop(0))
         console.log(marginTop)
-    }, [isDropdown])
+    }
 
     return (
         <div>
-            <nav className={styles.navBar}>
+            <nav style={{top: marginTop}} className={styles.navBar}>
                 <ul>
                     <li>login</li>
                     <li>contact</li>

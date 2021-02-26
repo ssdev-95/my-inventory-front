@@ -4,7 +4,7 @@
     padding: .5rem;
     align-items: center;
 
-    z-index: 99;
+    z-index: 10;
 }
 
 .navBar ul {
@@ -32,7 +32,7 @@
     flex-direction: column;
     gap: 5px;
 
-    z-index: 999888;
+    z-index: 999;
 }
 
 .burger div {
