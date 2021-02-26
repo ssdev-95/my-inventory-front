@@ -6,9 +6,9 @@ export function Menu() {
     const [marginTop, setMarginTop] = useState(-225)
 
     const dropDown = () => {
-        console.log(isDropdown)
         setIsDropdown(!isDropdown)
         useEffect(isDropdown)
+        console.log(isDropdown)
     }
 
     const useEffect = (state: Boolean) => {
