@@ -32,7 +32,7 @@
     flex-direction: column;
     gap: 5px;
 
-    z-index: 999;
+    z-index: 999888;
 }
 
 .burger div {
@@ -64,7 +64,7 @@
 
         border-radius: 0 0 50% 50%;
 
-        transition: margin-top .2s;
+        transition: transform .2s;
     }
 
     .navBar ul {
