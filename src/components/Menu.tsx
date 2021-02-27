@@ -1,30 +1,39 @@
+import EventEmitter from 'events';
 import { useState } from 'react';
 import styles from '../styles/components/Menu.module.css';
 
 export function Menu() {
     const [isDropdown, setIsDropdown] = useState(false)
-    const [marginTop, setMarginTop] = useState(-225)
 
     const dropDown = () => {
         setIsDropdown(!isDropdown)
-        useEffect(isDropdown)
         console.log(isDropdown)
     }
 
-    const useEffect = (state: Boolean) => {
-        state ? (setMarginTop(-225)) : (setMarginTop(0))
-        console.log(marginTop)
+    function handleClick() {
+        window.addEventListener('click', e => {
+            e.preventDefault()
+        })
     }
 
     return (
         <div>
-            <nav style={{top: marginTop}} className={styles.navBar}>
+            <nav className={styles.navBar}>
                 <ul>
-                    <li>login</li>
-                    <li>contact</li>
-                    <li>about</li>
+                    <li><a href="#" onClick={handleClick}>login</a></li>
+                    <li><a href="#" onClick={handleClick}>contact</a></li>
+                    <li><a href="#" onClick={handleClick}>about</a></li>
                 </ul>
             </nav>
+            { isDropdown && (
+                <div className={styles.dropdownMenu}>
+                    <ul>
+                        <li><a href="#" onClick={handleClick}>login</a></li>
+                        <li><a href="#" onClick={handleClick}>contact</a></li>
+                        <li><a href="#" onClick={handleClick}>about</a></li>
+                    </ul>
+                </div>
+            )}
             <div className={styles.burger} onClick={dropDown}>
                 <div className={styles.rectTop}></div>
                 <div className={styles.rectMid}></div>

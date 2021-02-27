@@ -1,3 +1,28 @@
+.dropdownMenu > ul li a,
+.navBar > ul li a {
+    text-decoration: none;
+}
+
+.dropdownMenu > ul li a:hover {
+    border-bottom: 2px solid var(--half-black);
+    opacity: .8;
+    transition: .2s;
+}
+
+.navBar > ul li a:hover {
+    border-bottom: 2px solid var(--half-white);
+    opacity: .8;
+    transition: .2s;
+}
+
+.dropdownMenu > ul li a {
+    color: var(--half-black);
+}
+
+.navBar > ul li a {
+    color: var(--half-white);
+}
+
 .navBar  {
     width: 425px;
 
@@ -11,6 +36,7 @@
     justify-content: space-between;
 }
 
+.dropdownMenu ul li,
 .navBar ul li {
     list-style: none;
     text-transform: uppercase;
@@ -18,6 +44,14 @@
     font-weight: 500;
 
     font-size: 2rem;
+}
+
+.dropdownMenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+
+    text-align: center;
 }
 
 .burger {
@@ -42,33 +76,40 @@
     border-radius: 6px;
 }
 
+.dropdownMenu {
+    position: absolute;
+    width: 100%;
+    height: 25vh;
+
+    top: 0;
+    left: 0;
+
+    background: var(--half-white);
+
+    z-index: 50;
+
+    border-radius: 0 0 50% 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: .2s;
+}
+
 @media(min-width: 801px) {
     .burger {
+        display: none;
+    }
+
+    .dropdownMenu {
         display: none;
     }
 }
 
 @media (max-width: 800px) {
     .navBar {
-        background: var(--half-white);
-        color: var(--half-black);
-        
-        position: absolute;
-        left: 0;
-        top: -225px;
-
-        width: 100%;
-        height: 225px;
-
-        border-radius: 0 0 50% 50%;
-
-        transition: transform .2s;
-    }
-
-    .navBar ul {
-        margin-top: 1rem;
-        flex-direction:column;
-        
-        text-align: center;
+        display: none;
     }
 }
