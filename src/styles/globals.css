@@ -30,3 +30,9 @@ body {
 a {
   text-decoration: none;
 }
+
+@media (max-width: 800px) {
+  html, body {
+    overflow-y: scroll;
+  }
+}

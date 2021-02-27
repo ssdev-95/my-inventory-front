@@ -26,8 +26,51 @@
     width: 75px;
 }
 
+.main {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    padding: 3rem 0;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.addButton {
+    position: fixed;
+
+    height: 50px;
+    width: 50px;
+
+    top: 26rem;
+    left: 72rem;
+
+    opacity: .65;
+}
+
+.addButton:hover {
+    opacity: 1;
+}
+
+.footer {
+    height: 100%;
+    position: relative;
+    margin-bottom: 0;
+}
+
 @media (max-width: 800px) {
     .container header {
         padding: .05rem 1.5rem;
     }
+
+    .main {
+        flex-direction: column;
+    }
+
+    .addButton {
+        top: 44rem;
+        left: 21rem;
+    }
+
 }

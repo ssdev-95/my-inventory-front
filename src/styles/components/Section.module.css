@@ -1,0 +1,78 @@
+.sectionContainer {
+    display: flex;
+    flex-direction: row;
+
+    height: 20.3125rem;
+    width: 18.75rem;
+
+    background: var(--half-black);
+    border-radius: 10px;
+    position: relative;
+}
+
+.heading {
+    position: absolute;
+    top: 7rem;
+
+    height: 23%;
+    width: 100%;
+
+    padding: 0 1rem;
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    opacity: .68;
+}
+
+.heading img {
+    height: 35px;
+    width: 35px;
+
+    padding: 0;
+    margin-left: -30%;
+}
+
+.heading h1 {
+    text-transform: capitalize;
+    padding: 0;
+    margin: auto;
+}
+
+.sectionContainer table {
+    margin: 2rem auto 0;
+}
+
+.sectionContainer table thead tr td,
+.sectionContainer table tbpdy tr td {
+    padding: 0 5px;
+}
+
+.sectionContainer table thead tr td {
+    font-weight: 600;
+}
+
+.sectionContainer table tbody tr td {
+    font-weight: 400;
+}
+
+.body {
+    overflow-y: scroll;
+}
+
+@media(max-width: 800px) {
+    .sectionContainer {
+        flex-direction: column;
+        height: 30rem;
+        width: 21rem;
+    }
+
+    .heading {
+        top: 10rem;
+    }
+
+    .heading img {
+        margin: auto;
+    }
+}

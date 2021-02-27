@@ -83,7 +83,7 @@
 }
 
 .burger {
-    position: absolute;
+    position: relative;
     top: 1.25rem;
     right: 2rem;
 

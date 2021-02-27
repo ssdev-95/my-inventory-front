@@ -7,7 +7,6 @@ export function Menu() {
 
     const dropDown = () => {
         setIsDropdown(!isDropdown)
-        console.log(isDropdown)
     }
 
     function handleClick() {
