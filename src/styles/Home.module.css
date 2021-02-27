@@ -59,13 +59,18 @@
     margin-bottom: 0;
 }
 
+@media (max-width: 1024px) {
+    .container {
+        overflow-y: scroll;
+    }
+    .main {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 800px) {
     .container header {
         padding: .05rem 1.5rem;
-    }
-
-    .main {
-        flex-direction: column;
     }
 
     .addButton {
