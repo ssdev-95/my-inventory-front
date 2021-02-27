@@ -35,9 +35,15 @@ export function Menu() {
                 </div>
             )}
             <div className={styles.burger} onClick={dropDown}>
-                <div className={styles.rectTop}></div>
-                <div className={styles.rectMid}></div>
-                <div className={styles.rectBot}></div>
+                <div 
+                    className={!isDropdown?(`${styles.rectTop}`):(`${styles.rectTop} ${styles.clicked}`)}>
+                </div>
+                <div 
+                    className={!isDropdown?(`${styles.rectMid}`):(`${styles.rectMid} ${styles.clicked}`)}>
+                </div>
+                <div 
+                    className={!isDropdown?(`${styles.rectBot}`):(`${styles.rectBot} ${styles.clicked}`)}>
+                </div>
             </div>
         </div>
     )

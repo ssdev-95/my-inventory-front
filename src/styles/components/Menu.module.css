@@ -1,28 +1,4 @@
-.dropdownMenu > ul li a,
-.navBar > ul li a {
-    text-decoration: none;
-}
-
-.dropdownMenu > ul li a:hover {
-    border-bottom: 2px solid var(--half-black);
-    opacity: .8;
-    transition: .2s;
-}
-
-.navBar > ul li a:hover {
-    border-bottom: 2px solid var(--half-white);
-    opacity: .8;
-    transition: .2s;
-}
-
-.dropdownMenu > ul li a {
-    color: var(--half-black);
-}
-
-.navBar > ul li a {
-    color: var(--half-white);
-}
-
+/*Dropdown Menu*/
 .navBar  {
     width: 425px;
 
@@ -32,11 +8,20 @@
 
 .navBar ul {
     display: flex;
-
     justify-content: space-between;
 }
 
-.dropdownMenu ul li,
+.navBar > ul li a {
+    text-decoration: none;
+    color: var(--half-white);
+}
+
+.navBar > ul li a:hover {
+    border-bottom: 2px solid var(--half-white);
+    opacity: .8;
+    transition: .2s;
+}
+
 .navBar ul li {
     list-style: none;
     text-transform: uppercase;
@@ -46,36 +31,7 @@
     font-size: 2rem;
 }
 
-.dropdownMenu ul {
-    display: flex;
-    flex-direction: column;
-    gap: .65rem;
-
-    text-align: center;
-}
-
-.burger {
-    margin-top: 1.25rem;
-
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-
-    z-index: 999;
-}
-
-.burger div {
-    background: var(--half-white);
-
-    width: 100%;
-    height: 8px;
-
-    border-radius: 6px;
-}
-
+/*Dropdown Menu*/
 .dropdownMenu {
     position: absolute;
     width: 100%;
@@ -96,6 +52,70 @@
     justify-content: center;
 
     transition: .2s;
+}
+
+.dropdownMenu ul {
+    display: flex;
+    flex-direction: column;
+    gap: .65rem;
+
+    text-align: center;
+}
+
+.dropdownMenu > ul li a {
+    text-decoration: none;
+    color: var(--half-black);
+}
+
+.dropdownMenu > ul li a:hover {
+    border-bottom: 2px solid var(--half-black);
+    opacity: .8;
+    transition: .2s;
+}
+
+.dropdownMenu ul li {
+    list-style: none;
+    text-transform: uppercase;
+
+    font-weight: 500;
+
+    font-size: 2rem;
+}
+
+.burger {
+    position: absolute;
+    top: 1.25rem;
+    right: 2rem;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    z-index: 999;
+}
+
+.burger div {
+    background: var(--half-white);
+
+    width: 100%;
+    height: 8px;
+
+    border-radius: 6px;
+}
+
+.burger > .rectTop.clicked {
+    transform: rotate(45deg) translate(1px, 12px);
+    background: var(--half-black);
+}
+.burger > .rectMid.clicked {
+    display: none;
+}
+.burger > .rectBot.clicked {
+    transform: rotate(-45deg) translate(-2px,-8px);
+    background: var(--half-black);
 }
 
 @media(min-width: 801px) {
