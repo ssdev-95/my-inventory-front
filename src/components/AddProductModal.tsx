@@ -10,15 +10,26 @@ export function AddProductModal() {
             <div className={styles.overlay}>
                 <div className={styles.modal}>
                     <form action="#">
-                        <input type="text" placeholder="Product"/>
-                        <input type="number" placeholder="12"/>
                         <input 
+                          name="productName" 
+                          type="text" 
+                          placeholder="Product"/>
+                        <input 
+                          name="productQuantity"
+                          type="number" 
+                          placeholder="12"/>
+                        <input 
+                          name="productCategory"
                           type="text" 
                           placeholder="Food, Hygiene or Cleaning"/>
-                        <input type="date"/>
+                        <input
+                          name="productExpiration" 
+                          type="date"/>
                     </form>
                     <div className={styles.actions}>
-                        <a className={styles.cancelButton} href="" onClick={openCloseAddProductModal}>cancel</a>
+                        <a className={styles.cancelButton} 
+                           href="" 
+                           onClick={openCloseAddProductModal}>cancel</a>
                         <a className={styles.saveButton} href="">save</a>
                     </div>
                 </div>
