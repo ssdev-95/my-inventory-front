@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
     render() {
-        return(
+        return (
             <Html >
                 <Head>
                     <link rel="shortcut icon" href="drawable/app_logo.svg" type="image/jpg"/>
