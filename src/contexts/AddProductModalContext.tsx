@@ -12,7 +12,7 @@ interface AddProductModalProps {
 export const AddProductModalContext = createContext({} as AddProductModalContextContextData)
 
 export function AddProductModalProvider({children}: AddProductModalProps) {
-    const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(true)
+    const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(false)
 
     const openCloseAddProductModal = () => {
         window.addEventListener('click', event => {
