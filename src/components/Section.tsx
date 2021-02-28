@@ -11,8 +11,8 @@ export function Section(props: SectionProps) {
             <table className={`${styles}.${props.className}`}>
                 <thead>
                     <tr className={styles.heading}>
-                        <img src={newLocal} alt=""/>   
-                        <h1>{props.className}</h1>
+                        <td><img src={newLocal} alt=""/> </td>  
+                        <td><p>{props.className}</p></td>
                     </tr>
                     <tr>
                         <td className={styles.title}>Description</td>
