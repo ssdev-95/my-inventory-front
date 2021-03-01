@@ -14,7 +14,7 @@ export function AddProductModal() {
     let products = []
     
     const submit = (data) => {
-      products.push(data)
+      products.push({data})
       addProduct(products)
     }
 
