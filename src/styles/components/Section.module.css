@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: row;
 
-    height: 20.3125rem;
+    height: 20.75rem;
     width: 18.75rem;
 
     background: var(--half-black);
     border-radius: 10px;
     position: relative;
 
-    overflow-y: scroll;
+    overflow-y: hidden;
 }
 
 .heading {
@@ -79,7 +79,7 @@
 
 @media(max-width: 800px) {
     .sectionContainer {
-        height: 30rem;
+        height: 75vh ;
         width: 21rem;
     }
 }

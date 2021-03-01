@@ -27,14 +27,22 @@
 }
 
 .main {
-    display: flex;
     width: 100%;
     height: 100%;
+}
 
-    padding: 3rem 0;
+.content {
+    display: flex;
+
+    width: 100%;
+    height: 82vh;
+
+    padding: 1rem 0;
     align-items: center;
     justify-content: center;
     gap: 3rem;
+
+    overflow-y: scroll;
 }
 
 .addButton {
@@ -43,8 +51,8 @@
     height: 50px;
     width: 50px;
 
-    top: 26rem;
-    left: 72rem;
+    top: 75vh;
+    left: 82vw;
 
     opacity: .65;
 }
@@ -60,22 +68,21 @@
 }
 
 @media (max-width: 1024px) {
-    .container {
-        overflow-y: scroll;
-    }
-    .main {
+    .content {
         flex-direction: column;
+        overflow-y: scroll;
+        gap: .5rem;
+    }
+
+    .addButton {
+        top: 75vh;
+        left: 80vw;
     }
 }
 
 @media (max-width: 800px) {
     .container header {
         padding: .05rem 1.5rem;
-    }
-
-    .addButton {
-        top: 44rem;
-        left: 21rem;
     }
 
 }

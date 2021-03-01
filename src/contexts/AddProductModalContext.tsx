@@ -3,6 +3,8 @@ import { createContext, ReactNode, useState } from 'react';
 interface AddProductModalContextContextData {
     isAddProductModalOpen: boolean;
     openCloseAddProductModal: () => void;
+    addProduct: (params) => void;
+    Products: object[];
 }
 
 interface AddProductModalProps {
@@ -13,6 +15,7 @@ export const AddProductModalContext = createContext({} as AddProductModalContext
 
 export function AddProductModalProvider({children}: AddProductModalProps) {
     const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(false)
+    const [Products, setProducts] = useState(null)
 
     const openCloseAddProductModal = () => {
         window.addEventListener('click', event => {
@@ -20,11 +23,17 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
         })
         setIsProductModalOpen(!isAddProductModalOpen)
     }
+    
+    const addProduct = (product) => {
+        setProducts(product)
+    }
 
     return (
         <AddProductModalContext.Provider value={{
             isAddProductModalOpen,
-            openCloseAddProductModal
+            addProduct,
+            openCloseAddProductModal,
+            Products
         }}>
             {children}
         </AddProductModalContext.Provider>

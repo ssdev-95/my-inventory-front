@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css'
 
 import {useContext} from 'react';
 import { Menu } from '../components/Menu';
-import { Section } from '../components/Section';
+import { Content } from '../components/Content';
 import { AddProductModal } from '../components/AddProductModal';
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
 
@@ -20,9 +20,7 @@ export default function Home() {
         <hr />
 
         <main className={styles.main}>
-          <Section className='food' />
-          <Section className='hygiene' />
-          <Section className='cleaning' />
+          <Content className={styles.content} />
         </main>
 
         <img src="drawable/add_button.png" 
