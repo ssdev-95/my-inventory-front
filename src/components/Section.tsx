@@ -9,7 +9,7 @@ export function Section(props: SectionProps) {
 
     return (
         <div className={styles.sectionContainer}>
-            <table className={`${styles}.${props.className}`}>
+            <table className={styles.table} id={`${props.className}-table`}>
                 <thead>
                     <tr className={styles.heading}>
                         <td><img src={newLocal} alt=""/> </td>  

@@ -37,31 +37,31 @@
     font-size: .85rem;
 }
 
-.sectionContainer table {
+.table {
     margin: 2rem auto 0;
     overflow-x: scroll;
 }
 
-.sectionContainer table thead tr td,
-.sectionContainer table tbpdy tr td {
+.table thead tr td,
+.table tbody tr td {
     padding: 0 5px;
 }
 
-.sectionContainer table thead tr td {
+.table thead tr td {
     font-weight: 600;
     font-size: .88rem;
 }
 
-.sectionContainer table tbody tr td {
+.table tbody tr td {
     font-weight: 400;
     font-size: .88rem;
 }
 
-.sectionContainer table tbody tr {
+.table tbody tr {
     opacity: .78;
 }
 
-.sectionContainer table tbody tr:hover {
+.table tbody tr:hover {
     opacity: 1;
 }
 
