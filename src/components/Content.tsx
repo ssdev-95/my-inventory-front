@@ -1,30 +1,36 @@
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
 import { Section } from '../components/Section';
-import { useContext, useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
 export function Content(props) {
-    const {Products} = useContext(AddProductModalContext)
+    const {Products, deleteProduct} = useContext(AddProductModalContext)
 
     const innerHTMLContainer = (item) => {
         let tr = document.createElement('tr')
-        tr.innerHTML = (`
-            <td>${item.productName}</td>
-            <td>${item.productQuantity}</td>
-            <td>${item.productExpiration}</td>
-            <td>
+        const child = (`
+            <td>${item.name}</td>
+            <td>${item.quantity}</td>
+            <td>${item.expiration}</td>
+            <td onClick='${deleteProduct(item.id)}'>
                 <img src="drawable/minus.svg" alt="Delete button"/>
             </td>
         `)
+
+        tr.innerHTML = child
 
         return tr
     }
 
     useEffect(()=>{
         Products!=null && (
-            /*Products.forEach(product => {
-                console.log(product)
-            })*/
-            console.log(Products)
+            Products.forEach(product => {
+                const { category } = product
+                //console.log(product)
+                let ele = document
+                    .querySelector(`#${category}-table tbody`)
+                ele.appendChild(innerHTMLContainer(product))
+                //console.log(ele)
+            })
         )
     }, [Products])
 

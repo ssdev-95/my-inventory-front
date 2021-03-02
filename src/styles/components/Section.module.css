@@ -3,13 +3,13 @@
     flex-direction: row;
 
     height: 20.75rem;
-    width: 18.75rem;
+    width: 21rem;
 
     background: var(--half-black);
     border-radius: 10px;
     position: relative;
 
-    overflow-y: hidden;
+    overflow-y: scroll;
 }
 
 .heading {
@@ -39,7 +39,7 @@
 
 .table {
     margin: 2rem auto 0;
-    overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .table thead tr td,
@@ -73,13 +73,13 @@
     .sectionContainer {
         flex-direction: column;
         height: 60vh;
-        width: 60%;
+        width: 24rem;
     }
 }
 
 @media(max-width: 800px) {
     .sectionContainer {
         height: 75vh ;
-        width: 21rem;
+        width: 85%;
     }
 }

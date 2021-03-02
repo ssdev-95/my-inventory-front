@@ -14,8 +14,15 @@ export function AddProductModal() {
     let products = []
     
     const submit = (data) => {
-      products.push({data})
+      products.push({
+          id: `${data.productCategory}-0${products.length+1}`,
+          name: data.productName,
+          quantity: data.productQuantity,
+          category: data.productCategory,
+          expiration: data.productExpiration,
+      })
       addProduct(products)
+      openCloseAddProductModal()
     }
 
     return (
