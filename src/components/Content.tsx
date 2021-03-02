@@ -11,7 +11,7 @@ export function Content(props) {
             <td>${item.name}</td>
             <td>${item.quantity}</td>
             <td>${item.expiration}</td>
-            <td onClick='${deleteProduct(item.id)}'>
+            <td onClick={${deleteProduct(item.id)}}>
                 <img src="drawable/minus.svg" alt="Delete button"/>
             </td>
         `)

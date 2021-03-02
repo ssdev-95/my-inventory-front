@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
 import {useForm} from 'react-hook-form';
+import {Formateer} from '../api/HandleData';
+
 import styles from '../styles/components/AddProductModal.module.css';
 
 export function AddProductModal() {
@@ -15,11 +17,11 @@ export function AddProductModal() {
     
     const submit = (data) => {
       products.push({
-          id: `${data.productCategory}-0${products.length+1}`,
+          id: Formateer.formatId(Formateer.formatCategory(String(data.productCategory)), Number(products.length)),
           name: data.productName,
-          quantity: data.productQuantity,
-          category: data.productCategory,
-          expiration: data.productExpiration,
+          quantity: Formateer.formatUnity(data.productQuantity),
+          category: Formateer.formatCategory(String(data.productCategory)),
+          expiration: Formateer.formatDate(data.productExpiration),
       })
       addProduct(products)
       openCloseAddProductModal()
