@@ -24,7 +24,7 @@ export const AddProductModalContext = createContext({} as AddProductModalContext
 
 export function AddProductModalProvider({children}: AddProductModalProps) {
     const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(false)
-    const [Products, setProducts] = useState(null)
+    const [Products, setProducts] = useState([])
 
     const openCloseAddProductModal = () => {
         window.addEventListener('click', event => {
@@ -34,7 +34,7 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
     }
     
     const addProduct = (product) => {
-        setProducts(product)
+        setProducts([...Products, product])
     }
 
     const deleteProduct = (id: string) => {

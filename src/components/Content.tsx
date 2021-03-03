@@ -24,7 +24,7 @@ export function Content(props) {
     const [storedItems, setStoredItems] = useState(null)
 
     useEffect(() => {
-        if(Products!==null) {
+        if(Products.length>0) {
             localStorage.setItem('@app/products',JSON.stringify(Products))
         }
         setStoredItems(JSON.parse(localStorage.getItem('@app/products')))
@@ -32,7 +32,7 @@ export function Content(props) {
 
 
     useEffect(()=>{
-        storedItems!=null && (
+        (storedItems!==null&&storedItems.length>0) && (
             storedItems.forEach(item => {
                 const { category } = item
                 //console.log(item)

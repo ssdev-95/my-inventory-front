@@ -9,21 +9,20 @@ export function AddProductModal() {
     const {
       isAddProductModalOpen, 
       openCloseAddProductModal, 
-      addProduct
+      addProduct,
+      Products
     } = useContext(AddProductModalContext)
     const {register, handleSubmit} = useForm()
-
-    let products = []
     
     const submit = (data) => {
-      products.push({
-          id: Formateer.formatId(Formateer.formatCategory(String(data.productCategory)), Number(products.length)),
+      const product = {
+          id: Formateer.formatId(Formateer.formatCategory(data.productCategory), String(data.expiration)),
           name: data.productName,
           quantity: Formateer.formatUnity(data.productQuantity),
           category: Formateer.formatCategory(String(data.productCategory)),
           expiration: Formateer.formatDate(data.productExpiration),
-      })
-      addProduct(products)
+      }
+      addProduct(product)
       openCloseAddProductModal()
     }
 
