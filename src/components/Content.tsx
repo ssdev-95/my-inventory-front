@@ -1,6 +1,6 @@
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
 import { Section } from '../components/Section';
-import React, { useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 export function Content(props) {
     const {Products, deleteProduct} = useContext(AddProductModalContext)
@@ -21,18 +21,28 @@ export function Content(props) {
         return tr
     }
 
+    const [storedItems, setStoredItems] = useState(null)
+
+    useEffect(() => {
+        if(Products!==null) {
+            localStorage.setItem('@app/products',JSON.stringify(Products))
+        }
+        setStoredItems(JSON.parse(localStorage.getItem('@app/products')))
+    }, [Products])
+
+
     useEffect(()=>{
-        Products!=null && (
-            Products.forEach(product => {
-                const { category } = product
-                //console.log(product)
+        storedItems!=null && (
+            storedItems.forEach(item => {
+                const { category } = item
+                //console.log(item)
                 let ele = document
                     .querySelector(`#${category}-table tbody`)
-                ele.appendChild(innerHTMLContainer(product))
+                ele.appendChild(innerHTMLContainer(item))
                 //console.log(ele)
             })
         )
-    }, [Products])
+    }, [storedItems])
 
     return (
         <div className={props.className}>
