@@ -6,6 +6,7 @@ import { Content } from '../components/Content';
 import { AddProductModal } from '../components/AddProductModal';
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
 import { ContactModal } from '../components/ContactModal';
+import { LoginModal } from '../components/LoginModal';
 
 export default function Home() {
   const { openCloseAddProductModal } = useContext(AddProductModalContext)
@@ -14,6 +15,7 @@ export default function Home() {
     <div className={styles.container}>
         <AddProductModal />
         <ContactModal />
+        <LoginModal />
         <header>
             <img src="drawable/app_logo.png" alt="App logo"/>
             <Menu className={'about'}/>

@@ -1,0 +1,95 @@
+.overlay {
+    background: var(--half-black);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    z-index:999;
+}
+
+.modal {
+    background: #f0f2f5;
+
+    height: 300px;
+    width: 300px;
+
+    border-radius: 10px;
+
+    margin: 25vh auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.form {
+    height: 50%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form small {
+    color: var(--half-black);
+    font-size: .85rem;
+}
+
+.form small > Link {
+    text-decoration: none;
+    color: red;
+}
+
+.form input {
+    height: 2.35rem;
+    width:  100%;
+
+    border-radius: 6px;
+    border: 0;
+
+    margin-top: 1.75rem;
+}
+
+.modal .actions {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.cancelButton,
+.saveButton {
+    border: 1px solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    font-weight: 500;
+}
+
+.cancelButton {
+    color: #f0f2f5;
+    border-color: rgb(248, 61, 61);
+    background: rgb(248, 61, 61);
+
+    padding: 5px 15px;
+}
+
+.saveButton {
+    color: #f0f2f5;
+    border-color: rgb(100,225, 100);
+    background: rgb(100,225, 100);
+
+    padding: 5px 25px;
+}
+
+.cancelButton:hover,
+.saveButton:hover {
+    filter: saturate(55%);
+}

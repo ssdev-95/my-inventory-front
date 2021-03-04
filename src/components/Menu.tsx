@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { useState, useEffect, useContext } from 'react';
-import styles from '../styles/components/Menu.module.css';
+
 import { ContactModalContext } from '../contexts/ContactModalContext';
+import { LoginModalContext } from '../contexts/LoginModalContext';
+
+import styles from '../styles/components/Menu.module.css';
 
 export function Menu(props) {
     const { toggle } = useContext(ContactModalContext)
+    const { openCloseLoginModal } = useContext(LoginModalContext)
     const [isDropdown, setIsDropdown] = useState(false)
     const [route, setRoute] = useState('/')
     const ref = props.className
@@ -44,7 +48,7 @@ export function Menu(props) {
         <div>
             <nav className={styles.navBar}>
                 <ul>
-                    <li><a href="#" onClick={handleClick}>login</a></li>
+                    <li><a href="#" onClick={openCloseLoginModal}>login</a></li>
                     <li><a href="#" onClick={openContact}>contact</a></li>
                     <li><Link href={{pathname: `${route}`}}><a>{ref}</a></Link></li>
                 </ul>
@@ -52,7 +56,7 @@ export function Menu(props) {
             { isDropdown && (
                 <div className={styles.dropdownMenu}>
                     <ul>
-                        <li><a href="#" onClick={handleClick}>login</a></li>
+                        <li><a href="#" onClick={openCloseLoginModal}>login</a></li>
                         <li><a href="#" onClick={openContact}>contact</a></li>
                         <li><Link href={{pathname: `${route}`}}><a>{ref}</a></Link></li>
                     </ul>

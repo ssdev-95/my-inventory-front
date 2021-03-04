@@ -8,7 +8,7 @@ interface ProductProps {
     expiration: string;
 }
 
-interface AddProductModalContextContextData {
+interface AddProductModalContextData {
     isAddProductModalOpen: boolean;
     openCloseAddProductModal: () => void;
     addProduct: (params) => void;
@@ -20,7 +20,7 @@ interface AddProductModalProps {
     children: ReactNode
 }
 
-export const AddProductModalContext = createContext({} as AddProductModalContextContextData)
+export const AddProductModalContext = createContext({} as AddProductModalContextData)
 
 export function AddProductModalProvider({children}: AddProductModalProps) {
     const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(false)
