@@ -1,0 +1,58 @@
+.content h2, .content p {
+    margin: .5rem 2.25rem auto;
+    text-align: left;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    padding-top: 1rem;
+}
+
+.content h1 {
+    font-weight: 500;
+    font-size: 1.875rem;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 1.35rem;
+    font-weight: 500;
+}
+
+.content p {
+    font-size: 1.125rem;
+
+    font-weight: 100;
+    padding-bottom: 2rem;
+}
+
+.content h3 {
+    font-size: .95rem;
+    text-align: center;
+    margin-top: .65rem;
+    font-weight: 500;
+
+    padding-top: 8rem;
+    padding-bottom: 1rem;
+}
+
+@media(min-width: 1024px) {
+    .content {
+        width: 80%;
+        height: 80%;
+        margin-left: 5rem;
+    }
+
+    .content h3 {
+        padding-top: 4rem;
+    }
+
+    .content h1 {
+        padding-left: 5rem;
+    }
+}

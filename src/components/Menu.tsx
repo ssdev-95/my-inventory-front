@@ -1,9 +1,25 @@
-import EventEmitter from 'events';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import styles from '../styles/components/Menu.module.css';
 
-export function Menu() {
+export function Menu(props) {
     const [isDropdown, setIsDropdown] = useState(false)
+    const [route, setRoute] = useState('/')
+    const ref = props.className
+
+    useEffect(()=>{
+        switch(ref) {
+            case 'home':
+                setRoute('/')
+                break
+            case 'about':
+                setRoute('/about')
+                break
+            default:
+                alert(`Route ${ref} not found!`)
+                break
+        }
+    },[])
 
     const dropDown = () => {
         setIsDropdown(!isDropdown)
@@ -21,7 +37,7 @@ export function Menu() {
                 <ul>
                     <li><a href="#" onClick={handleClick}>login</a></li>
                     <li><a href="#" onClick={handleClick}>contact</a></li>
-                    <li><a href="#" onClick={handleClick}>about</a></li>
+                    <li><Link href={{pathname: `${route}`}}><a>{ref}</a></Link></li>
                 </ul>
             </nav>
             { isDropdown && (
@@ -29,7 +45,7 @@ export function Menu() {
                     <ul>
                         <li><a href="#" onClick={handleClick}>login</a></li>
                         <li><a href="#" onClick={handleClick}>contact</a></li>
-                        <li><a href="#" onClick={handleClick}>about</a></li>
+                        <li><Link href={{pathname: `${route}`}}><a>{ref}</a></Link></li>
                     </ul>
                 </div>
             )}
