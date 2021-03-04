@@ -12,7 +12,7 @@ interface LoginModalProps {
 export const LoginModalContext = createContext({} as LoginModalContextData)
 
 export function LoginModalProvider({children}: LoginModalProps) {
-    const [isLoginModalOpen, setIsLoginModalOpen] = useState(true)
+    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
 
     const openCloseLoginModal = () => {
         window.addEventListener('click', event => {

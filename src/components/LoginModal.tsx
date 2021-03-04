@@ -23,7 +23,7 @@ export function LoginModal() {
                                 placeholder="Username" 
                                 ref={register}
                         />
-                        <small>Not registered? <Link href="https://google.com.br">Signup now!</Link></small>
+                        <small>Not registered? <Link href={{pathname: '/signup'}}><a href="#" onClick={openCloseLoginModal}>Signup now!</a></Link></small>
                         <input  type="password" 
                                 name="passphrase"
                                 placeholder="Password" 

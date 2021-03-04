@@ -1,0 +1,90 @@
+.content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content form {
+    width: 40%;
+    height: 76vh;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+}
+
+.content form input {
+    width: 70%;
+    height: 3rem;
+
+    padding-left: 1rem;
+
+    border-radius: 6px;
+    border: 0;
+}
+
+.submit {
+    width: 10vw;
+    height: 6.5vh;
+
+    display: flex;
+    gap: 1rem;
+
+    border-radius: 6px;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #F0F2F5;
+}
+
+.sumbmit img {
+    height: 24px;
+    width: 24px
+}
+
+.alternatives {
+    width: 40%;
+    height: 76vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.alternatives a {
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 1rem 15px;
+    display: flex;
+    gap: 1rem;
+
+    width: 15vw;
+}
+
+.git_login {
+    background: rgb(1, 1, 71);
+    color: white;
+}
+
+.ggl_login {
+    background: #f0f2f5;
+    color: rgba(0,0,0,.68);
+}
+
+.fb_login {
+    background: rgb(27, 27, 245);
+    color: white;
+}
+
+@media(max-width: 800px) {
+    .content {
+        flex-direction: column;
+    }
+}
