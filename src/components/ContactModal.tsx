@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import Link from 'next/link';
 import { ContactModalContext } from '../contexts/ContactModalContext'
 import styles from '../styles/components/ContactModal.module.css';
 
@@ -14,35 +15,35 @@ export function ContactModal() {
                         <div className={styles.rectBot}></div>
                     </div>
                     <div className={styles.iconsContainer}>
-                        <a href="https://www.instagram.com/xsallus.dev/" target="_blank" rel="external"><img src="drawable/instagram.svg" 
+                        <Link href="https://www.instagram.com/xsallus.dev/" ><img src="drawable/instagram.svg" 
                              className={styles.logo}
                              id={'insta'}
                              alt="Insta logo"
-                        /></a>
-                        <a href="https://twitter.com/xSallus_dev" target="_blank" rel="external"><img src="drawable/twitter.svg" 
+                        /></Link>
+                        <Link href="https://twitter.com/xSallus_dev" ><img src="drawable/twitter.svg" 
                              className={styles.logo} 
                              alt="Twitter logo"
-                        /></a>
-                        <a href="https://www.linkedin.com/in/salomao-vasconcelos/" target="_blank" rel="external"><img src="drawable/linkedin.svg"  
+                        /></Link>
+                        <Link href="https://www.linkedin.com/in/salomao-vasconcelos/" ><img src="drawable/linkedin.svg"  
                              className={styles.logo}
                              alt="Linkedin logo"
-                        /></a>
-                        <a href="#"><img src="drawable/mail.svg"  
+                        /></Link>
+                        <Link href="mailTo: souza95salomao@gmail.com"><img src="drawable/mail.svg"  
                              className={styles.logo}
                              alt="Email logo"
-                        /></a>
-                        <a href="https://www.behance.net/salomaosouza"><img src="drawable/behance.svg"  
+                        /></Link>
+                        <Link href="https://www.behance.net/salomaosouza"><img src="drawable/behance.svg"  
                              className={styles.logo}
                              alt="Behance logo"
-                        /></a>
-                        <a href="#"><img src="drawable/paypal.svg"  
+                        /></Link>
+                        <Link href="#"><img src="drawable/paypal.svg"  
                              className={styles.logo}
                              alt="Paypal logo"
-                        /></a>
-                        <a href="https://github.com/xSallus/MyInventory" target="_blank" rel="external"><img src="drawable/github.svg"  
+                        /></Link>
+                        <Link href="https://github.com/xSallus/MyInventory" ><img src="drawable/github.svg"  
                              className={styles.logo}
                              alt="Github logo"
-                        /></a>
+                        /></Link>
                     </div>
                 </div>
             </div>
