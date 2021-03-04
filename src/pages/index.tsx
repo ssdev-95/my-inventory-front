@@ -5,18 +5,15 @@ import { Menu } from '../components/Menu';
 import { Content } from '../components/Content';
 import { AddProductModal } from '../components/AddProductModal';
 import { AddProductModalContext } from '../contexts/AddProductModalContext';
-
-//import { UserLoginModal } from '../../components/UserLoginModal';
-//import { UserLoginModalContext } from '../contexts/UserLoginModalContext';
+import { ContactModal } from '../components/ContactModal';
 
 export default function Home() {
   const { openCloseAddProductModal } = useContext(AddProductModalContext)
-  //const { openCloseUserLoginModal } = useContext(UserLoginModalContext)
-  //<UserLoginModal />
-
+  /*LOL*/
   return (
-      <div className={styles.container}>
+    <div className={styles.container}>
         <AddProductModal />
+        <ContactModal />
         <header>
             <img src="drawable/app_logo.png" alt="App logo"/>
             <Menu className={'about'}/>

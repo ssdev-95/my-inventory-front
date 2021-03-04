@@ -1,8 +1,8 @@
 import styles from '../../styles/pages/Home.module.css'
 import stylos from '../../styles/pages/About.module.css'
 
-//import {useContext} from 'react';
 import { Menu } from '../../components/Menu';
+import { ContactModal } from '../../components/ContactModal';
 //import { UserLoginModal } from '../../components/UserLoginModal';
 //import { UserLoginModalContext } from '../contexts/UserLoginModalContext';
 
@@ -16,6 +16,7 @@ export default function About() {
         <header>
             <img src="drawable/app_logo.png" alt="App logo"/>
             <Menu className={'home'} />
+            <ContactModal />
         </header>
 
         <hr />

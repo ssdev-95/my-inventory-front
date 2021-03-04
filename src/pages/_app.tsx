@@ -1,11 +1,14 @@
 import '../styles/globals.css'
 import { AddProductModalProvider } from '../contexts/AddProductModalContext';
+import { ContactModalProvider } from '../contexts/ContactModalContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AddProductModalProvider>
-      <Component {...pageProps} />
-    </ AddProductModalProvider>
+    <ContactModalProvider>
+      <AddProductModalProvider>
+        <Component {...pageProps} />
+      </ AddProductModalProvider>
+    </ContactModalProvider>
   )
 }
 
