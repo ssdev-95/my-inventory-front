@@ -52,15 +52,15 @@ export default function Signup() {
                 </a>
             </form>
             <div className={stylos.alternatives}>
-                <a className={stylos.git_login} href="">
+                <a className={stylos.git_login} href="#" onClick={submit}>
                     <img src="drawable/github.svg" alt=""/>
                     Login via Github
                 </a>
-                <a className={stylos.ggl_login} href="">
+                <a className={stylos.ggl_login} href="#" onClick={submit}>
                     <img src="drawable/google.svg" alt=""/>
                     Login via Google
                 </a>
-                <a className={stylos.fb_login} href="">
+                <a className={stylos.fb_login} href="#" onClick={submit}>
                     <img src="drawable/facebook.svg" alt=""/>
                     Login via  Facebook
                 </a>

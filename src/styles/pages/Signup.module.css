@@ -39,6 +39,9 @@
     justify-content: center;
 
     background: #F0F2F5;
+
+    text-decoration: none;
+    color: var(--half-black);
 }
 
 .sumbmit img {
@@ -73,6 +76,10 @@
     color: white;
 }
 
+.git_login img {
+    filter: invert(100%);
+}
+
 .ggl_login {
     background: #f0f2f5;
     color: rgba(0,0,0,.68);
@@ -83,8 +90,46 @@
     color: white;
 }
 
+.fb_login:hover,
+.git_login:hover {
+    filter: saturate(50%);
+}
+
+.ggl_login:hover,
+.submit:hover {
+    filter: invert(100%);
+    opacity: .78;
+}
+
+@media (max-width: 1262px) {
+    .submit {
+        width: 45%;
+    }
+
+    .alternatives a {
+        width: 65%;
+    }
+}
+
 @media(max-width: 800px) {
     .content {
         flex-direction: column;
+        justify-content: center;
+
+        height: 125vh;
+        
+        align-items: space-evenly;
+    }
+    .content form,
+    .alternatives  {
+        width: 80vw;
+        margin: auto;
+        gap: 1.5rem;
+        height: 50vh;
+    }
+
+    .alternatives {
+        border: 1px solid var(--half-white);
+        border-radius: 15px;
     }
 }
