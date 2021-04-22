@@ -1,17 +1,14 @@
 import '../styles/globals.css'
-import { AddProductModalProvider } from '../contexts/AddProductModalContext';
-import { ContactModalProvider } from '../contexts/ContactModalContext';
-import { LoginModalProvider } from '../contexts/LoginModalContext';
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LoginModalProvider>
-      <ContactModalProvider>
-        <AddProductModalProvider>
-          <Component {...pageProps} />
-        </ AddProductModalProvider>
-      </ContactModalProvider>
-    </LoginModalProvider>
+    <>
+    <Head>
+      <title>My Inventory&trade;</title>
+    </Head>
+    <Component {...pageProps} />
+    </>
   )
 }
 
