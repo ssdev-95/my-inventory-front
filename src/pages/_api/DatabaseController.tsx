@@ -30,6 +30,7 @@ export const DBController = {
                         })
                     })
             })
+        return products
     },
     update(product: any) {
         database
