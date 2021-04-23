@@ -1,9 +1,6 @@
 import {createContext, useState, ReactNode} from 'react'
 
-interface LoginModalContextData {
-    isLoginModalOpen: boolean;
-    openCloseLoginModal: ()=>void;
-}
+interface LoginModalContextData {}
 
 interface LoginModalProps {
     children: ReactNode
@@ -12,20 +9,9 @@ interface LoginModalProps {
 export const LoginModalContext = createContext({} as LoginModalContextData)
 
 export function LoginModalProvider({children}: LoginModalProps) {
-    const [isLoginModalOpen, setIsLoginModalOpen] = useState(false)
-
-    const openCloseLoginModal = () => {
-        window.addEventListener('click', event => {
-            event.preventDefault()
-        })
-        setIsLoginModalOpen(!isLoginModalOpen)
-    }
 
     return (
-        <LoginModalContext.Provider value={{
-            isLoginModalOpen,
-            openCloseLoginModal
-        }}>
+        <LoginModalContext.Provider value={{}}>
             {children}
         </LoginModalContext.Provider>
     )

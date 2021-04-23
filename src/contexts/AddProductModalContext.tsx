@@ -8,13 +8,7 @@ interface ProductProps {
     expiration: string;
 }
 
-interface AddProductModalContextData {
-    isAddProductModalOpen: boolean;
-    openCloseAddProductModal: () => void;
-    addProduct: (params) => void;
-    deleteProduct: (params) => void;
-    Products: ProductProps[];
-}
+interface AddProductModalContextData {}
 
 interface AddProductModalProps {
     children: ReactNode
@@ -23,32 +17,9 @@ interface AddProductModalProps {
 export const AddProductModalContext = createContext({} as AddProductModalContextData)
 
 export function AddProductModalProvider({children}: AddProductModalProps) {
-    const [ isAddProductModalOpen, setIsProductModalOpen ] = useState(false)
-    const [Products, setProducts] = useState([])
-
-    const openCloseAddProductModal = () => {
-        window.addEventListener('click', event => {
-            event.preventDefault()
-        })
-        setIsProductModalOpen(!isAddProductModalOpen)
-    }
-    
-    const addProduct = (product) => {
-        setProducts([...Products, product])
-    }
-
-    const deleteProduct = (id: string) => {
-        alert(`Product(${id}) will soon be removed`)
-    }
 
     return (
-        <AddProductModalContext.Provider value={{
-            isAddProductModalOpen,
-            addProduct,
-            deleteProduct,
-            openCloseAddProductModal,
-            Products
-        }}>
+        <AddProductModalContext.Provider value={{}}>
             {children}
         </AddProductModalContext.Provider>
     )
