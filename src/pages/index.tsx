@@ -6,8 +6,9 @@ import { DBController } from './_api/DatabaseController'
 
 import Header from '../components/Header'
 import Dashboard from '../components/Dashboard'
+import Switcher from '../components/ThemeSwitcher'
 
-import { Container } from '../styles/pages/home'
+import { Container, Footer } from '../styles/pages/home'
 
 interface Product {
 	id: string;
@@ -23,11 +24,54 @@ interface HomeProps {
 
 export default function Home({ products }: HomeProps) {
 
-	// useEffect(() => {
-    //     if(products.length>0) {
-    //         localStorage.setItem('@app/products',JSON.stringify(products))
-    //     }
-    // }, [])
+	const productList = [
+		{
+			id: 'sjddbrytveqcwewrert',
+			name: 'salame',
+			quantity: 550,
+			category: 'food',
+			expiration: Date.now()
+		},
+		{
+			id: 'evrdrerc4rb44yfd4',
+			name: 'salame',
+			quantity: 550,
+			category: 'food',
+			expiration: Date.now()
+		},
+		{
+			id: 'dvbnttwenrnyjmjjf54',
+			name: 'shampoo',
+			quantity: 12,
+			category: 'hygiene',
+			expiration: Date.now()
+		},
+		{
+			id: 'brbrerermmgyrtyt4',
+			name: 'condicionador',
+			quantity: 12,
+			category: 'hygiene',
+			expiration: Date.now()
+		},
+		{
+			id: 'crtht4y4hrehr444',
+			name: 'sabao em po',
+			quantity: 5,
+			category: 'cleaning',
+			expiration: Date.now()
+		},
+		{
+			id: 'asrrtryhnavhnkvret',
+			name: 'agua sanitaria',
+			quantity: 10,
+			category: 'cleaning',
+			expiration: Date.now()
+		}
+	]
+
+	useEffect(() => {
+        console.log(JSON.stringify(productList))
+    }, [productList])
 	
 	return (
 		<>
@@ -35,8 +79,11 @@ export default function Home({ products }: HomeProps) {
 				<title>Home | My Inventory&trade;</title>
 			</Head>
 			<Container>
-				<Header />
-				<Dashboard />
+				<Header name="about" />
+				<Dashboard products={productList} />
+				<Footer>
+					<Switcher />
+				</Footer>
 			</Container>
 		</>
 	)
@@ -48,6 +95,7 @@ export default function Home({ products }: HomeProps) {
 // 	return {
 // 		props: {
 // 			products
-// 		}
+// 		},
+// 		revalidate: 60*60*3
 // 	}
 // }

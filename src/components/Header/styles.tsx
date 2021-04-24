@@ -35,10 +35,15 @@ export const Menu = styled.ul`
         color: ${colors.halfWhite};
         padding: .5rem;
 
+        a {
+            text-decoration: none;
+            color: ${colors.halfWhite};
+        }
+
         &:hover {
             font-weight: 600;
-            color: ${colors.halfBlack};
-            border-bottom: 2px solid ${colors.halfBlack};
+            filter: invert(100%);
+            border-bottom: 2px solid ${colors.halfWhite};
         }
     }
 
