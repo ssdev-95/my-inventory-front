@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
@@ -41,7 +41,7 @@ export default function Home({ products }: HomeProps) {
 }
 
 export const getStaticProps:GetStaticProps = async () => {
-	//const products = DBController.get()
+	const list = DBController.get()
 	const productList = [
 		{
 			id: 'sjddbrytveqcwewrert',

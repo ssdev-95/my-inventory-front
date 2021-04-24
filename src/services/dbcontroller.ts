@@ -12,24 +12,21 @@ export const DBController = {
                 category: product.category
             })
     },
-    get() {
+    async get() {
         let products = []
-        database
-            .firestore()
-            .collection('products')
-            .onSnapshot(snapshot=>{
-                snapshot
-                    .docs
-                    .forEach(doc=>{
-                        products.push({
+        database.firestore().collection('products').onSnapshot(snapshot=>{
+                snapshot.docs.forEach(doc=>{
+                        products = [...products, {
                             id: doc.id,
                             name: doc.data().name,
                             quantity: doc.data().quantity,
                             category: doc.data().category,
                             expiration: doc.data().expires
-                        })
+                        }]
                     })
-            })
+                    console.log(products)
+                })
+        console.log(products)
         return products
     },
     update(product: any) {
