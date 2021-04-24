@@ -4,25 +4,27 @@ import Link from 'next/link'
 import { Navbar, Menu } from './styles'
 
 interface HeaderProps {
-    name: string;
+    pathA: string;
+    pathB: string;
 }
 
-export default function Header({ name }: HeaderProps) {
+export default function Header({ pathA, pathB }: HeaderProps) {
     const [isDropped, setIsDroppped] = useState(false)
-    const route = name === 'about' ? '/about' : '/'
+    const routeA = pathA === 'about' ? '/about' : '/'
+    const routeB = pathB === 'login' ? '/signin' : '/'
 
     return (
         <Navbar>
             <Image
-                onClick={()=>setIsDroppped(!isDropped)}
+               onClick={()=>setIsDroppped(!isDropped)}
                width={45}
                height={45}
                src='/drawable/app_logo.svg'
                objectFit='contain'
             />
             <Menu style={{top: isDropped ? '0' : '-330px'}}>
-                <li><Link href="/signin">login</Link></li>
-                <li><Link href={route}>{name}</Link></li>
+                <li><Link href={routeB}>{pathB}</Link></li>
+                <li><Link href={routeA}>{pathA}</Link></li>
                 <li>contact</li>
             </Menu>
         </Navbar>

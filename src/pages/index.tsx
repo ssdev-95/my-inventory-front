@@ -30,7 +30,7 @@ export default function Home({ products }: HomeProps) {
 				<title>Home | My Inventory&trade;</title>
 			</Head>
 			<Container>
-				<Header name="about" />
+				<Header pathA="about" pathB="login" />
 				<Dashboard products={products} />
 				<Footer>
 					<Switcher />

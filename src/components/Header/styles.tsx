@@ -69,6 +69,14 @@ export const Menu = styled.ul`
         li {
             color: ${colors.halfBlack};
             z-index: 10;
+            &:hover {
+                    color: ${colors.halfBlack};
+                    font-weight: 600;
+                    filter: invert(0);
+                 }
+            a {
+                color: ${colors.halfBlack};
+            }
         }
     }
 `
