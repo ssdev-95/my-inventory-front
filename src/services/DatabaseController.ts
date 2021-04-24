@@ -1,4 +1,4 @@
-import { database } from './config'
+import { database } from './api'
 
 export const DBController = {
     save(product: any) {
