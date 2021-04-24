@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { DBController } from '../services/DatabaseController'
+import { DBController } from '../services/dbcontroller'
 
 import Header from '../components/Header'
 import Dashboard from '../components/Dashboard'
