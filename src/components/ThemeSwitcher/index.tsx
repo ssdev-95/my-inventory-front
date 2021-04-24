@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useTheme } from '../../contexts/Theme'
 
 import { Container, Thumb } from './styles'
+import colors from '../../../colors.json'
 
 export default function Switcher() {
     const { theme, toggleTheme } = useTheme()
@@ -14,7 +15,7 @@ export default function Switcher() {
 
     return (
         <Container
-          style={{background: theme==='light' ? '#009900' : 'red'}}
+          style={{background: theme==='light' ? colors.green : colors.darkGreen}}
           onClick={toggleTheme}>
             <Thumb style={{left: posiX}}></Thumb>
         </Container>
