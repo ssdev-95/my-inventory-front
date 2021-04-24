@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState, useContext } from 'react'
+import { ReactNode, createContext, useState, useContext, useEffect } from 'react'
 
 interface ContextData {
     theme: string;
@@ -15,8 +15,14 @@ export const ThemeProvider = ({children}: ProviderProps) => {
     const [ theme, setTheme ] = useState('light')
 
     function toggleTheme() {
-        theme==='light'? setTheme('dark') : setTheme('light')
+        theme==='light'? localStorage.setItem('theme', 'dark') : localStorage.setItem('theme', 'light')
+
+        setTheme(localStorage.getItem('theme'))
     }
+
+    useEffect(()=>{
+        setTheme(localStorage.getItem('theme'))
+    }, [])
 
     return (
         <ThemeContext.Provider value={{

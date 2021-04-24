@@ -5,8 +5,6 @@ export const Container = styled.div`
     width: 48px;
 
     border-radius: 24px;
-
-    background: #009900;
     position: relative;
 `
 

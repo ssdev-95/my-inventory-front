@@ -13,7 +13,9 @@ export default function Switcher() {
     }, [theme])
 
     return (
-        <Container onClick={toggleTheme}>
+        <Container
+          style={{background: theme==='light' ? '#009900' : 'red'}}
+          onClick={toggleTheme}>
             <Thumb style={{left: posiX}}></Thumb>
         </Container>
     )

@@ -23,7 +23,25 @@ interface HomeProps {
 }
 
 export default function Home({ products }: HomeProps) {
+	
+	return (
+		<>
+			<Head>
+				<title>Home | My Inventory&trade;</title>
+			</Head>
+			<Container>
+				<Header name="about" />
+				<Dashboard products={products} />
+				<Footer>
+					<Switcher />
+				</Footer>
+			</Container>
+		</>
+	)
+}
 
+export const getStaticProps:GetStaticProps = async () => {
+	//const products = DBController.get()
 	const productList = [
 		{
 			id: 'sjddbrytveqcwewrert',
@@ -69,33 +87,10 @@ export default function Home({ products }: HomeProps) {
 		}
 	]
 
-	useEffect(() => {
-        console.log(JSON.stringify(productList))
-    }, [productList])
-	
-	return (
-		<>
-			<Head>
-				<title>Home | My Inventory&trade;</title>
-			</Head>
-			<Container>
-				<Header name="about" />
-				<Dashboard products={productList} />
-				<Footer>
-					<Switcher />
-				</Footer>
-			</Container>
-		</>
-	)
+	return {
+		props: {
+			products: productList
+		},
+		revalidate: 60*60*3
+	}
 }
-
-// export const getStaticProps:GetStaticProps = async () => {
-// 	const products = DBController.get()
-
-// 	return {
-// 		props: {
-// 			products
-// 		},
-// 		revalidate: 60*60*3
-// 	}
-// }
