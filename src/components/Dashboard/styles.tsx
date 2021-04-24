@@ -35,6 +35,7 @@ export const Container = styled.div`
         img {
             height: 150%;
             width: 150%;
+            padding:0;
         }
 
         &:hover {
