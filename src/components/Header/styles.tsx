@@ -69,6 +69,8 @@ export const Menu = styled.ul`
         li {
             color: ${colors.halfBlack};
             z-index: 10;
+            cursor: pointer;
+            
             &:hover {
                     color: ${colors.halfBlack};
                     font-weight: 600;

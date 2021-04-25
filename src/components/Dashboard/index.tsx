@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AddProductModalContext } from '../../contexts/AddProductModalContext'
 import { Container, Table } from './styles'
 
 interface Product {
@@ -14,9 +15,11 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ products }: DashboardProps) {
+    const { toggleModal } = useContext(AddProductModalContext)
+
     return (
         <Container>
-            <button>
+            <button onClick={toggleModal}>
                 <img src="drawable/add_icon.svg" alt="Add product" />
             </button>
             <Table>

@@ -1,6 +1,9 @@
 import {ReactNode, createContext, useState} from 'react';
 
-interface ContactModalContextData {}
+interface ContactModalContextData {
+    isContactModalOpen: boolean;
+    toggleContactModal: ()=>void;
+}
 
 interface AddProductModalProps {
     children: ReactNode;
@@ -9,9 +12,17 @@ interface AddProductModalProps {
 export const ContactModalContext = createContext({} as ContactModalContextData)
 
 export function ContactModalProvider({children}: AddProductModalProps) {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false)
+
+    const toggleContactModal = () => {
+        setIsContactModalOpen(!isContactModalOpen)
+    }
 
     return (
-        <ContactModalContext.Provider value={{}}>
+        <ContactModalContext.Provider value={{
+            isContactModalOpen,
+            toggleContactModal
+        }}>
             {children}
         </ContactModalContext.Provider>
     )

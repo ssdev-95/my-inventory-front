@@ -3,7 +3,6 @@ import { database } from './api'
 export const DBController = {
     save(product: any) {
         database
-            .firestore()
             .collection('products')
             .add({
                 name: product.name,
@@ -14,24 +13,25 @@ export const DBController = {
     },
     async get() {
         let products = []
-        database.firestore().collection('products').onSnapshot(snapshot=>{
-                snapshot.docs.forEach(doc=>{
-                        products = [...products, {
+        let list = ''
+        database
+            .collection('products')
+            .onSnapshot(snapshot=>{
+                products = [...snapshot.docs.map(doc=>{
+                        return {
                             id: doc.id,
                             name: doc.data().name,
                             quantity: doc.data().quantity,
                             category: doc.data().category,
                             expiration: doc.data().expires
-                        }]
-                    })
-                    console.log(products)
-                })
-        console.log(products)
+                        }
+                }), ...products]
+                list = (JSON.stringify(products))
+            })
         return products
     },
     update(product: any) {
         database
-            .firestore()
             .collection('products')
             .doc(product.id)
             .update({
@@ -43,7 +43,6 @@ export const DBController = {
     },
     delete(id: string) {
         database
-            .firestore()
             .collection('products')
             .doc(id)
             .delete()
