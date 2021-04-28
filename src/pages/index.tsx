@@ -54,7 +54,9 @@ export default function Home({ products }: HomeProps) {
 }
 
 export const getStaticProps:GetStaticProps = async () => {
+	const { DBController } = require('./_api/dbcontroller')
 	let list = []
+	await DBController.read()
 
 	const productList = [
 		{

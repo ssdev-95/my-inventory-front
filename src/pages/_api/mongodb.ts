@@ -1,9 +1,10 @@
 import { MongoClient } from 'mongodb'
 
-const uri = process.env.MONGO_DB_URI
+const uri = "mongodb+srv://xsallus:sodio505@cluster0.uahyz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+export const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
+//Samle from mongo db docs
 // client.connect(err => {
 //   const collection = client.db("myinventory").collection("products")
 //   // perform actions on the collection object
