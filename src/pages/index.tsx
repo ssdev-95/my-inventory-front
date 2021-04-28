@@ -2,8 +2,6 @@ import React, { useContext } from 'react';
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import { DBController } from '../services/dbcontroller'
-
 import Header from '../components/Header'
 import Dashboard from '../components/Dashboard'
 import Switcher from '../components/ThemeSwitcher'
