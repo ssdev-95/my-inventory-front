@@ -4,7 +4,7 @@ interface Product {
     name: string;
     quantity: number;
     category: string;
-    expiration: number;
+    expirateon: number;
 }
 
 export const DBController = {
