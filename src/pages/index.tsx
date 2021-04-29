@@ -55,57 +55,11 @@ export default function Home({ products }: HomeProps) {
 
 export const getStaticProps:GetStaticProps = async () => {
 	const { DBController } = require('./_api/dbcontroller')
-	let list = []
-	await DBController.read()
+	let list = await DBController.read()
 
-	const productList = [
-		{
-			id: 'sjddbrytveqcwewrert',
-			name: 'salame',
-			quantity: 550,
-			category: 'food',
-			expiration: Date.now()
-		},
-		{
-			id: 'evrdrerc4rb44yfd4',
-			name: 'salame',
-			quantity: 550,
-			category: 'food',
-			expiration: Date.now()
-		},
-		{
-			id: 'dvbnttwenrnyjmjjf54',
-			name: 'shampoo',
-			quantity: 12,
-			category: 'hygiene',
-			expiration: Date.now()
-		},
-		{
-			id: 'brbrerermmgyrtyt4',
-			name: 'condicionador',
-			quantity: 12,
-			category: 'hygiene',
-			expiration: Date.now()
-		},
-		{
-			id: 'crtht4y4hrehr444',
-			name: 'sabao em po',
-			quantity: 5,
-			category: 'cleaning',
-			expiration: Date.now()
-		},
-		{
-			id: 'asrrtryhnavhnkvret',
-			name: 'agua sanitaria',
-			quantity: 10,
-			category: 'cleaning',
-			expiration: Date.now()
-		}
-	]
-	
 	return {
 		props: {
-			products: productList
+			products: list
 		},
 		revalidate: 60*60*3
 	}

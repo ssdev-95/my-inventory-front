@@ -4,7 +4,7 @@ interface Product {
     name: string;
     quantity: number;
     category: string;
-    expirate: number;
+    expiration: number;
 }
 
 export const DBController = {
@@ -22,24 +22,28 @@ export const DBController = {
     async read() {
         await client.connect()
 
-        const results = await client
-                                .db('myinventory')
-                                .collection('products')
-                                .find({})
-                                .map(doc=>{
-                                    return {
-                                        id: doc['_id'],
-                                        name: doc.name,
-                                        quantity: doc.quantity,
-                                        category: doc.quantity,
-                                        expirate: doc.expirateon
-                                    }
-                                })
+        const results = client
+            .db('myinventory')
+            .collection('products')
+            .find({})
 
-
-        console.log(results)
+        let products = []
+        
+        await results.forEach(doc=>{
+            const { _id, name, quantity, category, expirateon } = doc
+            
+            products.push({
+                id: `${_id}`,
+                name: name,
+                quantity: quantity,
+                category: category,
+                expiration: expirateon
+            })
+        })
 
         await client.close()
+
+        return products
     },
 
     async update(doc: Product, id: String) {

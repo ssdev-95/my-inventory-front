@@ -1,6 +1,8 @@
 import { MongoClient } from 'mongodb'
 
-const uri = "mongodb+srv://xsallus:sodio505@cluster0.uahyz.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+const uri = "mongodb+srv://xsallus:sodio505@cluster0.uahyz.mongodb.net/myinventory?retryWrites=true&w=majority"
+
+const { MONGO_URI, MONGO_DB } = process.env
 
 export const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -15,7 +17,7 @@ async function run() {
     try {
         await client.connect()
 
-        await client.db("myinventory").command({ ping: 1 })
+        await client.db(MONGO_DB).command({ ping: 1 })
 
         console.log('Connected sucessfully to database')
     } finally {
