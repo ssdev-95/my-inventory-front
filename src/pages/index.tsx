@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import { GetStaticProps } from 'next'
-import Head from 'next/head'
+import { dbConnect, jsonify } from './api/mongodb'
+import products from './api/product'
 
+import Head from 'next/head'
 import Header from '../components/Header'
 import Dashboard from '../components/Dashboard'
 import Switcher from '../components/ThemeSwitcher'
@@ -54,8 +56,19 @@ function Home({ products }: HomeProps) {
 }
 
 export const getStaticProps:GetStaticProps = async () => {
-	const { DBController } = require('../services/dbcontroller')
-	let list = await DBController.read()
+	dbConnect()
+	const productList = await products.find({}).exec()
+
+	let list = jsonify(productList).map(product=>{
+		const { _id, expirateon, quantity, category, name} = product
+		return {
+			id: _id,
+			name: name,
+			category: category,
+			quantity: quantity,
+			expiration: expirateon,
+		}
+	})
 
 	return {
 		props: {

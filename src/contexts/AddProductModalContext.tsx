@@ -28,9 +28,7 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
         setIsAddModalOpen(!isAddModalOpen)
     }
 
-    const submit = async (data: any) => {
-        const { DBController } = require('../services/dbcontroller')
-
+    const submit =  (data: any) => {
         const { name, category, quantity, expiration } = data
 
         const product = {
@@ -40,14 +38,13 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
             quantity: quantity
         }
 
-        await DBController.create(product)
+        console.log(product)
 
         toggleModal()
     }
 
-    const deleteEntry = async (id:string) => {
-        const { DBController } = require('../services/dbcontroller')
-        await DBController.delete(id).then((res:any)=>alert(res))
+    const deleteEntry = (id:string) => {
+        console.log(id)
     }
 
     return (
