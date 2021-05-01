@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useState } from 'react';
-import { DBController } from '../pages/_api/dbcontroller'
 
 // interface ProductProps {
 //     id: string;
@@ -13,6 +12,7 @@ interface AddProductModalContextData {
     isAddModalOpen: boolean;
     toggleModal: ()=>void;
     submit: (data:any)=>void;
+    deleteEntry: (id:string)=>void;
 }
 
 interface AddProductModalProps {
@@ -28,8 +28,10 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
         setIsAddModalOpen(!isAddModalOpen)
     }
 
-    const submit = (data: any) => {
-        const {name, category, quantity, expiration} = data
+    const submit = async (data: any) => {
+        const { DBController } = require('../services/dbcontroller')
+
+        const { name, category, quantity, expiration } = data
 
         const product = {
             name: name,
@@ -38,16 +40,22 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
             quantity: quantity
         }
 
-        console.log(product)
+        await DBController.create(product)
 
         toggleModal()
+    }
+
+    const deleteEntry = async (id:string) => {
+        const { DBController } = require('../services/dbcontroller')
+        await DBController.delete(id).then((res:any)=>alert(res))
     }
 
     return (
         <AddProductModalContext.Provider value={{
             isAddModalOpen,
             toggleModal,
-            submit
+            submit,
+            deleteEntry
         }}>
             {children}
         </AddProductModalContext.Provider>

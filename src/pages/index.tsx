@@ -27,7 +27,7 @@ interface HomeProps {
 	products: Product[];
 }
 
-export default function Home({ products }: HomeProps) {
+function Home({ products }: HomeProps) {
 	const { isAddModalOpen } = useContext(AddProductModalContext)
 	const { isEditModalOpen } = useContext(EditModalContext)
 	const { isContactModalOpen } = useContext(ContactModalContext)
@@ -54,7 +54,7 @@ export default function Home({ products }: HomeProps) {
 }
 
 export const getStaticProps:GetStaticProps = async () => {
-	const { DBController } = require('./_api/dbcontroller')
+	const { DBController } = require('../services/dbcontroller')
 	let list = await DBController.read()
 
 	return {
@@ -64,3 +64,5 @@ export const getStaticProps:GetStaticProps = async () => {
 		revalidate: 60*60*3
 	}
 }
+
+export default Home

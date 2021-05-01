@@ -15,7 +15,7 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ products }: DashboardProps) {
-    const { toggleModal } = useContext(AddProductModalContext)
+    const { toggleModal, deleteEntry } = useContext(AddProductModalContext)
 
     return (
         <Container>
@@ -41,7 +41,7 @@ export default function Dashboard({ products }: DashboardProps) {
                                         <td>{product.quantity}</td>
                                         <td>{product.expiration}</td>
                                         <td className="deleteButton">
-                                            <img src="drawable/trash.svg" alt="Delete button icon"/>
+                                            <img onClick={()=>deleteEntry(product.id)} src="drawable/trash.svg" alt="Delete button icon"/>
                                         </td>
                                     </tr>
                                 )

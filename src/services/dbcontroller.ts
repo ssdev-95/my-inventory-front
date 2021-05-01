@@ -63,7 +63,7 @@ export const DBController = {
         await client
                  .db('myinventory')
                  .collection('products')
-                 .findOneAndDelete(id)
+                 .deleteOne({_id: id})
 
         await client.close()
     }
