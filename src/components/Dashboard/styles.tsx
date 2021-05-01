@@ -11,6 +11,7 @@ export const Container = styled.div`
     gap: 5rem;
 
     padding: 3rem 2rem;
+    overflow-y: scroll;
 
     button {
         background: ${colors.halfBlack};
@@ -61,7 +62,10 @@ export const Table = styled.table`
     border-spacing: 0;
     max-width: 70%;
     max-height: 90%;
-    overflow-y: scroll;
+
+    tbody {
+        overflow-y: scroll;
+    }
 
     color: ${colors.halfWhite};
     text-align: left;

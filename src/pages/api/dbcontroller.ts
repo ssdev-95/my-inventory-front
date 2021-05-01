@@ -1,4 +1,5 @@
 import { dbConnect } from './mongodb'
+import products from './product'
 
 interface Product {
     name: string;
@@ -8,7 +9,13 @@ interface Product {
 }
 
 export const DBController = {
-    async create(doc: Product) {},
+    async create(doc: Product) {
+        dbConnect()
+        const res = await products.create(doc, (err, doc)=>{
+            if(err) console.log(err)
+        })
+        console.log(res)
+    },
     
     async read() {},
 

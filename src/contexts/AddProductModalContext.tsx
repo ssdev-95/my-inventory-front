@@ -28,7 +28,7 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
         setIsAddModalOpen(!isAddModalOpen)
     }
 
-    const submit =  (data: any) => {
+    const submit = (data: any) => {
         const { name, category, quantity, expiration } = data
 
         const product = {
