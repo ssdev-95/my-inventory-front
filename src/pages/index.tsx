@@ -57,6 +57,7 @@ function Home({ products }: HomeProps) {
 
 export const getStaticProps:GetStaticProps = async () => {
 	dbConnect()
+	// const productList = await fetch('http://localhost:3000/api/products')
 	const productList = await products.find({}).exec()
 
 	let list = jsonify(productList).map(product=>{
