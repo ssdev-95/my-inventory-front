@@ -70,7 +70,7 @@ export const getStaticProps:GetStaticProps = async () => {
 		}
 	})
 
-	products.create({name: 'shampoo', category: 'hygiene', quantity: 5, expirateon: 454505545})
+	// products.create({name: 'shampoo', category: 'hygiene', quantity: 5, expirateon: 454505545})
 
 	return {
 		props: {
