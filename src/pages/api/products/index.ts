@@ -1,5 +1,5 @@
-import { dbConnect } from '../mongodb'
-import products from '../product'
+import { dbConnect } from '@api/mongodb'
+import products from '@api/product'
 
 dbConnect()
 

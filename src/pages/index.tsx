@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { GetStaticProps } from 'next'
-import { dbConnect, jsonify } from './api/mongodb'
-import products from './api/product'
+import { dbConnect, jsonify } from '@api/mongodb'
+import products from '@api/product'
 
 import Head from 'next/head'
 import Header from '../components/Header'
