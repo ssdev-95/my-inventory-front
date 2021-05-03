@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { ContactModalContext } from '../../contexts/ContactModalContext'
+import { ContactModalContext } from '@/contexts/ContactModalContext'
 
 import { Navbar, Menu } from './styles'
 

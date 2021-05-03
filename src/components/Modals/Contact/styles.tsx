@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import colors from '../../../../colors.json'
+import colors from '@/styles/colors.json'
 
 const filtro = 'invert(.5) sepia(1) saturate(30) hue-rotate(345deg)'
 

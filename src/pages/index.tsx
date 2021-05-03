@@ -4,18 +4,18 @@ import { dbConnect, jsonify } from '@api/mongodb'
 import products from '@api/product'
 
 import Head from 'next/head'
-import Header from '../components/Header'
-import Dashboard from '../components/Dashboard'
-import Switcher from '../components/ThemeSwitcher'
-import AddModal from '../components/Modals/AddProduct'
-import EditModal from '../components/Modals/EditProduct'
-import Contact from '../components/Modals/Contact'
+import Header from '@/components/Header'
+import Dashboard from '@/components/Dashboard'
+import Switcher from '@/components/ThemeSwitcher'
+import AddModal from '@/components/Modals/AddProduct'
+import EditModal from '@/components/Modals/EditProduct'
+import Contact from '@/components/Modals/Contact'
 
-import { AddProductModalContext } from '../contexts/AddProductModalContext'
-import { EditModalContext } from '../contexts/EditModalContext'
-import {ContactModalContext } from '../contexts/ContactModalContext'
+import { AddProductModalContext } from '@/contexts/AddProductModalContext'
+import { EditModalContext } from '@/contexts/EditModalContext'
+import {ContactModalContext } from '@/contexts/ContactModalContext'
 
-import { Container, Footer } from '../styles/pages/home'
+import { Container, Footer } from '@/styles/pages/home'
 
 interface Product {
 	id: string;

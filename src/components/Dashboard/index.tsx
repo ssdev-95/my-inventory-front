@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { AddProductModalContext } from '../../contexts/AddProductModalContext'
+import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 import { Container, Table, Section } from './styles'
 
 interface Product {

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 
-import { useTheme } from '../../contexts/Theme'
+import { useTheme } from '@/contexts/Theme'
 
 import { Container, Thumb } from './styles'
-import colors from '../../../colors.json'
+import colors from '@/styles/colors.json'
 
 export default function Switcher() {
     const { theme, toggleTheme } = useTheme()

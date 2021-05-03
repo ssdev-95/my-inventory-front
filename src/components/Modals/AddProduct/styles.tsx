@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import colors from '../../../../colors.json'
+import colors from '@/styles/colors.json'
 //lmao
 export const Overlay = styled.div`
     width: 100%;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 // import { useForm } from 'react-hook-form'
 
-import { AddProductModalContext } from '../../../contexts/AddProductModalContext'
+import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 
 import { Modal, Overlay, Actions } from './styles'
 

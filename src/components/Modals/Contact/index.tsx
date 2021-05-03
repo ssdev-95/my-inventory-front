@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
 
-import { ContactModalContext } from '../../../contexts/ContactModalContext'
+import { ContactModalContext } from '@/contexts/ContactModalContext'
 
 import { Overlay, Modal } from './styles'
 
