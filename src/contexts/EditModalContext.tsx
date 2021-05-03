@@ -2,7 +2,8 @@ import {createContext, useState, ReactNode} from 'react'
 
 interface EditModalContextData {
     isEditModalOpen: boolean;
-    toggleEditModal: ()=>void;
+    toggleEditModal: (product:any)=>void;
+    toUpdate: any;
 }
 
 interface EditModalProps {
@@ -13,15 +14,18 @@ export const EditModalContext = createContext({} as EditModalContextData)
 
 export function EditModalProvider({children}: EditModalProps) {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
+    const [toUpdate, setToUpdate] = useState({})
 
-    const toggleEditModal = () => {
+    const toggleEditModal = (product:any) => {
         setIsEditModalOpen(!isEditModalOpen)
+        setToUpdate(product)
     }
 
     return (
         <EditModalContext.Provider value={{
             isEditModalOpen,
-            toggleEditModal
+            toggleEditModal,
+            toUpdate
         }}>
             {children}
         </EditModalContext.Provider>

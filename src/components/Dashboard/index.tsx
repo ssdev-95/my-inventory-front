@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { AddProductModalContext } from '@/contexts/AddProductModalContext'
+import { EditModalContext } from '@/contexts/EditModalContext'
 import { Container, Table, Section } from './styles'
 
 interface Product {
@@ -15,7 +16,8 @@ interface DashboardProps {
 }
 
 export default function Dashboard({ products }: DashboardProps) {
-    const { toggleModal, deleteEntry } = useContext(AddProductModalContext)
+    const { toggleModal } = useContext(AddProductModalContext)
+    const { toggleEditModal } = useContext(EditModalContext)
 
     return (
         <Container>
@@ -37,12 +39,18 @@ export default function Dashboard({ products }: DashboardProps) {
                             products.map(product => {
                                 if (product.category === 'food') {
                                     return (
-                                        <tr key={product.id}>
+                                        <tr
+                                         key={product.id}
+                                         onClick={()=>toggleEditModal(product)}
+                                        >
                                             <td>{product.name}</td>
                                             <td>{product.quantity}</td>
                                             <td>{product.expiration}</td>
                                             <td className="deleteButton">
-                                                <img onClick={() => deleteEntry(product.id)} src="drawable/trash.svg" alt="Delete button icon" />
+                                                <img
+                                                  src="drawable/trash.svg"
+                                                  alt="Delete button icon"
+                                                />
                                             </td>
                                         </tr>
                                     )
@@ -68,7 +76,10 @@ export default function Dashboard({ products }: DashboardProps) {
                             products.map(product => {
                                 if (product.category === 'hygiene') {
                                     return (
-                                        <tr key={product.id}>
+                                        <tr
+                                         key={product.id}
+                                         onClick={()=>toggleEditModal(product)}
+                                        >
                                             <td>{product.name}</td>
                                             <td>{product.quantity}</td>
                                             <td>{product.expiration}</td>
@@ -99,7 +110,10 @@ export default function Dashboard({ products }: DashboardProps) {
                             products.map(product => {
                                 if (product.category === 'cleaning') {
                                     return (
-                                        <tr key={product.id}>
+                                        <tr
+                                         key={product.id}
+                                         onClick={()=>toggleEditModal(product)}
+                                        >
                                             <td>{product.name}</td>
                                             <td>{product.quantity}</td>
                                             <td>{product.expiration}</td>

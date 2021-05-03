@@ -5,21 +5,20 @@ import { EditModalContext } from '@/contexts/EditModalContext'
 import { Modal, Overlay, Actions } from './styles'
 
 export default function EditModal() {
-    const { toggleEditModal } = useContext(EditModalContext)
-    const id = 'jhjhdhfjhjfhj'
+    const { toggleEditModal, toUpdate } = useContext(EditModalContext)
     
     return (
         <Overlay>
             <Modal>
                 <form
                   method="put"
-                  action={`/api/products/${id}`}
+                  action={`/api/products/${toUpdate?.id}`}
                   id="edit_product"
                 >
-                    <input type="text" name="name" id="name"/>
-                    <input type="text" name="category" id="category"/>
-                    <input type="number" name="quantity" id="quantity"/>
-                    <input type="date" name="expiration" id="expiration"/>
+                    <input value={toUpdate?.name} type="text" name="name" id="name"/>
+                    <input value={toUpdate?.category} type="text" name="category" id="category"/>
+                    <input value={toUpdate?.quantity} type="number" name="quantity" id="quantity"/>
+                    <input value={Date.parse(toUpdate?.expiration)} type="date" name="expiration" id="expiration"/>
                 </form>
                 <Actions>
                     <button onClick={toggleEditModal} style={{background: '#ff3c3c'}}>cancel</button>
