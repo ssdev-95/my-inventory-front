@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import colors from '../../../colors.json'
 
@@ -49,6 +48,7 @@ export const Container = styled.div`
         gap: 2.5rem;
         align-items: center;
         justify-content: flex-start;
+        overflow-y: scroll;
 
         button {
             height: 25px;
@@ -58,10 +58,24 @@ export const Container = styled.div`
     }
 `
 
+export const Section = styled.section`
+    width: 23rem;
+    height: 20rem;
+    padding: .5rem;
+
+    display: flex;
+    justify-content:center;
+    align-items: flex-start;
+
+    background: rgba(0,0,0,.18);
+    border-radius: 8px;
+    overflow-y: scroll;
+`
+
 export const Table = styled.table`
     border-spacing: 0;
-    max-width: 70%;
-    max-height: 90%;
+    width: 100%;
+    max-height: 100%;
 
     tbody {
         overflow-y: scroll;

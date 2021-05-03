@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { AddProductModalContext } from '../../contexts/AddProductModalContext'
-import { Container, Table } from './styles'
+import { Container, Table, Section } from './styles'
 
 interface Product {
     id: string;
@@ -22,90 +22,98 @@ export default function Dashboard({ products }: DashboardProps) {
             <button onClick={toggleModal}>
                 <img src="drawable/add_icon.svg" alt="Add product" />
             </button>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Expirate</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        products.map(product=>{
-                            if(product.category==='food') {
-                                return (
-                                    <tr key={product.id}>
-                                        <td>{product.name}</td>
-                                        <td>{product.quantity}</td>
-                                        <td>{product.expiration}</td>
-                                        <td className="deleteButton">
-                                            <img onClick={()=>deleteEntry(product.id)} src="drawable/trash.svg" alt="Delete button icon"/>
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                        })
-                    }
-                </tbody>
-            </Table>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Expirate</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        products.map(product=>{
-                            if(product.category==='hygiene') {
-                                return (
-                                    <tr key={product.id}>
-                                        <td>{product.name}</td>
-                                        <td>{product.quantity}</td>
-                                        <td>{product.expiration}</td>
-                                        <td className="deleteButton">
-                                            <img src="drawable/trash.svg" alt="Delete button icon"/>
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                        })
-                    }
-                </tbody>
-            </Table>
-            <Table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Expirate</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        products.map(product=>{
-                            if(product.category==='cleaning') {
-                                return (
-                                    <tr key={product.id}>
-                                        <td>{product.name}</td>
-                                        <td>{product.quantity}</td>
-                                        <td>{product.expiration}</td>
-                                        <td className="deleteButton">
-                                            <img src="drawable/trash.svg" alt="Delete button icon"/>
-                                        </td>
-                                    </tr>
-                                )
-                            }
-                        })
-                    }
-                </tbody>
-            </Table>
+            <Section>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Expirate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map(product => {
+                                if (product.category === 'food') {
+                                    return (
+                                        <tr key={product.id}>
+                                            <td>{product.name}</td>
+                                            <td>{product.quantity}</td>
+                                            <td>{product.expiration}</td>
+                                            <td className="deleteButton">
+                                                <img onClick={() => deleteEntry(product.id)} src="drawable/trash.svg" alt="Delete button icon" />
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </Section>
+
+            <Section>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Expirate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map(product => {
+                                if (product.category === 'hygiene') {
+                                    return (
+                                        <tr key={product.id}>
+                                            <td>{product.name}</td>
+                                            <td>{product.quantity}</td>
+                                            <td>{product.expiration}</td>
+                                            <td className="deleteButton">
+                                                <img src="drawable/trash.svg" alt="Delete button icon" />
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </Section>
+            
+            <Section>
+                <Table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Expirate</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            products.map(product => {
+                                if (product.category === 'cleaning') {
+                                    return (
+                                        <tr key={product.id}>
+                                            <td>{product.name}</td>
+                                            <td>{product.quantity}</td>
+                                            <td>{product.expiration}</td>
+                                            <td className="deleteButton">
+                                                <img src="drawable/trash.svg" alt="Delete button icon" />
+                                            </td>
+                                        </tr>
+                                    )
+                                }
+                            })
+                        }
+                    </tbody>
+                </Table>
+            </Section>
         </Container>
     )
 }

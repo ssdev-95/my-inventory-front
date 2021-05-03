@@ -14,6 +14,7 @@ export const Main = styled.main`
     width: 100%;
     height:100%;
     padding: 2rem 4rem;
+    overflow:hidden;
 
     form input {
         border: none;

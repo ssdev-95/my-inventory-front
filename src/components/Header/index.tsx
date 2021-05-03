@@ -26,6 +26,7 @@ export default function Header({ pathA, pathB }: HeaderProps) {
                height={45}
                src='/drawable/app_logo.svg'
                objectFit='contain'
+               alt="Logo"
             />
             <Menu style={{top: isDropped ? '0' : '-330px'}}>
                 <li onClick={()=>setIsDropped(false)}><Link href={routeB}>{pathB}</Link></li>
