@@ -33,7 +33,7 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
             name: newProduct?.name,
             quantity: newProduct?.quantity,
             category: newProduct?.category,
-            expirateon: Date.parse(newProduct?.expiration)
+            expirateon: String(newProduct?.expiration)
         }
         
         try{
@@ -54,7 +54,6 @@ export function AddProductModalProvider({children}: AddProductModalProps) {
 
     useEffect(()=>{
         if(newProduct) createProduct()
-        // if(newProduct) console.log(newProduct)
     }, [newProduct])
 
     return (

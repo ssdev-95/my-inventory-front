@@ -24,7 +24,7 @@ interface Product {
 	name: string;
 	category: string;
 	quantity: number;
-	expiration: number;
+	expiration: string;
 }
 
 interface HomeProps {
@@ -62,9 +62,6 @@ export const getStaticProps:GetStaticProps = async () => {
 	const res = await fetch('http://localhost:3000/api/products')
 	const { data } = await res.json()
 	
-	//old way to retrieve data from db:
-	// const productList = await products.find({}).exec()
-
 	let list = data.map(product=>{
 		const { _id, expirateon, quantity, category, name} = product
 		return {
@@ -75,6 +72,7 @@ export const getStaticProps:GetStaticProps = async () => {
 			expiration: expirateon,
 		}
 	})
+	
 	return {
 		props: {
 			products: list

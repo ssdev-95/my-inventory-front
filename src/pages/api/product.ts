@@ -16,7 +16,7 @@ const schema = new Schema({
         require: true
     },
     expirateon: {
-        type: Number,
+        type: String,
         require: true
     }
 }, {

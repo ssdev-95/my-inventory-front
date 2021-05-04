@@ -3,7 +3,6 @@ const uri = "mongodb+srv://xsallus:sodio505@cluster0.uahyz.mongodb.net/myinvento
 
 export async function dbConnect() {
     if(Mongoose.connection.readyState>=1) return
-
     return Mongoose.connect(uri, {
         useNewUrlParser:true,
         useUnifiedTopology: true,

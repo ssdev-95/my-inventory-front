@@ -11,7 +11,7 @@ interface Product {
     id: string;
     name: string;
     quantity: number;
-    expiration: number;
+    expiration: string;
     category: string;
 }
 
@@ -34,6 +34,10 @@ export default function Dashboard({ products }: DashboardProps) {
             }
         })
         router.push('/')
+    }
+
+    const formatDate =(date:string) => {
+        return date.split('-').reverse().join('/')
     }
 
     return (
@@ -65,7 +69,7 @@ export default function Dashboard({ products }: DashboardProps) {
                                             >{product.quantity}</td>
                                             <td
                                               onClick={()=>toggleEditModal(product)}
-                                            >{product.expiration}</td>
+                                            >{formatDate(product.expiration)}</td>
                                             <td
                                               className="deleteButton"
                                               onClick={()=>deleteProduct(product.id)}
@@ -108,7 +112,7 @@ export default function Dashboard({ products }: DashboardProps) {
                                             >{product.quantity}</td>
                                             <td
                                               onClick={()=>deleteProduct(product.id)}
-                                            >{product.expiration}</td>
+                                            >{formatDate(product.expiration)}</td>
                                             <td
                                               onClick={()=>deleteProduct(product.id)}
                                               className="deleteButton"
@@ -148,7 +152,7 @@ export default function Dashboard({ products }: DashboardProps) {
                                             >{product.quantity}</td>
                                             <td
                                               onClick={()=>toggleEditModal(product)}
-                                            >{product.expiration}</td>
+                                            >{formatDate(product.expiration)}</td>
                                             <td
                                               onClick={()=>deleteProduct(product.id)}
                                               className="deleteButton">
