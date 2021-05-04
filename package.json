@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.1.0",
     "mongoose": "^5.12.7",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-hook-form": "^7.4.0",
     "styled-components": "^5.2.3"
   },
   "devDependencies": {

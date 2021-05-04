@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { GetStaticProps } from 'next'
+import fetch from 'isomorphic-unfetch'
+
 import { dbConnect, jsonify } from '@api/mongodb'
 import products from '@api/product'
 
@@ -57,10 +59,13 @@ function Home({ products }: HomeProps) {
 
 export const getStaticProps:GetStaticProps = async () => {
 	dbConnect()
-	// const productList = await fetch('http://localhost:3000/api/products')
-	const productList = await products.find({}).exec()
+	const res = await fetch('http://localhost:3000/api/products')
+	const { data } = await res.json()
+	
+	//old way to retrieve data from db:
+	// const productList = await products.find({}).exec()
 
-	let list = jsonify(productList).map(product=>{
+	let list = data.map(product=>{
 		const { _id, expirateon, quantity, category, name} = product
 		return {
 			id: _id,
@@ -70,9 +75,6 @@ export const getStaticProps:GetStaticProps = async () => {
 			expiration: expirateon,
 		}
 	})
-
-	// products.create({name: 'shampoo', category: 'hygiene', quantity: 5, expirateon: 454505545})
-
 	return {
 		props: {
 			products: list

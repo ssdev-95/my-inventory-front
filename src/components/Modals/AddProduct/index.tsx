@@ -1,41 +1,40 @@
 import React, { useContext } from 'react'
-// import { useForm } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 
 import { Modal, Overlay, Actions } from './styles'
 
 export default function AddModal() {
-    const { toggleModal } = useContext(AddProductModalContext)
-    // const { register, handleSubmit } = useForm()
+    const { toggleModal, submit } = useContext(AddProductModalContext)
+    const { register, handleSubmit } = useForm()
 
     return (
         <Overlay>
             <Modal>
                 <form
-                  action="http://localhost:3000/api/products"
-                  method="post"
+                  action="#"
                   id="add_product"
                 >
-                    <input
+                    <input {...register('name')}
                         type="text"
                         name="name"
                         id="name"
                         placeholder="Product name"
                     />
-                    <input
+                    <input {...register('category')}
                         type="text"
                         name="category"
                         id="category"
                         placeholder="Type 'hygiene', 'food' or 'cleaning'"
                     />
-                    <input
+                    <input {...register('quantity')}
                         type="number"
                         name="quantity"
                         id="quantity"
                         placeholder="Product quantity"
                     />
-                    <input
+                    <input {...register('expiration')}
                         type="date"
                         name="expiration"
                         id="expiration"/>
@@ -46,8 +45,7 @@ export default function AddModal() {
                         style={{background: '#ff3c3c'}}
                     >cancel</button>
                     <button
-                        type="submit"
-                        form="add_product"
+                        onClick={handleSubmit(submit)}
                         style={{background: '#3cff3c'}}
                     >save</button>
                 </Actions>
