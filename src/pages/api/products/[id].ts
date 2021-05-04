@@ -33,6 +33,8 @@ export default async (req, res) => {
                 if(!deleted) {
                     return res.status(400).send('Could not delete data..')
                 }
+
+                res.status(200).send('Document deleted on database..')
             } catch (err) {
                 res.status(400).send('Could not delete data..')
             }
