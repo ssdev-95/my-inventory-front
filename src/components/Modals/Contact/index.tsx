@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { ContactModalContext } from '@/contexts/ContactModalContext'
 
-import { Overlay, Modal } from './styles'
+import { Overlay, Modal } from '@/components/Modals/Contact/styles'
 
 export default function EditModal() {
     const { toggleContactModal } = useContext(ContactModalContext)

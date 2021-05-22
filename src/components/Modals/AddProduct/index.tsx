@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 
 import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 
-import { Modal, Overlay, Actions } from './styles'
+import { Modal, Overlay, Actions } from '@/components/Modals/AddProduct/styles'
 
 export default function AddModal() {
     const { toggleModal, submit } = useContext(AddProductModalContext)

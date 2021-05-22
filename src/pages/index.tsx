@@ -1,9 +1,5 @@
 import React, { useContext } from 'react';
 import { GetServerSideProps } from 'next'
-import fetch from 'isomorphic-unfetch'
-
-import { dbConnect, jsonify } from '@api/mongodb'
-import products from '@api/product'
 
 import Head from 'next/head'
 import Header from '@/components/Header'
@@ -48,20 +44,15 @@ function Home({ products }: HomeProps) {
 }
 
 export const getServerSideProps:GetServerSideProps = async () => {
-	dbConnect()
-	const res = await fetch('http://localhost:3000/api/products')
-	const { data } = await res.json()
-	
-	let list = data.map(product=>{
-		const { _id, expirateon, quantity, category, name} = product
-		return {
-			id: _id,
-			name: name,
-			category: category,
-			quantity: quantity,
-			expiration: expirateon,
+	const list = [
+		{
+			id: 'dd4gbgfdsd4g',
+			name: 'Salame',
+			category: 'food',
+			quantity: 550,
+			expiration: '2021-05-36',
 		}
-	})
+	]
 	
 	return {
 		props: {

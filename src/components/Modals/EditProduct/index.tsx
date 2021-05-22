@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 
 import { EditModalContext } from '@/contexts/EditModalContext'
 
-import { Modal, Overlay, Actions } from './styles'
+import { Modal, Overlay, Actions } from '@/components/Modals/EditProduct/styles'
 
 export default function EditModal() {
     const { toggleEditModal, updateProduct, toUpdate } = useContext(EditModalContext)

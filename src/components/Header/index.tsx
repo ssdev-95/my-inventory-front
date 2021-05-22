@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 import { ContactModalContext } from '@/contexts/ContactModalContext'
 
-import { Navbar, Menu } from './styles'
+import { Navbar, Menu } from '@/components/Header/styles'
 
 import { HeaderProps } from '@/Types'
 

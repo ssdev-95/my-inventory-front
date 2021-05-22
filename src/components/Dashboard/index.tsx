@@ -1,29 +1,18 @@
-import React, { useContext, useState } from 'react'
-import { useRouter } from 'next/router'
-import fetch from 'isomorphic-unfetch'
+import React, { useContext} from 'react'
  
 import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 import { EditModalContext } from '@/contexts/EditModalContext'
 
-import { Container, Table, Section } from './styles'
+import { Container, Table, Section } from '@/components/Dashboard/styles'
 
 import { DashboardProps } from '@/Types'
 
 export default function Dashboard({ products }: DashboardProps) {
     const { toggleModal } = useContext(AddProductModalContext)
     const { toggleEditModal } = useContext(EditModalContext)
-    const router = useRouter()
 
     const deleteProduct = async (id:String) => {
-        await fetch(`http://localhost:3000/api/products/${id}`, {
-            method: 'DELETE',
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*"
-            }
-        })
-        router.push('/')
+        alert(`Sucessfully deleted: ${id}`)
     }
 
     const formatDate =(date:string) => {
