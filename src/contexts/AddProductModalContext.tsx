@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
 
-import { AddProductModalContextData, ProviderProps } from '@/Types'
+import { AddProductModalContextData, ProviderProps } from '@/types'
 
 export const AddProductModalContext = createContext({} as AddProductModalContextData)
 

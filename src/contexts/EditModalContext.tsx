@@ -1,6 +1,6 @@
 import {createContext, useState} from 'react'
 
-import { EditModalContextData, ProviderProps } from '@/Types'
+import { EditModalContextData, ProviderProps } from '@/types'
 
 export const EditModalContext = createContext({} as EditModalContextData)
 

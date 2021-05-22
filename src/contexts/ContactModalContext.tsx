@@ -1,6 +1,6 @@
 import { createContext, useState} from 'react';
 
-import { ContactModalContextData, ProviderProps } from '@/Types'
+import { ContactModalContextData, ProviderProps } from '@/types'
 
 export const ContactModalContext = createContext({} as ContactModalContextData)
 

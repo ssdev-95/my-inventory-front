@@ -1,6 +1,6 @@
 import { createContext, useState, useContext, useEffect } from 'react'
 
-import { ThemeContextData, ProviderProps } from '@/Types'
+import { ThemeContextData, ProviderProps } from '@/types'
 
 const ThemeContext = createContext({} as ThemeContextData)
 

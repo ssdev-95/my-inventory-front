@@ -5,7 +5,8 @@ import { EditModalContext } from '@/contexts/EditModalContext'
 
 import { Container, Table, Section } from '@/components/Dashboard/styles'
 
-import { DashboardProps } from '@/Types'
+import { DashboardProps } from '@/types'
+import { formatDate } from '@/services/utils/formats'
 
 export default function Dashboard({ products }: DashboardProps) {
     const { toggleModal } = useContext(AddProductModalContext)
@@ -13,10 +14,6 @@ export default function Dashboard({ products }: DashboardProps) {
 
     const deleteProduct = async (id:String) => {
         alert(`Sucessfully deleted: ${id}`)
-    }
-
-    const formatDate =(date:string) => {
-        return date.split('-').reverse().join('/')
     }
 
     return (

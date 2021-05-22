@@ -6,7 +6,7 @@ import { ContactModalContext } from '@/contexts/ContactModalContext'
 
 import { Navbar, Menu } from '@/components/Header/styles'
 
-import { HeaderProps } from '@/Types'
+import { HeaderProps } from '@/types'
 
 export default function Header({ pathA, pathB }: HeaderProps) {
     const { toggleContactModal } = useContext(ContactModalContext)

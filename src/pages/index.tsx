@@ -15,7 +15,7 @@ import {ContactModalContext } from '@/contexts/ContactModalContext'
 
 import { Container, Footer } from '@/styles/pages/home'
 
-import { HomeProps } from '@/Types'
+import { HomeProps } from '@/types'
 
 function Home({ products }: HomeProps) {
 	const { isAddModalOpen } = useContext(AddProductModalContext)
