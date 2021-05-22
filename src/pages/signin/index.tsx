@@ -7,7 +7,7 @@ import { Container, Main, Footer } from '@/styles/pages/home'
 import { Form } from '@/styles/pages/signin'
 import { ContactModalContext } from '@/contexts/ContactModalContext'
 
-export default function About() {
+export default function Signin() {
 	const { isContactModalOpen } = useContext(ContactModalContext)
 	
     return (

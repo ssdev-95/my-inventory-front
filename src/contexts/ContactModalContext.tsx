@@ -1,17 +1,10 @@
-import {ReactNode, createContext, useState} from 'react';
+import { createContext, useState} from 'react';
 
-interface ContactModalContextData {
-    isContactModalOpen: boolean;
-    toggleContactModal: ()=>void;
-}
-
-interface AddProductModalProps {
-    children: ReactNode;
-}
+import { ContactModalContextData, ProviderProps } from '@/Types'
 
 export const ContactModalContext = createContext({} as ContactModalContextData)
 
-export function ContactModalProvider({children}: AddProductModalProps) {
+export function ContactModalProvider({children}: ProviderProps) {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false)
 
     const toggleContactModal = () => {

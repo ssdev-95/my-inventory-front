@@ -1,20 +1,11 @@
-import {createContext, useState, ReactNode} from 'react'
+import {createContext, useState } from 'react'
 import { useRouter } from 'next/router'
 
-interface EditModalContextData {
-    isEditModalOpen: boolean;
-    toggleEditModal: (product:any)=>void;
-    updateProduct: (updatedProduct:any)=>void;
-    toUpdate: any;
-}
-
-interface EditModalProps {
-    children: ReactNode
-}
+import { EditModalContextData, ProviderProps } from '@/Types'
 
 export const EditModalContext = createContext({} as EditModalContextData)
 
-export function EditModalProvider({children}: EditModalProps) {
+export function EditModalProvider({children}: ProviderProps) {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
     const [toUpdate, setToUpdate] = useState(null)
     const router = useRouter()

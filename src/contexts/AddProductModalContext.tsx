@@ -1,20 +1,12 @@
-import { createContext, ReactNode, useState, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import fetch from 'isomorphic-unfetch'
 
-interface AddProductModalContextData {
-    isAddModalOpen: boolean;
-    toggleModal: ()=>void;
-    submit: (data:any)=>void;
-}
-
-interface AddProductModalProps {
-    children: ReactNode
-}
+import { AddProductModalContextData, ProviderProps } from '@/Types'
 
 export const AddProductModalContext = createContext({} as AddProductModalContextData)
 
-export function AddProductModalProvider({children}: AddProductModalProps) {
+export function AddProductModalProvider({children}: ProviderProps) {
     const [isAddModalOpen, setIsAddModalOpen] = useState(false)
     const [newProduct, setNewProduct] = useState(null)
     const router = useRouter()

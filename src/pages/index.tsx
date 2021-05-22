@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import fetch from 'isomorphic-unfetch'
 
 import { dbConnect, jsonify } from '@api/mongodb'
@@ -19,17 +19,7 @@ import {ContactModalContext } from '@/contexts/ContactModalContext'
 
 import { Container, Footer } from '@/styles/pages/home'
 
-interface Product {
-	id: string;
-	name: string;
-	category: string;
-	quantity: number;
-	expiration: string;
-}
-
-interface HomeProps {
-	products: Product[];
-}
+import { HomeProps } from '@/Types'
 
 function Home({ products }: HomeProps) {
 	const { isAddModalOpen } = useContext(AddProductModalContext)
@@ -57,7 +47,7 @@ function Home({ products }: HomeProps) {
 	)
 }
 
-export const getStaticProps:GetStaticProps = async () => {
+export const getServerSideProps:GetServerSideProps = async () => {
 	dbConnect()
 	const res = await fetch('http://localhost:3000/api/products')
 	const { data } = await res.json()
@@ -76,8 +66,7 @@ export const getStaticProps:GetStaticProps = async () => {
 	return {
 		props: {
 			products: list
-		},
-		revalidate: 60*60*3
+		}
 	}
 }
 

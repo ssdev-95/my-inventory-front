@@ -7,17 +7,7 @@ import { EditModalContext } from '@/contexts/EditModalContext'
 
 import { Container, Table, Section } from './styles'
 
-interface Product {
-    id: string;
-    name: string;
-    quantity: number;
-    expiration: string;
-    category: string;
-}
-
-interface DashboardProps {
-    products: Product[];
-}
+import { DashboardProps } from '@/Types'
 
 export default function Dashboard({ products }: DashboardProps) {
     const { toggleModal } = useContext(AddProductModalContext)
