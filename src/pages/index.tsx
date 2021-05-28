@@ -50,7 +50,7 @@ export const getServerSideProps:GetServerSideProps = async () => {
 			name: 'Salame',
 			category: 'food',
 			quantity: 550,
-			expiration: '2021-05-36',
+			expiration: '2021-05-16',
 		}
 	]
 	
