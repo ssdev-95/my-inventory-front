@@ -34,11 +34,7 @@ Project currently under development;
 >>
 - ReactJS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https://reactjs.org/docs/getting-started.html)
 >>
-- ReactNative <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https:/reactnative.dev)
->>
 - NextJS <img src="./web/public/drawable/next.svg" height="12px"> - [See more](https://nextjs.org/docs)
->>
-- Expo <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/65/24/19/652419e4-053e-d24a-1850-da1073f092e6/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png" height="12px" /> - [See more](https://nextjs.org/docs)
 
 ## Tools used
 
