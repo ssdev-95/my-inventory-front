@@ -1,6 +1,13 @@
-import firebase from 'firebase'
-import 'firebase/firestore'
+import { database } from "@/services/db/DBConfig";
 
-const config = {}
+export const Controller = {
+  async get() {
+    const data = await database.collection("products").get()
+    const results = data.docs
 
-firebase.initializeApp(config)
+    return results
+  },
+  async set() {},
+  async update() {},
+  async delete() {},
+};
