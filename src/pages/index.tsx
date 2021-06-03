@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { GetServerSideProps } from 'next'
+import { Controller } from '@/services/db/DBController'
 
 import Head from 'next/head'
 import Header from '@/components/Header'
@@ -53,10 +54,22 @@ export const getServerSideProps:GetServerSideProps = async () => {
 			expiration: '2021-05-16',
 		}
 	]
+
+	const res = await Controller.get()
+
+	const productos = res.map(prod=>{
+		return {
+			id: prod.id,
+			name: prod.data().name,
+			category: prod.data().category,
+			quantity: prod.data().quantity,
+			expiration: prod.data().expirateon
+		}
+	})
 	
 	return {
 		props: {
-			products: list
+			products: productos
 		}
 	}
 }
