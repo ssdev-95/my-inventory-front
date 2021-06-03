@@ -45,28 +45,19 @@ function Home({ products }: HomeProps) {
 }
 
 export const getServerSideProps:GetServerSideProps = async () => {
-	const list = [
-		{
-			id: 'dd4gbgfdsd4g',
-			name: 'Salame',
-			category: 'food',
-			quantity: 550,
-			expiration: '2021-05-16',
-		}
-	]
+	// const list = [
+	// 	{
+	// 		id: 'dd4gbgfdsd4g',
+	// 		name: 'Salame',
+	// 		category: 'food',
+	// 		quantity: 550,
+	// 		expiration: '2021-05-16',
+	// 	}
+	// ]
 
-	const res = await Controller.get()
+	const productos = await Controller.get()
+	// console.log(process.env.NEXT_DB_COLLECTION)
 
-	const productos = res.map(prod=>{
-		return {
-			id: prod.id,
-			name: prod.data().name,
-			category: prod.data().category,
-			quantity: prod.data().quantity,
-			expiration: prod.data().expirateon
-		}
-	})
-	
 	return {
 		props: {
 			products: productos
