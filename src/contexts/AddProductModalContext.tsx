@@ -25,8 +25,8 @@ export function AddProductModalProvider({children}: ProviderProps) {
         }
 
         Controller.set(product)
-            .then(res=>alert('Sucess'))
-            .catch(err=>console.log(err))
+            .then(res=>alert(res))
+            .catch(err=>alert(err))
         
         toggleModal()
         router.push('/')
