@@ -1,29 +1,33 @@
 import {createContext, useState} from 'react'
 
-import { EditModalContextData, ProviderProps } from '@/types'
+import { Controller } from '@/services/db/DBController'
+
+import { EditModalContextData, ProviderProps, Product } from '@/types'
 
 export const EditModalContext = createContext({} as EditModalContextData)
 
 export function EditModalProvider({children}: ProviderProps) {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false)
-    const [toUpdate, setToUpdate] = useState(null)
+    const [toUpdate, setToUpdate] = useState<any>(null)
 
-    const toggleEditModal = (product:any) => {
+    const toggleEditModal = (product?:any) => {
         setIsEditModalOpen(!isEditModalOpen)
         setToUpdate(product)
     }
 
-    const updateProduct = async (updatedProduct:any) => {
-        const product = {
-            name: updatedProduct?.name,
-            quantity: updatedProduct?.quantity,
-            category: updatedProduct?.category,
-            expirateon: String(updatedProduct?.expiration)
+    const updateProduct = (data:any) => {
+        const product:Product = {
+            name: data?.name,
+            quantity: data?.quantity,
+            category: data?.category,
+            expiration: String(data?.expiration)
         }
 
-        console.log(JSON.stringify(product))
+        Controller.update(toUpdate?.id, product)
+            .then(()=>alert('Success!'))
+            .catch((err)=>alert(`Failed, ${err}`))
 
-        toggleEditModal(null)
+        toggleEditModal()
     }
 
     return (
