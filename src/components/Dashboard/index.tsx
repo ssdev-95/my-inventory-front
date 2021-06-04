@@ -1,19 +1,26 @@
 import React, { useContext} from 'react'
+import { useRouter } from 'next/router'
  
 import { AddProductModalContext } from '@/contexts/AddProductModalContext'
 import { EditModalContext } from '@/contexts/EditModalContext'
 
-import { Container, Table, Section } from '@/components/Dashboard/styles'
+import { Controller } from '@/services/db/DBController'
 
 import { DashboardProps } from '@/types'
 import { formatDate } from '@/services/utils/formats'
+
+import { Container, Table, Section } from '@/components/Dashboard/styles'
 
 export default function Dashboard({ products }: DashboardProps) {
     const { toggleModal } = useContext(AddProductModalContext)
     const { toggleEditModal } = useContext(EditModalContext)
 
-    const deleteProduct = async (id:String) => {
-        alert(`Sucessfully deleted: ${id}`)
+    const router = useRouter();
+
+    const deleteProduct = async (id:string) => {
+        await Controller.delete(id);
+
+        router.push('/');
     }
 
     return (
