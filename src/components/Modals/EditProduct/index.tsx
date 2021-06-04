@@ -35,7 +35,7 @@ export default function EditModal() {
                        {...register('quantity')}
                     />
                     <input
-                       defaultValue={String(new Date(5))}
+                       value={toUpdate?.expiration}
                        type="date"
                        name="expiration"
                        id="expiration"
