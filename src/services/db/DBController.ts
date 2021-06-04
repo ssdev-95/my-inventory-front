@@ -1,13 +1,14 @@
 import { database } from "@/services/db/DBConfig";
 import { Product } from "@/types";
 
-const collname = process.env.NEXT_DB_COLLECTION
+const collname = 'products';
 
 export const Controller = {
   async get() {
     const data = await database
-      .collection(process.env.NEXT_DB_COLLECTION)
+      .collection(collname)
       .get();
+
     const results: Product[] = data.docs.map((prod) => {
       return {
         id: prod.id,
@@ -26,8 +27,27 @@ export const Controller = {
       expirateon: product.expiration,
     };
 
-    return await database.collection(collname).add(producto);
+    const res = await database
+      .collection(collname)
+      .add(producto);
+
+    alert(res.id)
   },
-  async update(id: string) {},
-  async delete(id: string) {},
+  async update(id: string, product: Product) {
+    const updated = {
+      ...product,
+      expirateon: product.expiration,
+    };
+
+    await database
+      .collection(collname)
+      .doc(id)
+      .set(updated)
+  },
+  async delete(id: string) {
+    await database
+      .collection(collname)
+      .doc(id)
+      .delete()
+  },
 };
