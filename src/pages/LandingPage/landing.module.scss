@@ -1,0 +1,14 @@
+// @use'src/globals.scss'with(<default>){};
+
+.landing_container {
+    height: 100%;
+    width: 100%;
+
+    & .light {
+        background: $background-light;
+    }
+
+    & .dark {
+        background: $background-dark;
+    }
+}

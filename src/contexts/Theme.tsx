@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react'
 
 import { Inventory } from 'src/@types/inventory'
 
-const ThemeContext = createContext({} as Inventory.ThemeContextData)
+export const ThemeContext = createContext({} as Inventory.ThemeContextData)
 
 export const ThemeProvider = ({children}: Inventory.ProviderProps) => {
     const [ theme, setTheme ] = useState('light')
