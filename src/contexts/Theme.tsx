@@ -1,20 +1,20 @@
-import { createContext, useState, useContext, useEffect } from 'react'
+import { createContext, useState, useEffect } from 'react'
 
-import { ThemeContextData, ProviderProps } from '@/types'
+import { Inventory } from 'src/@types/inventory'
 
-const ThemeContext = createContext({} as ThemeContextData)
+const ThemeContext = createContext({} as Inventory.ThemeContextData)
 
-export const ThemeProvider = ({children}: ProviderProps) => {
+export const ThemeProvider = ({children}: Inventory.ProviderProps) => {
     const [ theme, setTheme ] = useState('light')
 
     function toggleTheme() {
         theme==='light'? localStorage.setItem('theme', 'dark') : localStorage.setItem('theme', 'light')
 
-        setTheme(localStorage.getItem('theme'))
+        setTheme(localStorage.getItem('theme')||'')
     }
 
     useEffect(()=>{
-        setTheme(localStorage.getItem('theme'))
+        setTheme(localStorage.getItem('theme')||'')
     }, [])
 
     return (
@@ -25,8 +25,4 @@ export const ThemeProvider = ({children}: ProviderProps) => {
             {children}
         </ThemeContext.Provider>
     )
-}
-
-export const useTheme = () => {
-    return useContext(ThemeContext)
 }
