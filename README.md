@@ -25,6 +25,7 @@ Project currently under development;
 - Store and manage product data, such as quantities and expirations;
 - Show what's expirating on, expired products may no longer be visible for user;
 - Local and cloud(comming soon) data storage (storage currently not working);
+- PWA version comming soon, or not so soon rs.
 
 ## Teconolgies embed
 
@@ -33,14 +34,11 @@ Project currently under development;
 - CSS Modules <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" height="12px"/> - [See more](https://github.com/css-modules/css-modules)
 >>
 - ReactJS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https://reactjs.org/docs/getting-started.html)
->>
-- NextJS <img src="./web/public/drawable/next.svg" height="12px"> - [See more](https://nextjs.org/docs)
 
 ## Tools used
 
 - Figma - [see](https://www.figma.com/)
 - Visual Studio Code - [see](https://code.visualstudio.com/)
-- ExpoGO - [Android](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=pt_BR&gl=US) / [iOS](https://apps.apple.com/br/app/expo-go/id982107779)
 
 ## How to run
 
