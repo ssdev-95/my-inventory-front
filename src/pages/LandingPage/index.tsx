@@ -1,24 +1,34 @@
+import { useHistory } from 'react-router-dom'
 import { Button } from '@material-ui/core'
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow'
+
 import { useTheme } from "src/hooks/useTheme"
 import styles from 'src/pages/LandingPage/landing.module.scss'
 import colors from 'src/colors.json'
-
+ 
 export function LandingPage() {
     const { theme } = useTheme()
+    const history = useHistory()
+
+    function handleGoToDashboard() {
+      history.push('/dashboard')
+
+      return
+    }
 
     return (
         <div
-          className={`${styles.landing_container} ${theme==='light'?styles.light:styles.dark}`}
-          style={{ 
-            background: theme==='light' ? colors.background.light : colors.background.dark
+          className={styles.landing_container}
+          style={{
+            backgroundColor: theme==='light' ? colors.background.light : colors.background.dark,
+            color: theme==='light' ? colors.texts.dark : colors.texts.light
           }}
         >
-            <div>
+            <div className={styles.texts}>
               <h1>My Inventory</h1>
               <p>Kitchens management made easy.</p>
             </div>
-            <Button>
+            <Button onClick={handleGoToDashboard}>
               <span>Get started today</span>
               <DoubleArrowIcon />
             </Button>

@@ -1,14 +1,67 @@
-// @use'src/globals.scss'with(<default>){};
-
 .landing_container {
     height: 100%;
     width: 100%;
 
-    & .light {
-        background: $background-light;
+    background-image: url('../../drawable/heavy_box.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 60%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-left: 3rem;
+
+    .texts {
+        width: 30rem;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: .95rem;
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        p {
+            font-size: 1.75rem;
+        }
     }
 
-    & .dark {
-        background: $background-dark;
+    button {
+        background: var(--color-primary);
+        color: var(--background-light);
+        height: 3rem;
+        width: 18rem;
+        display: flex;
+        justify-content: space-evenly;
+
+        span {
+            font-weight: 500;
+        }
+    }
+
+    @media(max-width: 600px) {
+        background-image: none;
+        align-items: center;
+        padding-left: 0;
+
+        .texts {
+            align-items: center;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+            }
+        }
+
+        button {
+            width: 85%;
+            height: 8vh;
+            font-size: 1rem;
+        }
     }
 }

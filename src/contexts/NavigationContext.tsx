@@ -1,12 +1,13 @@
 import { createContext, useState } from 'react'
+
 import  { Inventory } from 'src/@types/inventory'
 
 export const NavigationContext = createContext({} as Inventory.INavigationContext)
 
 export function NavigationProvider({ children }: Inventory.ProviderProps) {
-    const [currentComponent, setCurrentComponent] = useState<JSX.Element>()
+    const [currentComponent, setCurrentComponent] = useState<string|undefined>()
 
-    function changeCurrentComponent(component: JSX.Element) {
+    function changeCurrentComponent(component: string) {
         setCurrentComponent(component)
     }
 
