@@ -28,13 +28,17 @@
             color: var(--texts-light);
 
             &:hover {
-                color: var(--color-primary);
+                filter: sepia(4) hue-rotate(190deg) saturate(100) brightness(.9);
             }
         }
 
         img {
             height: 8rem;
             filter: invert(70%);
+
+            &:hover {
+                filter: sepia(4) hue-rotate(190deg) saturate(100) brightness(.9);
+            }
         }
 
         @media(max-width: 800px)  {
