@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom'
-import { Button } from '@material-ui/core'
+import { CButton } from 'src/components/Button'
 import DoubleArrowIcon from '@material-ui/icons/DoubleArrow'
 
 import { useTheme } from "src/hooks/useTheme"
@@ -28,10 +28,10 @@ export function LandingPage() {
               <h1>My Inventory</h1>
               <p>Kitchens management made easy.</p>
             </div>
-            <Button onClick={handleGoToDashboard}>
+            <CButton onClick={handleGoToDashboard}>
               <span>Get started today</span>
               <DoubleArrowIcon />
-            </Button>
+            </CButton>
         </div>
     )
 }

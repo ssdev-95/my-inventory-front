@@ -31,9 +31,11 @@
     button {
         background: var(--color-primary);
         color: var(--background-light);
+        border: 0;
         height: 3rem;
         width: 18rem;
         display: flex;
+        align-items: center;
         justify-content: space-evenly;
 
         span {

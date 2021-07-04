@@ -1,4 +1,4 @@
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { Header } from 'src/components/Header'
 import { Container } from 'src/components/Dashboard/Container'
 import { CLogin } from 'src/components/Dashboard/Login'
@@ -8,20 +8,20 @@ import { CProductList } from 'src/components/Dashboard/ProductList'
 import { CContact } from 'src/components/Dashboard/Contact'
 
 import { useNavigation } from 'src/hooks/useNavigation'
-// import { useAuth } from 'src/hooks/useAuth'
+import { useAuth } from 'src/hooks/useAuth'
 
 import styles from './home.module.scss'
 
 export function Home() {
-const { currentComponent/*, changeCurrentComponent*/ } = useNavigation()
-    // const { user } = useAuth()
+    const { currentComponent, changeCurrentComponent } = useNavigation()
+    const { user } = useAuth()
 
-    // useEffect(()=>{
-    //     if(!user) {
-    //         changeCurrentComponent('Login')
-    //         return
-    //     }
-    // }, [user, changeCurrentComponent])
+    useEffect(()=>{
+        if(!user) {
+            changeCurrentComponent('Login')
+            return
+        }
+    }, [user, changeCurrentComponent])
 
     return (
         <div

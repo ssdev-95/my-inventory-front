@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Button } from '@material-ui/core'
+import { CButton } from 'src/components/Button'
 import DashboardIcon from '@material-ui/icons/Dashboard'
 
 import { useNavigation } from 'src/hooks/useNavigation'
@@ -13,8 +13,8 @@ export function Header() {
         <header className={styles.header}>
             <DashboardIcon onClick={()=>changeCurrentComponent('ProductList')} />
             <div className={styles.menu}>
-                <Button onClick={()=>changeCurrentComponent('Contact')}>Contact</Button>
-                <Button onClick={()=>changeCurrentComponent('About')}>About</Button>
+                <CButton onClick={()=>changeCurrentComponent('Contact')}>Contact</CButton>
+                <CButton onClick={()=>changeCurrentComponent('About')}>About</CButton>
             </div>
         </header>
     )
