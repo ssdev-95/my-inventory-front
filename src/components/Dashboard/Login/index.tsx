@@ -1,21 +1,26 @@
-import { useState } from 'react'
+import { useState, FormEvent } from 'react'
 
 import { CButton } from 'src/components/Button'
+import { ReAnimated } from 'src/components/reAnimated'
 import GoogleIcon from 'src/drawable/google.svg'
 
 import { useAuth } from 'src/hooks/useAuth'
+import { useNavigation } from 'src/hooks/useNavigation'
 
 import styles from './login.module.scss'
 
 export const CLogin: React.FC = ()  =>{
+    const { changeCurrentComponent } = useNavigation()
     const { handleLoginWithEmailAndPassword, handleLoginWithGoogle } = useAuth()
     const [ email, setEmail ] = useState('')
     const [ phrase, setPhrase ] = useState('')
 
-   async function handleManualLogin() {
+   async function handleManualLogin(event: FormEvent) {
+       event.preventDefault()
+
        if(email.trim() === '' || phrase.trim() === '') {
            alert('Invalid email/password')
-           return
+           return;
        }
 
        await handleLoginWithEmailAndPassword(email, phrase)
@@ -35,14 +40,14 @@ export const CLogin: React.FC = ()  =>{
                         <input onChange={e => setEmail(e.target.value)} type="email" />
                         <input onChange={e => setPhrase(e.target.value)} type="password" />
                         <CButton type="submit" className={styles.button}>
-                            <span>Login with Google</span>
+                            <span>LogIn</span>
                         </CButton>
                     </form>
-                    <small>Not have an account ?<br/> Login with google or <CButton>SignUp</CButton> now.</small>
+                    <small>Not have an account ?<br/> Login with google or <CButton onClick={()=>changeCurrentComponent('SignUp')}>SignUp</CButton> now.</small>
                 </div>
             </main>
             <aside>
-                <span>login</span>
+                <ReAnimated />
             </aside>
         </div>
     )

@@ -32,8 +32,10 @@ declare namespace Inventory {
     export interface AuthContextData {
         user: User|undefined;
         handleLoginWithGoogle: ()=>Promise<void>;
-        handleLoginWithGithub: ()=>Promise<void>;
+        handleLoginWithGithub?: ()=>Promise<void>;
         handleLoginWithEmailAndPassword: (email: string, password: string)=>Promise<void>;
+        handleSignUpWithEmailAndPassword:(email: string, password: string)=>Promise<void>;
+        handleLogout:()=>Promise<void>
     }
 
     export interface INavigationContext {
