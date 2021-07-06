@@ -13,6 +13,7 @@ declare namespace Inventory {
         category: string;
         quantity: number;
         expiration: string;
+        owner_id: string;
     }
     
     export interface ProviderProps {
