@@ -1,11 +1,45 @@
 @charset "UTF-8";
 
-.iconsmaller {
-    color: var(--texts-light);
-    font-size: 36rem;
+.animated {
+    display: flex;
+    align-items: flex-start;
+
+    svg {
+        &:first-child {
+            color: var(--color-primary);
+            font-size: 10rem;
+            animation: rotation 2s infinite ease;
+        }
+
+        &:last-child {
+            color: var(--texts-light);
+            font-size: 4.5rem;
+            animation: rotation 2s infinite reverse ease;
+            margin-top: -11rem;
+            margin-left: -2rem;
+        }
+    }
 }
 
-.iconbigger {
-    color: var(--color-primary);
-    font-size: 6rem;
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
