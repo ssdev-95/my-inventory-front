@@ -41,9 +41,22 @@
         height: 2.5rem;
         cursor: pointer;
 
+        &.exit {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            svg {
+                font-size: 2rem;
+            }
+        }
+
         &:hover {
             color: var(--texts-light);
             background: rgba(0,0,0,.48);
         }
+    }
+
+    @media(max-width: 800px) {
+        gap: .15rem;
     }
 }
