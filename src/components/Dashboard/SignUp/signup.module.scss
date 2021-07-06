@@ -68,7 +68,7 @@
 	justify-content: center;
 	gap: 1.65rem;
 
-	.button, input {
+	.signupbutton, input {
 		height: 2.5rem;
 		width: 12rem;
 	}
@@ -101,7 +101,7 @@
 
 	@media(max-width:1024px) {
 		gap: 1rem;
-		.button, input {
+		.signupbutton, input {
 			height: 3rem;
 			width: 15rem;
 		}
