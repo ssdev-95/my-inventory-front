@@ -1,13 +1,14 @@
-<h1 align="center"><img src="./web/public/drawable/app_logo.png" height="35" align="center"/>&nbsp;&nbsp;MyInventory</h1>
+<h1 align="center"><img src="public/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
+<h3>v2.0
+</h3>
+<img src="public/prototyping.old/mockups/mockup_full.png" height="200px" width="375px" alt="Mockup"/>
 
-<img src="./web/public/prototyping/mockups/mockup_full.png" height="200px" width="375px" alt="Mockup"/>
-
-## Sumary
+## Summary
 
 - [What is it?](#what-is-it)
 - [Development Status](#development-staus)
 - [Features](#what-is-it)
-- [Tecnologies Embed](#tecnologies-embed)
+- [Technologies Embed](#tecnologies-embed)
 - [Tools Used](#tools-used)
 - [How to Run](#how-to-run)
 - [Contact](#contact-the-dev)
@@ -24,16 +25,16 @@ Project currently under development;
 
 - Store and manage product data, such as quantities and expirations;
 - Show what's expirating on, expired products may no longer be visible for user;
-- Local and cloud(comming soon) data storage (storage currently not working);
+- Local and cloud(coming soon) data storage (storage currently not working);
 - PWA version comming soon, or not so soon rs.
 
 ## Teconolgies embed
 
 - HTML 5 <img src="https://cdn.iconscout.com/icon/free/png-512/html5-19-722707.png" height="12px"/> - [See more](https://developer.mozilla.org/pt-BR/docs/Web/HTML/HTML5)
 >>
-- CSS Modules <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" height="12px"/> - [See more](https://github.com/css-modules/css-modules)
+- SASS <img src="src/drawable/sass.svg" height="12px"/> - [See more](https://sass-lang.com/)
 >>
-- ReactJS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https://reactjs.org/docs/getting-started.html)
+- ReactJS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https://reactjs.org/)
 
 ## Tools used
 
@@ -68,20 +69,20 @@ yarn dev
 
 Finally, open ```'http://localhost:3000'``` with your browser to see the result.
 
-And for mobile version, run the expo aplication and...
+And for mobile version, run the expo application and...
 [coming soon...]
 
 ## Known bugs
 
-- When a product is added, thhe function that handles its remove is calls itself.</br>[Status: Not fixed]
+- None right now :D
 
 ## Contact the Dev
 
-- [Github&nbsp;&nbsp;<img src="./web/public/drawable/github.svg" height="10px">](https://github.com/xSallus)
-- [Instagram&nbsp;&nbsp;<img src="./web/public/drawable/instagram.svg" height="10px">](https://instagram.com/xsallus.dev)
-- [Twitter&nbsp;&nbsp;<img src="./web/public/drawable/twitter.svg" height="10px">](https://twitter.com/xSallus_dev)
-- [Linkedin&nbsp;&nbsp;<img src="./web/public/drawable/linkedin.svg" height="10px">](https://linkedin.com/in/salomao-vasconcelos)
-- [Behance&nbsp;&nbsp;<img src="./web/public/drawable/behance.svg" height="10px">](https://behance.com/salomaosouza)
+- [Github&nbsp;&nbsp;<img src="src/drawable/github.svg" height="10px">](https://github.com/xSallus)
+- [Instagram&nbsp;&nbsp;<img src="src/drawable/instagram.svg" height="10px">](https://instagram.com/xsallus.dev)
+- [Twitter&nbsp;&nbsp;<img src="src/drawable/twitter.svg" height="10px">](https://twitter.com/xSallus_dev)
+- [Linkedin&nbsp;&nbsp;<img src="src/drawable/linkedin.svg" height="10px">](https://linkedin.com/in/salomao-vasconcelos)
+- [Behance&nbsp;&nbsp;<img src="src/drawable/behance.svg" height="10px">](https://behance.com/salomaosouza)
 
 ## Licensing
  Licensed under MIT License, [see more](./Licensing.md);
