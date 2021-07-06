@@ -12,13 +12,13 @@ import reportWebVitals from 'src/pages/reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
-      <ThemeProvider>
-        <NavigationProvider>
+    <NavigationProvider>
+      <AuthProvider>
+        <ThemeProvider>
           <App />
-        </NavigationProvider>
-      </ThemeProvider>
-    </AuthProvider>
+        </ThemeProvider>
+      </AuthProvider>
+    </NavigationProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
