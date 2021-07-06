@@ -1,12 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useState, useEffect } from 'react'
+import { useNavigation } from 'src/hooks/useNavigation'
 import { Inventory } from 'src/@types/inventory'
 import { auth, firebase } from 'src/services/firebase'
 
 export const AuthContext = createContext({} as Inventory.AuthContextData)
 
 export function AuthProvider({ children }: Inventory.ProviderProps) {
-
+    const { changeCurrentComponent } = useNavigation()
     const [user, setUser] = useState<Inventory.User>()
+
+    async function handleLogout() {
+        if (user) {
+            await firebase.auth().signOut()
+            setUser(undefined)
+            changeCurrentComponent('Login')
+        }
+    }
 
     async function handleLoginWithGoogle() {
         const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
@@ -22,6 +32,8 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
                 avatar: photoURL,
                 name: displayName
             })
+
+            changeCurrentComponent('ProductList')
         }
     }
 
@@ -39,6 +51,8 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
     //             avatar: photoURL,
     //             name: displayName
     //         })
+    //
+    //         changeCurrentComponent('ProductList')
     //     }
     // }
 
@@ -48,13 +62,18 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
         if (user) {
             const { uid, displayName, photoURL } = user
             
-            if(!displayName || !photoURL) throw new Error('Invalid user')
+            if(!displayName || !photoURL) {
+                throw new Error('Invalid user')
+            }
 
             setUser({
                 id: uid,
                 avatar: photoURL,
                 name: displayName
             })
+
+            changeCurrentComponent('ProductList')
+
         }
     }
 
@@ -71,12 +90,9 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
                 avatar: photoURL,
                 name: displayName
             })
-        }
-    }
 
-    async function handleLogout() {
-        if (user) {
-            await firebase.auth().signOut()
+            changeCurrentComponent('ProductList')
+
         }
     }
     
@@ -92,6 +108,9 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
                     avatar: photoURL,
                     name: displayName
                 })
+
+                changeCurrentComponent('ProductList')
+                
             }
         })
 
@@ -99,8 +118,6 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
             unsubscribe()
         }
     }, [])
-
-    useEffect(()=>{console.log(user)}, [user])
 
     return (
         <AuthContext.Provider value={{
