@@ -1,0 +1,64 @@
+.products {
+    width: 50rem;
+    max-width: 98%;
+    line-height: 1.25rem;
+    border-collapse: collapse;
+
+    tr {
+        line-height: 2rem;
+        padding-left: 4px;
+    }
+
+    td, th {
+        text-align: start;
+
+        &:last-child {
+            width: 1.5rem;
+        }
+    }
+
+
+    thead tr, tbody tr:not(:last-child) {
+        border-bottom: 1px solid var(--texts-light);
+    }
+
+    thead tr th {
+        color: var(--texts-dark);
+    }
+    
+    tbody tr {
+
+        &:hover {
+            background: rgba(141, 141, 255, .68);
+            td, td button {
+                color: var(--color-ternary);
+            }
+        }
+
+        td {
+            color: var(--texts-dark);
+            overflow: hidden;
+            text-overflow: ellipsis;
+    
+            button {
+                border: 0;
+                background: var(--transparent);
+                color: var(--texts-dark);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 4px;
+                cursor: pointer;
+    
+                &:hover {
+                    color: var(--color-secondary);
+                }
+            }
+        }
+    }
+
+    @media(min-width: 1024px) {tr {
+            font-size: 1.45rem;
+        }
+    }
+}
