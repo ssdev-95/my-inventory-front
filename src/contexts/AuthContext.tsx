@@ -23,14 +23,11 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
         const { user } = await auth.signInWithPopup(googleAuthProvider)
 
         if (user) {
-            const { uid, displayName, photoURL } = user
-            
-            if(!displayName || !photoURL) throw new Error('Invalid user')
+            const { uid, displayName } = user
 
             setUser({
                 id: uid,
-                avatar: photoURL,
-                name: displayName
+                name: displayName ?? `User-${Date.now()}`
             })
 
             changeCurrentComponent('ProductList')
@@ -41,16 +38,18 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
     //     const githubAuthProvider = new firebase.auth.GithubAuthProvider()
     //     const { user } = await auth.signInWithPopup(githubAuthProvider)
 
-    //     if (user) {
-    //         const { uid, displayName, photoURL } = user
-                
-    //         if(!displayName || !photoURL) throw new Error('Invalid user')
+    // if (user) {
+    //     const { uid, displayName } = user
+        
+    //     if(!displayName) throw new Error('Invalid user')
 
-    //         setUser({
-    //             id: uid,
-    //             avatar: photoURL,
-    //             name: displayName
-    //         })
+    //     setUser({
+    //         id: uid,
+    //         name: displayName
+    //     })
+
+    //     changeCurrentComponent('ProductList')
+    // }
     //
     //         changeCurrentComponent('ProductList')
     //     }
@@ -60,38 +59,31 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
         const { user } = await firebase.auth().createUserWithEmailAndPassword(email, password)
         
         if (user) {
-            const { uid, displayName, photoURL } = user
-            
-            if(!displayName || !photoURL) {
-                throw new Error('Invalid user')
-            }
+            const { uid, displayName } = user
 
             setUser({
                 id: uid,
-                avatar: photoURL,
-                name: displayName
+                name: displayName ?? `User ${Date.now()}`
             })
 
             changeCurrentComponent('ProductList')
-
         }
+            console.log(user)
     }
 
     async function handleLoginWithEmailAndPassword(email: string, password: string) {
         const { user } = await auth.signInWithEmailAndPassword(email, password)
 
         if (user) {
-            const { uid, displayName, photoURL } = user
-            
-            if(!displayName || !photoURL) throw new Error('Invalid user')
-
+            const { uid, displayName } = user
+                
             setUser({
                 id: uid,
-                avatar: photoURL,
-                name: displayName
+                name: displayName ?? `User ${Date.now()}`
             })
 
             changeCurrentComponent('ProductList')
+            console.log(user)
 
         }
     }
@@ -99,18 +91,14 @@ export function AuthProvider({ children }: Inventory.ProviderProps) {
     useEffect(()=>{
         const unsubscribe = auth.onAuthStateChanged(user=> {
             if (user) {
-                const { uid, displayName, photoURL } = user
-                
-                if(!displayName || !photoURL) throw new Error('Invalid user')
+                const { uid, displayName } = user
 
                 setUser({
                     id: uid,
-                    avatar: photoURL,
-                    name: displayName
+                    name: displayName ?? `User ${Date.now()}`
                 })
-
+    
                 changeCurrentComponent('ProductList')
-                
             }
         })
 
