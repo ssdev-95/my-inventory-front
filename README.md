@@ -34,6 +34,8 @@ Project currently under development;
 >>
 - SASS <img src="src/drawable/sass.svg" height="12px"/> - [See more](https://sass-lang.com/)
 >>
+- Material UI - [See more](https://material-ui.com/)
+>>
 - ReactJS <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/React.svg/512px-React.svg.png" height="12px" /> - [See more](https://reactjs.org/)
 
 ## Tools used
