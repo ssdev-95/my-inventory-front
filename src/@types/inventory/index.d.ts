@@ -4,16 +4,15 @@ declare namespace Inventory {
     export interface User {
         id: string;
         name: string;
-        avatar: string;
     }
 
     export interface Product {
         id?: string;
-        name: string;
-        category: string;
-        quantity: number;
-        expiration: string;
-        owner_id: string;
+        name?: string;
+        category?: string;
+        quantity?: number;
+        expiration?: string;
+        owner?: string;
     }
     
     export interface ProviderProps {
@@ -42,5 +41,11 @@ declare namespace Inventory {
     export interface INavigationContext {
         currentComponent: string|undefined;
         changeCurrentComponent: (component: string) => void;
-    }    
+    }  
+
+    export interface ProductContext {
+        products: Product[] | undefined;
+        handleRetrieveData: ()=>void;
+        handleDeleteData:(id:string)=>void;
+    }  
 }
