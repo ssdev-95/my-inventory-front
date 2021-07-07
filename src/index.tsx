@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom'
 import { NavigationProvider } from 'src/contexts/NavigationContext'
 import { ThemeProvider } from 'src/contexts/Theme'
 import { AuthProvider } from 'src/contexts/AuthContext'
+import { ProductProvider } from 'src/contexts/ProductContext'
+
 import App from 'src/pages/App'
 
 import 'src/globals.scss'
@@ -14,9 +16,11 @@ ReactDOM.render(
   <React.StrictMode>
     <NavigationProvider>
       <AuthProvider>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ProductProvider>
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
+        </ProductProvider>
       </AuthProvider>
     </NavigationProvider>
   </React.StrictMode>,
