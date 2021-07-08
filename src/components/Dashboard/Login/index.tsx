@@ -47,7 +47,7 @@ export const CLogin: React.FC = ()  =>{
                 </div>
             </main>
             <aside>
-                <ReAnimated />
+                <ReAnimated text="Loading.." />
             </aside>
         </div>
     )

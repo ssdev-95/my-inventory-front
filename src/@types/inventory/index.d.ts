@@ -49,5 +49,10 @@ declare namespace Inventory {
         handleDeleteData:(id:string)=>void;
         handleIncreaseSelection:()=>void;
         handleDecreaseSelection:()=>void;
-    }  
+    }
+    
+    export interface LoadingProps {
+        text: string;
+        children?: ReactNode;
+    }
 }

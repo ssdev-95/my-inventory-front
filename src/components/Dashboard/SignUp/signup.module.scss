@@ -23,6 +23,24 @@
 
 			width: 100%;
 			height: 100%;
+
+			p {
+				font-size: 14px;
+				color: var(--texts-dark);
+	
+				button {
+					background: var(--transparent);
+					border: 0;
+					font-size: 14px;
+					color: var(--texts-dark);
+					cursor: pointer;
+					text-decoration: underline;
+	
+					&:hover {
+						color: var(--color-primary);
+					}
+				}
+			}
 		}
 
 		&::after {
