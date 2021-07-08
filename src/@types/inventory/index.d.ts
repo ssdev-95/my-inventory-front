@@ -12,7 +12,6 @@ declare namespace Inventory {
         category?: string;
         quantity?: number;
         expiration?: string;
-        owner?: string;
     }
     
     export interface ProviderProps {
@@ -44,8 +43,11 @@ declare namespace Inventory {
     }  
 
     export interface ProductContext {
+        filters: string[];
         products: Product[] | undefined;
-        handleRetrieveData: ()=>void;
+        currentSelection: number;
         handleDeleteData:(id:string)=>void;
+        handleIncreaseSelection:()=>void;
+        handleDecreaseSelection:()=>void;
     }  
 }
