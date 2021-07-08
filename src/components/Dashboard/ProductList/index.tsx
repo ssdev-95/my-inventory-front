@@ -1,5 +1,6 @@
 import { useAuth } from 'src/hooks/useAuth'
 import { useNavigation } from 'src/hooks/useNavigation'
+import { useProduct } from 'src/hooks/useProduct'
 
 import PlayArrowIcon from '@material-ui/icons/PlayArrow'
 
@@ -11,16 +12,22 @@ import styles from './products.module.scss'
 export const CProductList = () => {
     const { user } = useAuth()
     const { changeCurrentComponent } = useNavigation()
+    const {
+        currentSelection,
+        handleIncreaseSelection,
+        handleDecreaseSelection,
+        filters
+    } = useProduct()
 
     return (
         <div className={styles.productsContainer}>
             <header>
                 <div>
-                    <CButton>
+                    <CButton onClick={handleDecreaseSelection}>
                         <PlayArrowIcon />
                     </CButton>
-                    <span>Food</span>
-                    <CButton>
+                    <span>{filters[currentSelection]}</span>
+                    <CButton onClick={handleIncreaseSelection}>
                         <PlayArrowIcon />
                     </CButton>
                 </div>
