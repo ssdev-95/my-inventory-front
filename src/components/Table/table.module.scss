@@ -1,6 +1,6 @@
 .products {
     width: 50rem;
-    max-width: 98%;
+    max-width: 92vw;
     line-height: 1.25rem;
     border-collapse: collapse;
 
@@ -57,7 +57,8 @@
         }
     }
 
-    @media(min-width: 1024px) {tr {
+    @media(min-width: 1024px) {
+        tr {
             font-size: 1.45rem;
         }
     }
