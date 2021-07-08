@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import TwitterIcon from '@material-ui/icons/Twitter'
@@ -20,13 +20,69 @@ export const CContact = () => {
                 color: theme==='light' ? colors.texts.dark :  colors.texts.light
             }}>Contact</h1>
             <div>
-                <Link to="https://instagram.com"><InstagramIcon /></Link>
-                <Link to="https://linkedin.com"><LinkedInIcon /></Link>
-                <Link to="https://twitter.com"><TwitterIcon /></Link>
-                <Link to="https://gmail.com"><MailIcon /></Link>
-                <Link to="https://github.com/xSallus"><GitHubIcon /></Link>
-                <Link to="https://paypal"><img src={PayPalIcon} alt="PayPal" /></Link>
-                <Link to="https://behance.com"><img src={BehanceIcon} alt="Behance" /></Link>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://instagram.com/xSallus.dev/"
+                >
+                    <abbr title="Link to https://instagram.com/xSallus.dev">
+                        <InstagramIcon />
+                    </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://linkedin.com/in/salomao-vasconcelos/"
+                >
+                    <abbr title="Link to https://linkedin.com/in/salomao-vasconcelos/">
+                        <LinkedInIcon />
+                    </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://twitter.com/xSallus_dev"
+                >
+                    <abbr title="Link to https://twitter.com/xSallus_dev">
+                        <TwitterIcon />
+                    </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://gmail.com"
+                >
+                    <abbr title="Link to https://gmail.com/">
+                        <MailIcon />
+                    </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://github.com/xSallus"
+                >
+                    <abbr title="Link to https://github.com/xSallus">
+                        <GitHubIcon />
+                    </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://paypal.com"
+                >
+                   <abbr title="Link to https://paypal.com">
+                       <img src={PayPalIcon} alt="PayPal" />
+                   </abbr>
+                </a>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://behance.net/SalomaoSouza"
+                >
+                   <abbr title="Link to https://behance.net/SalomaoSouza">
+                       <img src={BehanceIcon} alt="Behance" />
+                   </abbr>
+                </a>
             </div>
         </div>
     )
