@@ -1,7 +1,8 @@
 <h1 align="center"><img src="public/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
-<h3>v2.0
-</h3>
-<img src="public/prototyping.old/mockups/mockup_full.png" height="200px" width="375px" alt="Mockup"/>
+<h3>v2.0</h3>
+<p align="center">
+    <img src="public/prototyping.old/mockups/mockup_half.png" height="200px" width="375px" alt="Mockup"/>
+</p>
 
 ## Summary
 
@@ -24,9 +25,9 @@ Project currently under development;
 ## Features
 
 - Store and manage product data, such as quantities and expirations;
-- Show what's expirating on, expired products may no longer be visible for user;
-- Local and cloud(coming soon) data storage (storage currently not working);
-- PWA version comming soon, or not so soon rs.
+- Show what's expirating on, expired products may no longer be visible for user(coming soon);
+- Data storage on Firebase Realtime Database;
+- PWA version coming soon, or not so soon rs.
 
 ## Teconolgies embed
 
@@ -61,6 +62,10 @@ Then, add all the dependencies, on each folder run:
 
 ```bash
 yarn add
+
+#or simply
+
+yarn
 ```
 
 Then, for web version, run the development server:
@@ -87,6 +92,6 @@ And for mobile version, run the expo application and...
 - [Behance&nbsp;&nbsp;<img src="src/drawable/behance.svg" height="10px">](https://behance.com/salomaosouza)
 
 ## Licensing
- Licensed under MIT License, [see more](./Licensing.md);
+ Licensed under MIT License,&nbsp;&nbsp;[see more](LICENSE.md);
 
 <p align="center">2021, xSallus&copy;</p>
