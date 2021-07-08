@@ -94,4 +94,6 @@ And for mobile version, run the expo application and...
 ## Licensing
  Licensed under MIT License,&nbsp;&nbsp;[see more](LICENSE.md);
 
-<p align="center">2021, xSallus&copy;</p>
+You can take a look at the live project [here](https://myinventory2.vercel.app/).
+
+2021, xSallus&copy;.
