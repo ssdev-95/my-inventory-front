@@ -50,12 +50,12 @@ First create a folder with a name of your choice, then clone this repo:
 
 - Via SSH:
 ```bash
-git clone git@github.com:xSallus/MyInventory.git
+$ git clone git@github.com:xSallus/my-inventory.git
 ```
 
 - Via HTTPS:
 ```bash
-git clone https://github.com/xSallus/MyInventory.git
+$ git clone https://github.com/xSallus/my-inventory.git
 ```
 
 Then, add all the dependencies, on each folder run:
@@ -82,10 +82,7 @@ And for mobile version, run the expo application and...
 ## Contact the Dev
 
 - [Github&nbsp;&nbsp;<img src="src/drawable/github.svg" height="10px">](https://github.com/xSallus)
-- [Instagram&nbsp;&nbsp;<img src="src/drawable/instagram.svg" height="10px">](https://instagram.com/xsallus.dev)
-- [Twitter&nbsp;&nbsp;<img src="src/drawable/twitter.svg" height="10px">](https://twitter.com/xSallus_dev)
 - [Linkedin&nbsp;&nbsp;<img src="src/drawable/linkedin.svg" height="10px">](https://linkedin.com/in/salomao-vasconcelos)
-- [Behance&nbsp;&nbsp;<img src="src/drawable/behance.svg" height="10px">](https://behance.com/salomaosouza)
 
 ## Licensing
  Licensed under MIT License,&nbsp;&nbsp;[see more](LICENSE.md);
