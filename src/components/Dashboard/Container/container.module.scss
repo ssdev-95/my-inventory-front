@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.container {
+    width: 100vw;
+    height: 92vh;
+    border-radius: 24px 24px 0 0;
+    background: var(--background-light);
+    overflow: hidden;
+
+    div {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

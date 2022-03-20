@@ -1,0 +1,27 @@
+@charset "UTF-8";
+:root {
+    --background-light: #F8F8F8;
+    --background-dark: #000000;
+    --texts-light: #c4c4c4;
+    --texts-dark: #8e8888;
+    --color-primary: #37AEF1;
+    --color-secondary: #EC0000;
+    --color-ternary: #ffffff;
+    --transparent: rgba(0,0,0,0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.App {
+    height: 100vh;
+    width : 100vw;
+}
+
+button {
+    transition: all .25s ease;
+}

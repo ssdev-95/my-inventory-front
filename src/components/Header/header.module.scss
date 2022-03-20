@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+.header {
+    width : 100vw;
+    height: 10vh;
+    color: var(--background-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2.75rem;
+
+    svg {
+        font-size: 3rem;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    @media(max-width:800px) {
+        padding: 0 1.5rem;
+        height: 8vh;
+
+        svg {
+            font-size: 2rem;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    gap: 1rem;
+
+    button {
+        color: var(--background-light);
+        background: var(--transparent);
+        border: 0;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 1rem;
+        width: 6rem;
+        height: 2.5rem;
+        cursor: pointer;
+
+        &.exit {
+            width: 2.5rem;
+            height: 2.5rem;
+
+            svg {
+                font-size: 2rem;
+            }
+        }
+
+        &:hover {
+            color: var(--texts-light);
+            background: rgba(0,0,0,.48);
+        }
+    }
+
+    @media(max-width: 800px) {
+        gap: .15rem;
+    }
+}

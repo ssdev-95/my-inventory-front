@@ -28,3 +28,10 @@ hs_err_pid*
 *.xml
 *.txt
 *.png
+
+.build
+.vscode
+node_modules
+
+.env
+.env.*

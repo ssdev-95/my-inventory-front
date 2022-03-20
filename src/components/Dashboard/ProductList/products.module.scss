@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+.productsContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        flex: .2;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 12px 0;
+
+        button {
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            button {
+                color: var(--texts-dark);
+                font-weight: 600;
+                font-size: 2rem;
+                background: var(--transparent);
+
+                &:first-child {
+                    transform: rotate(180deg);
+                }
+
+                &:hover {
+                    color: var(--color-primary);
+                }
+            }
+
+            span {
+                font-size: 3.45rem;
+                font-weight: 600;
+                color: var(--texts-dark);
+            }
+
+
+            @media(max-width: 600px) {
+                gap: .5rem;
+                
+                span {
+                    font-size: 2.85rem;
+                }
+            }
+        }
+
+        .addButton {
+            width: 6rem;
+            height: 2.5rem;
+            margin-top: -3.25rem;
+            background: var(--color-primary);
+            color: var(--color-ternary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            
+            &:hover {
+                filter: brightness(.8);
+            }
+
+            @media(max-width: 800px) {
+                margin: 0;
+            }
+        }
+
+        @media(max-width: 800px) {
+            p:last-child {
+                display: none;
+            }
+        }
+    }
+
+    section {
+        flex: .8;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        overflow-y: scroll;
+    }
+}
