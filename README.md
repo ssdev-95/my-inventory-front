@@ -1,7 +1,7 @@
-<h1 align="center"><img src="public/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/xSallus/my-inventory/main/static/icons/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
 <h3>v2.0</h3>
 <p align="center">
-    <img src="public/prototyping.old/mockups/mockup_half.png" height="200px" width="375px" alt="Mockup"/>
+    <img src="https://raw.githubusercontent.com/xSallus/my-inventory/main/static/icons/heavy_box.svg" height="200px" width="auto" alt="Mockup"/>
 </p>
 
 ## Summary
