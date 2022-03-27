@@ -26,7 +26,7 @@ Project currently under development;
 
 - Store and manage product data, such as quantities and expirations;
 - Show what's expirating on, expired products may no longer be visible for user(coming soon);
-- Data storage on Firebase Realtime Database;
+- Data storage with it's own api using NodeJS and PostgreSQL;
 - PWA version coming soon, or not so soon rs.
 
 ## Teconolgies embed
