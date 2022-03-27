@@ -1,8 +1,20 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
+import type { NextPage } from "next"
+import Head from "next/head"
+import { useSession } from "next-auth/react"
 import { SigninButton } from "../components/signin-button"
 
 const Home: NextPage = () => {
+  const { data: session } = useSession()
+
+	if (session) {
+	  return (
+		  <>
+		    <img src={session?.user?.image} alt="user" />
+			  <p>{session?.user?.login}</p>
+		  </>
+		)
+	}
+
   return (
 		 <>
       <Head>
