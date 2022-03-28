@@ -8,7 +8,7 @@ type BProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	background: string;
 }
 
-export function SigninButton({ provider, ...props }: any) {
+function SigninButton({ provider, ...props }: any) {
 	const src = `/icons/${provider.toLowerCase()}.svg`
 
 	async function login() {
@@ -25,3 +25,5 @@ export function SigninButton({ provider, ...props }: any) {
 		</ButtonBase>
 	)
 }
+
+export { SigninButton }

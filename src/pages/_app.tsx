@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
 import { SessionProvider } from "next-auth/react"
-import GlobalCSS from '../globals'
+import { GlobalCSS } from '../globals'
 
 function MyApp({
   Component, pageProps: { session, ...pageProps }

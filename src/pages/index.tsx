@@ -1,26 +1,15 @@
+import { useState } from "react"
 import type { NextPage } from "next"
 import Head from "next/head"
-import { useSession, signOut } from "next-auth/react"
-import { SigninButton } from "../components/signin-button"
+
+import { LoginModal } from "../components/modal/login-modal"
+import { HomeContainer } from "../globals"
 
 const Home: NextPage = () => {
-  const { data: session } = useSession()
-
-	if (session) {
-	  return (
-		  <>
-		    <img src={session.user.image} alt="user" />
-				<p>{session.user.name}</p>
-				<button
-				  className="signout"
-					onClick={()=>signOut()}
-				>x</button>
-		  </>
-		)
-	}
+  const [isLoginModalOpen, setIsLoginModal] = useState(false)
 
   return (
-		 <>
+		 <HomeContainer>
       <Head>
         <meta
 				  name="description"
@@ -28,22 +17,16 @@ const Home: NextPage = () => {
 				/>
 				<title>MyInventory&trade;</title>
       </Head>
-			<SigninButton
-			  provider="Google"
-				color="white"
-				background="#a33"
+			<h1>MyInvemtory</h1>
+			<button
+			  className="login-button"
+				onClick={()=>setIsLoginModal(prev=>!prev)}
+			>Login to use</button>
+			<LoginModal
+			  isOpen={isLoginModalOpen}
+				toggle={()=>setIsLoginModal(prev=>!prev)}
 			/>
-			<SigninButton
-			  provider="GitHub"
-				color="white"
-				background="#777"
-			/>
-			<SigninButton
-			  provider="Discord"
-				color="white"
-				background="#33a"
-			/>
-		</>
+		</HomeContainer>
 	)
 }
 

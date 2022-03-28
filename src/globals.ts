@@ -1,6 +1,6 @@
-import { createGlobalStyle } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-export default createGlobalStyle`
+const GlobalCSS = createGlobalStyle`
   * {
     padding: 0;
     margin: 0;
@@ -11,22 +11,33 @@ export default createGlobalStyle`
   a {
     text-decoration: none;
   }
+`
 
+const HomeContainer = styled.main`
+  height: 100vh;
+	width: 100vw;
 
-	body {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		gap: 2.5rem;
-		background: #5f5f5f;
+  display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	background-color: #0c0c0c;
+	background-image: url(/public/icons/heavy_box.svg) no-repeat;
 
-		.signout {
-			padding: 0.25rem;
-			color: red;
-			border: 1px solid red;
-			border-radius: 100px;
-			background: transparent;
-		}
+	& .login-button {
+		background: #55f;
+		border: 0;
+		border-radius: 1rem;
+		padding: 0.25rem 0.5rem;
+	}
+
+	& .close-button {
+		padding: 0.2rem;
+		background: transparent;
+		color: red;
+		border: 1px solid red;
+		border-radius: 100%;
 	}
 `
+
+export { GlobalCSS, HomeContainer }
