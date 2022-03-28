@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import Head from "next/head"
-import { useSession } from "next-auth/react"
+import { useSession, signOut } from "next-auth/react"
 import { SigninButton } from "../components/signin-button"
 
 const Home: NextPage = () => {
@@ -9,8 +9,12 @@ const Home: NextPage = () => {
 	if (session) {
 	  return (
 		  <>
-		    <img src={session?.user?.image} alt="user" />
-			  <p>{session?.user?.login}</p>
+		    <img src={session.user.image} alt="user" />
+				<p>{session.user.name}</p>
+				<button
+				  className="signout"
+					onClick={()=>signOut()}
+				>x</button>
 		  </>
 		)
 	}

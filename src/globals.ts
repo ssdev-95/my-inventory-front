@@ -20,5 +20,13 @@ export default createGlobalStyle`
 		justify-content: center;
 		gap: 2.5rem;
 		background: #5f5f5f;
+
+		.signout {
+			padding: 0.25rem;
+			color: red;
+			border: 1px solid red;
+			border-radius: 100px;
+			background: transparent;
+		}
 	}
 `
