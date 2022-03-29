@@ -8,7 +8,7 @@ const Overlay = styled.div<OverlayProps>`
   width: 100vw;
 	height: 100vh;
 
-	display: ${props => props.isHidden ? 'none' : 'flex'};
+	display: ${({ isOpen }) => isOpen ? 'flex' : 'none'};
 	align-items: center;
 	justify-content: center;
 

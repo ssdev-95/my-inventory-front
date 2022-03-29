@@ -9,22 +9,22 @@ interface IModalProps {
 function LoginModal({ toggle, isOpen }: IModalProps) {
 
 	return (
-		<Overlay isHidden={isOpen} >
+		<Overlay isOpen={isOpen} >
 			<ModalBase>
 				<SigninButton
 					provider="Google"
-					color="white"
 					background="#f23"
+					toggle={toggle}
 				/>
 				<SigninButton
 					provider="GitHub"
-					color="white"
 					background="#1c1c1c"
+					toggle={toggle}
 				/>
 				<SigninButton
 					provider="Discord"
-					color="white"
 					background="#33f"
+					toggle={toggle}
 				/>
 				<button className="close-button" onClick={toggle}>x</button>
 			</ModalBase>

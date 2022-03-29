@@ -5,13 +5,19 @@ function Header() {
   const { data: session } = useSession()
 
   return (
-	  <Header>
-		  <img
-			  src={session?.user.image}
-				alt={session?.user.name}
-			/>
-			<p>{session?.user.name}</>
-		</Header>
+	  <Base>
+		 <img
+		   src="/icons/app_logo.svg"
+			 alt="app logo"
+		 />
+		 <div>
+  		  <img
+  			  src={session?.user.image}
+  				alt={session?.user.name}
+  			/>
+  			<p>{session?.user.name}</p>
+			</div>
+		</Base>
 	)
 }
 

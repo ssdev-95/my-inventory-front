@@ -6,6 +6,7 @@ const GlobalCSS = createGlobalStyle`
     margin: 0;
 		box-sizing: border-box;
     font-family: -apple-system, Roboto, sans-serif;
+		color: #f0f2f5;
   }
 
   a {
@@ -21,18 +22,23 @@ const HomeContainer = styled.main`
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
+	background-image: url("/public/icons/heavy_box.svg") no-repeat;
 	background-color: #0c0c0c;
-	background-image: url(/public/icons/heavy_box.svg) no-repeat;
 
 	& .login-button {
 		background: #55f;
 		border: 0;
-		border-radius: 1rem;
-		padding: 0.25rem 0.5rem;
+		border-radius: 6px;
+		width: 12rem;
+		height: 3rem;
+
+		font-size: 1.2rem;
+		font-weight: medium;
 	}
 
 	& .close-button {
-		padding: 0.2rem;
+		height: 2rem;
+		width: 2rem;
 		background: transparent;
 		color: red;
 		border: 1px solid red;
@@ -40,4 +46,15 @@ const HomeContainer = styled.main`
 	}
 `
 
-export { GlobalCSS, HomeContainer }
+const DashboardContainer = styled.main`
+  height: 100vh;
+	width: 100vw;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #7c7c7c;
+ `
+
+export { GlobalCSS, HomeContainer, DashboardContainer }
