@@ -4,7 +4,6 @@ const Base = styled.div`
   width: inherit;
 	height: 76vh;
 
-	background-color: #0c0c0c;
 	border-radius: 0 0 50px 50px;
 
 	display: flex;
