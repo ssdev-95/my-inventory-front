@@ -1,5 +1,4 @@
 import { ButtonHTMLAttributes } from "react"
-import { useRouter } from "next/router"
 import { signIn, useSession } from "next-auth/react"
 import { ButtonBase } from "./base"
 
@@ -12,19 +11,9 @@ type BProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 function SigninButton({ provider, toggle, ...props }: any) {
 	const src = `/icons/${provider.toLowerCase()}.svg`
 
-	const { data: session } = useSession()
-	const router = useRouter()
-
 	function login() {
 	  toggle()
-		setTimeout(()=>{
-			if (session) {
-				router.push("/dashboard")
-				return
-			}
-
-			signIn(`${provider.toLowerCase()}`)
-		}, 2000)
+		setTimeout(() => signIn(`${provider.toLowerCase()}`), 1500)
 	}
 
   return (
