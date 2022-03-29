@@ -7,7 +7,7 @@ function MyApp({
 }: AppProps) {
   return (
 	  <SessionProvider session={session}>
-		  <GlobalCSS />
+	    <GlobalCSS />
 	    <Component {...pageProps} />
 		</SessionProvider>
 	)

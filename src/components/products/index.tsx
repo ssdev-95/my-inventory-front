@@ -1,9 +1,39 @@
+import { useState, useEffect, useMemo } from "react"
+import { useSession } from "next-auth/react"
+import { api } from "../../services/api"
 import { Base, Table, Row } from "./base"
 
-function Products() {
+import { IProduct } from "../../types"
+
+interface ProductsProps {
+  current: string
+}
+
+function Products({ current }: ProductsProps) {
+  const { data: session } = useSession()
+  const [products, setProducts] = useState<IProduct[]>([])
+
+	useEffect(()=>{
+	 if (session) {
+	  api
+		 .get("/products")
+		 .then(({data})=>setProducts(data.products as IProduct[]))
+		 .catch(err => {
+		   throw err
+	   })
+   }
+	}, [])
+
+	const filtered = useMemo(()=>{
+	  const filterings = products
+		  .map(item=>item.category === current)
+
+		return filterings
+	},[current])
+
   return (
 		<Base>
-		  <span>Food</span>
+		  <span>{ current }</span>
   		<Table>
   		  <thead>
   			  <Row>
@@ -13,13 +43,13 @@ function Products() {
   				</Row>
   			</thead>
 
-  			<tbody>
-  			  <Row>
-  				  <td>Salame</td>
-	  				<td>500</td>
-	  				<td>2021-05-12</td>
+  			<tbody>{filtered.map(item=>(
+  			  <Row id={item.id}>
+  				  <td>{item.name}</td>
+	  				<td>{item.quantity}</td>
+	  				<td>{item.expiration}</td>
   				</Row>
-  			</tbody>
+  			))}</tbody>
   		</Table>
 		</Base>
 	)

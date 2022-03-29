@@ -7,8 +7,11 @@ const Base = styled.div`
 	border-radius: 0 0 50px 50px;
 
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
+
+	gap: 1.5rem;
 `
 
 const Table = styled.table``

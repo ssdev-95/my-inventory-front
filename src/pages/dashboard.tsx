@@ -1,3 +1,4 @@
+import { useState } from "react"
 import type { NextPage, GetServerSideProps } from "next"
 import { getSession } from "next-auth/react"
 
@@ -8,11 +9,18 @@ import { Products } from "../components/products"
 import { DashboardContainer } from "../globals"
 
 const Dashboard: NextPage = () => {
+  const [current, setCurrent] = useState("food")
+
   return (
 	  <DashboardContainer>
 		  <Header />
-			<Products />
-			<Footer />
+			<Products
+			  current={current}
+			/>
+			<Footer
+			  current={current}
+				setCurrent={setCurrent}
+			/>
 		</DashboardContainer>
 	)
 }
