@@ -3,6 +3,8 @@ import DiscordProvider from "next-auth/providers/discord"
 import GithubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
 
+import nookies from "nookies"
+
 export default NextAuth({
   providers: [
 		GoogleProvider({
@@ -18,5 +20,14 @@ export default NextAuth({
       clientSecret: process.env.DISCORD_CLIENT_SECRET
     })
   ],
-	callbacks: {}
+	callbacks: {
+		async signin({ user, account, profile }) {
+			const cookies = nookies.get(ctx)
+			console.log(cookies)
+			return true
+		},
+		//async session(session) {},
+		//async profile(session) {},
+		//async jwt(session) {},
+	}
 })
