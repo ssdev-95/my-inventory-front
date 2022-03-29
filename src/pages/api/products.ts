@@ -9,14 +9,13 @@ export default function (req:NextApiRequest, res: NextApiResponse){
 
 	try {
 		const file = fs.readFileSync(uri) as string
-  	const json = JSON.parse(file)
-  	console.log("json: \n", json)
+  	const { products } = JSON.parse(file)
 
-  	/*if (!products.length) {
+  	if (!products.length) {
   	  return res.status(404).end("No data found")
-  	}*/
+  	}
 
-  	return res.status(200).json({ products: file })
+  	return res.status(200).json({ products })
 	} catch {
 		return res.status(500).end("Deu ruim T.T")
 	}

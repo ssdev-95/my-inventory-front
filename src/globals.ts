@@ -12,6 +12,13 @@ const GlobalCSS = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+	button {
+		cursor: pointer;
+		&:hover {
+			filter: brightness(0.8);
+		}
+	}
 `
 
 const HomeContainer = styled.main`
@@ -22,8 +29,10 @@ const HomeContainer = styled.main`
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	background-image: url("/public/icons/heavy_box.svg") no-repeat;
+
+	background-image: url(/public/icons/heavy_box.svg) no-repeat;
 	background-color: #0c0c0c;
+	background-position: center;
 
 	& .login-button {
 		background: #55f;
@@ -36,13 +45,21 @@ const HomeContainer = styled.main`
 		font-weight: medium;
 	}
 
-	& .close-button {
+	& button.close-button {
 		height: 2rem;
 		width: 2rem;
+
 		background: transparent;
-		color: red;
 		border: 1px solid red;
 		border-radius: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& > span  {
+			line-height: 1rem;
+			color: red;
+		}
 	}
 `
 

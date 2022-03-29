@@ -26,7 +26,9 @@ function LoginModal({ toggle, isOpen }: IModalProps) {
 					background="#33f"
 					toggle={toggle}
 				/>
-				<button className="close-button" onClick={toggle}>x</button>
+				<button className="close-button" onClick={toggle}>
+					<span>x</span>
+				</button>
 			</ModalBase>
 		</Overlay>
 	)
