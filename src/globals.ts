@@ -54,7 +54,7 @@ const DashboardContainer = styled.main`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #7c7c7c;
+	background-color: #0c0c0c;
  `
 
 export { GlobalCSS, HomeContainer, DashboardContainer }
