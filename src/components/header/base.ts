@@ -10,18 +10,16 @@ const Base = styled.header`
 	align-items: center;
 	justify-content: space-between;
 
-	background-color: #0c0c0c;
-
 	& > img {
 		height: 70%;
 		width: auto;
-		border-radius: 100%;
-
-		filter: invert(100%);
 	}
 
 	& div {
 		height: 100%;
+		display: flex;
+		align-items: center;
+		gap: 1.35rem;
 	
 		p {
 	  	font-size: 1.45rem;
