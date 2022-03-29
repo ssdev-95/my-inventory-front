@@ -7,7 +7,7 @@ function Header() {
   return (
 	  <Base>
 		 <img
-		   src="/icons/app_logo.svg"
+		   src="/icons/favicon.svg"
 			 alt="app logo"
 		 />
 		 <div>
