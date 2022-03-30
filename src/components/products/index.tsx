@@ -17,7 +17,9 @@ function Products({ current }: ProductsProps) {
 	 if (session) {
 	  api
 		 .get("/products")
-		 .then(({data})=>setProducts(data.products as IProduct[]))
+		 .then(({data})=>{
+		   setProducts(JSON.parse(data.products) as IProduct[])
+		 })
 		 .catch(err => {
 		   throw err
 	   })

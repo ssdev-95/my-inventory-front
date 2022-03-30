@@ -8,6 +8,10 @@ const Base = styled.footer`
 	display: flex;
 	align-items: center;
 	justify-content: space-evenly;
+
+	@media(max-width: 860px) {
+		height: 8vh;
+	}
 `
 
 export { Base }

@@ -12,10 +12,29 @@ const Base = styled.div`
 	justify-content: flex-start;
 
 	gap: 1.5rem;
+
+	& > span {
+		align-self: flex-start;
+	}
+
+	@media(max-width: 860px) {
+		height: 84vh;
+		padding: 2rem 2rem;
+	}
 `
 
-const Table = styled.table``
+const Table = styled.table`
+  width: 400px;
+	max-width: 95vw;
 
-const Row = styled.tr``
+
+	tbody, thead {
+		width: 100%;
+	}
+`
+
+const Row = styled.tr`
+  width: 100%;
+`
 
 export { Base, Table, Row }

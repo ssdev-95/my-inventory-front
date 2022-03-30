@@ -35,6 +35,11 @@ const Base = styled.header`
 			width: auto;
 		}
 	}
+
+	@media(max-width: 860px) {
+		height: 8vh;
+		padding: 0.5rem 2rem;
+	}
 `
 
 export { Base }

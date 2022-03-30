@@ -30,9 +30,9 @@ const HomeContainer = styled.main`
 	align-items: center;
 	justify-content: space-around;
 
-	background-image: url(/public/icons/heavy_box.svg) no-repeat;
+	background: url("/icons/heavy_box.svg") no-repeat;
 	background-color: #0c0c0c;
-	background-position: center;
+	background-position: bottom;
 
 	& .login-button {
 		background: #55f;
@@ -60,6 +60,12 @@ const HomeContainer = styled.main`
 			line-height: 1rem;
 			color: red;
 		}
+	}
+
+	@media(min-width: 1024px) {
+		padding-left: 12rem;
+		align-items: flex-start;
+		background-position: center right;
 	}
 `
 

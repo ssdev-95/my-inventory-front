@@ -12,7 +12,6 @@ const Base = styled.button`
 	border: 0;
 
 	flex: 1;
-	position: relative;
 
 	& > img {
 		height: 60%;
@@ -20,19 +19,9 @@ const Base = styled.button`
 	}
 
 	&.active {
-		&:after {
-			content: "";
-
-			width: 100%;
-			height: 100%;
-
-			border-radius: 100% 100% 0 0;
-			background: #f0f2f5;
-
-			position: absolute;
-			left: 0;
-			bottom: 0;
-		}
+		background: url("/icons/drop.svg") no-repeat;
+		background-position-x: center;
+		background-size: cover;
 
 		& > img {
 			filter: invert(100%);

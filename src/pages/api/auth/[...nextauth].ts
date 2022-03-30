@@ -24,7 +24,6 @@ export default NextAuth({
   callbacks: {
     async signIn({ user, account, profile }: SignInOptions) {
       const token = "nrv3r3r3v8rv8re8vvvvevn4n4884nd";
-      console.log(token);
       setCookie(null, "@MyInventory:api-token", token);
       return true;
     },
