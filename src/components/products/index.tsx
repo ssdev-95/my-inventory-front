@@ -9,8 +9,6 @@ function Products() {
 	  const filterings = products
 		  .filter(item=>item.category === current)
 
-		console.log(products)
-
 		return filterings
 	},[current, products])
 
