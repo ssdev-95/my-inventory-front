@@ -30,6 +30,46 @@ const ModalBase = styled.div`
 	justify-content: center;
 
 	gap: 2rem;
+	background: #f0f2f5;
+
+	& > form {
+		height: 109%;
+		width: 100%;
+
+    display: grid;
+	  grid-template-rows: repeat(4, 1fr);
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: "nane name name name" "date date . qtd" "cat cat cat cat" "act act act act";
+		
+		& > input {
+			height: 2rem;
+			
+			&:first-of-type {
+			  grid-area: name;
+			}
+
+			&:nth-of-type(2) {
+				grid-area: date;
+			}
+
+			&:nth-of-type(3) {
+				grid-area:qtd;
+			}
+		}
+
+		& > div {
+	    height: 2rem;
+			display: flex;
+	
+			&.categories {
+  			grid-area: cat;
+			}
+
+			&.actions {
+				grid-area: act;
+			}
+		}
+	}
 `
 
 export { ModalBase, Overlay }

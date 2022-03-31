@@ -6,7 +6,7 @@ const uri = path.join(process.cwd(), 'public/mock.json')
 export default function (req:NextApiRequest, res: NextApiResponse){
   try {  	
 	  //const token = req.headers.cookie
-    console.log(req)
+    //console.log(req)
 
 		const file = fs.readFileSync(uri) as string
   	const { products } = JSON.parse(file)

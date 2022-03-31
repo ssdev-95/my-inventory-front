@@ -15,6 +15,25 @@ const Base = styled.header`
 		width: auto;
 	}
 
+	& > .add-button {
+		height: 40px;
+		width: 40px;
+
+		background: transparent;
+		border: 2px solid white;
+		border-radius: 10px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& > span {
+			font-weight: 700;
+			font-size: 1.45rem;
+			line-height: 1.45rem;
+		}
+	}
+
 	& div {
 		height: 100%;
 		display: flex;

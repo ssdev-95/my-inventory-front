@@ -1,37 +1,18 @@
-import { useState, useEffect, useMemo } from "react"
-import { useSession } from "next-auth/react"
-import { api } from "../../services/api"
+import { useMemo } from "react"
+import { useProduct } from "../../contexts"
 import { Base, Table, Row } from "./base"
 
-import { IProduct } from "../../types"
-
-interface ProductsProps {
-  current: string
-}
-
-function Products({ current }: ProductsProps) {
-  const { data: session } = useSession()
-  const [products, setProducts] = useState<IProduct[]>([])
-
-	useEffect(()=>{
-	 if (session) {
-	  api
-		 .get("/products")
-		 .then(({data})=>{
-		   setProducts(JSON.parse(data.products) as IProduct[])
-		 })
-		 .catch(err => {
-		   throw err
-	   })
-   }
-	}, [])
+function Products() {
+  const { products, current } = useProduct()
 
 	const filtered = useMemo(()=>{
 	  const filterings = products
-		  .map(item=>item.category === current)
+		  .filter(item=>item.category === current)
+
+		console.log(products)
 
 		return filterings
-	},[current])
+	},[current, products])
 
   return (
 		<Base>

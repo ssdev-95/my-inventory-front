@@ -28,11 +28,16 @@ const HomeContainer = styled.main`
   display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: flex-start;
+	gap: 7rem;
 
 	background: url("/icons/heavy_box.svg") no-repeat;
 	background-color: #0c0c0c;
 	background-position: bottom;
+
+	& > h1 {
+		margin-top: 15rem;
+	}
 
 	& .login-button {
 		background: #55f;
@@ -60,6 +65,10 @@ const HomeContainer = styled.main`
 			line-height: 1rem;
 			color: red;
 		}
+	}
+
+	@media(max-width: 860px) {
+		background-size: contain;
 	}
 
 	@media(min-width: 1024px) {

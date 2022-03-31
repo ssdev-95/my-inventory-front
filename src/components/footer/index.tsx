@@ -1,13 +1,11 @@
-import { useState, Dispatch, SetStateAction } from "react"
 import { TabButton } from "../tab-button"
 import { Base } from "./base"
 
-interface FootetProps {
-  current: string;
-	setCurrent: Dispatch<SetStateAction<string>>;
-}
+import { useProduct } from "../../contexts"
 
-function Footer({ current, setCurrent }:FooterProps) {
+function Footer() {
+  const { current, setCurrent } = useProduct()
+
 	const toggleCurrent = (categ: string) => {
 	  setCurrent(categ)
 	}

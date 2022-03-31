@@ -2,7 +2,11 @@ import { useSession, signOut } from "next-auth/react"
 import { useRouter } from "next/router"
 import { Base } from "./base"
 
-function Header() {
+interface HeaderProps {
+  toggle: ()=>void;
+}
+
+function Header({ toggle }: HeaderProps) {
   const { data: session } = useSession()
 	const router = useRouter()
 
@@ -18,6 +22,9 @@ function Header() {
 		   src="/icons/favicon.svg"
 			 alt="app logo"
 		 />
+		 <button className="add-button" onClick={toggle}>
+		   <span>+</span>
+		 </button>
 		 <div>
   		  <img
 				  onClick={logOut}

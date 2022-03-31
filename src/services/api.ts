@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseURL = process.env.API_ENDPOINT as string;
-
-const api = axios.create({ baseURL });
+const api = axios.create({
+  baseURL: "http://localhost:3000/api"
+});
 
 export { api };
