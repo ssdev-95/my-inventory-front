@@ -1,28 +1,37 @@
 import { useState, ChangeEvent, FormEvent } from "react"
-import { ModalBase, Overlay } from "./base"
+import { ModalBase, Overlay, Form } from "./base"
 
 interface IModalProps {
   isOpen: boolean;
 	toggle: ()=>void;
 }
 
+const initialValue = {
+  name:"", category:"", expiration:"", quantity:0
+}
+
 function ResisterProductModal({ toggle, isOpen }: IModalProps) {
-  const [product, setProduct] = useState({})
+  const [product, setProduct] = useState(initialValue)
 
 	function cleanUp() {
-	  const initialValue = {}
-		setProduct(initialValue)
-		toggle()
+		setProduct(initialValue)		
+		setTimeout(toggle, 1500)
 	}
 
 	function submit(e: FormEvent) {
 	  e.preventDefault()
 
-		cleanUp()
+		alert(JSON.stringify(product))
+
+		e.currentTarget.reset()
+		cleanUp(e)
 	}
 
 	function handleChange(e: ChangeEvent) {
-	  const temp = { [e.currentTarget.name]: e.currentTarget.value }
+	  const temp = {
+		  ...product,
+	    [e.currentTarget.name]: e.currentTarget.value
+		}
 
 		setProduct(temp)
 	}
@@ -30,34 +39,42 @@ function ResisterProductModal({ toggle, isOpen }: IModalProps) {
   return (
 	  <Overlay isOpen={isOpen}>
 	    <ModalBase>
-			  <form onSubmit={submit}>
+			  <Form onSubmit={submit}>
 				 <input
+				   required
 				   type="text"
 					 name="name"
+					 placeholder="Product name"
+					 maxLength="30"
 					 onChange={handleChange}
 				 />
 				 <input
+				   required
 				   type="date"
 					 name="expiration"
+					 placeholder="2021-05-23"
+					 max="3000-12-31"
 					 onChange={handleChange}
 				 />
 				 <input
+				   required
 				   type="number"
 					 name="quantity"
+					 placeholder="999"
+					 min="1"
+					 max="999"
 					 onChange={handleChange}
 				 />
 				 <select name="category" onChange={handleChange} >
 				   <option disabled selected value="">Categories</option>
 				   <option value="food">Food</option>
 					 <option value="hygiene">Hygiene</option>
-					 <option value="cleaning">Clean6ing</option>
+					 <option value="cleaning">Cleaning</option>
 					 <option disabled value="office">Office</option>
 				 </select>
-				 <div>
-				   <button type="button" onClick={cleanUp}>CANCEL</button>
-					 <button type="submit">SUBMIT</button>
-				 </div>
-				</form>
+				 <button type="button" onClick={cleanUp}>CANCEL</button>
+				 <button type="submit">SUBMIT</button>
+				</Form>
 			</ModalBase>
 		</Overlay>
 	)

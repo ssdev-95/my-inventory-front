@@ -32,44 +32,65 @@ const ModalBase = styled.div`
 	gap: 2rem;
 	background: #f0f2f5;
 
-	& > form {
-		height: 109%;
-		width: 100%;
-
-    display: grid;
-	  grid-template-rows: repeat(4, 1fr);
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-areas: "nane name name name" "date date . qtd" "cat cat cat cat" "act act act act";
+	border-radius: 1rem;
+`
+const Form = styled.form`
+  height: 109%;
+	width: 100%;
+  display: grid;
+	gap: 1.5rem;
+  grid-template-rows: repeat(4, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas: "name name name name"
+	                     "date date . qtd"
+											 "cat cat cat cat"
+											 "cancel . . submit";
 		
-		& > input {
-			height: 2rem;
-			
-			&:first-of-type {
-			  grid-area: name;
-			}
+	& > input {
+		height: 2rem;
+		color: #0c0c0c;
+		border-radius: 0.3125rem;
+		background: transparent;
 
-			&:nth-of-type(2) {
-				grid-area: date;
-			}
+		padding-left: 0.25rem;
 
-			&:nth-of-type(3) {
-				grid-area:qtd;
-			}
+		&:first-of-type {
+		  grid-area: name;
 		}
 
-		& > div {
-	    height: 2rem;
-			display: flex;
-	
-			&.categories {
-  			grid-area: cat;
-			}
+		&:nth-of-type(2) {
+			grid-area: date;
+		}
 
-			&.actions {
-				grid-area: act;
-			}
+	  &:nth-of-type(3) {
+			grid-area:qtd;
+		}
+	}
+
+	& > select {
+		height: 2rem;
+		grid-area: cat;
+		color: #0c0c0c;
+		border-radius: 0.3125rem;
+		background: transparent;
+	}
+	
+ 
+	& > button {
+		height: 2rem;
+		background: none;
+		widtth: 40%;
+		border-radius: 0.3125rem;
+		border: 1px solid red;
+  	color: red;
+		grid-area: cancel;
+
+		&[type=submit] {
+			color: green;
+			border: 1px solid green;
+			grid-area: submit;
 		}
 	}
 `
 
-export { ModalBase, Overlay }
+export { ModalBase, Overlay, Form }
