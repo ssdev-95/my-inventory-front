@@ -32,7 +32,11 @@ const ModalBase = styled.div`
 	gap: 2rem;
 	background: #f0f2f5;
 
-	border-radius: 1rem;
+	border-radius: 0.3125rem;
+
+	&.form {
+		width: 600px;
+	}
 `
 const Form = styled.form`
   height: 109%;
@@ -42,17 +46,20 @@ const Form = styled.form`
   grid-template-rows: repeat(4, 1fr);
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-areas: "name name name name"
-	                     "date date . qtd"
+	                     "date date qtd qtd"
 											 "cat cat cat cat"
-											 "cancel . . submit";
+											 "cancel cancel submit submit";
 		
-	& > input {
-		height: 2rem;
-		color: #0c0c0c;
-		border-radius: 0.3125rem;
+	& > fieldset {
 		background: transparent;
+		border: 1px solid #0c0c0c;
+		border-radius: 0.3125rem;
 
-		padding-left: 0.25rem;
+		& > legend {
+			color: #0c0c0c;
+			font-weight: 400;
+			padding: 0 4px;
+		}
 
 		&:first-of-type {
 		  grid-area: name;
@@ -65,14 +72,36 @@ const Form = styled.form`
 	  &:nth-of-type(3) {
 			grid-area:qtd;
 		}
-	}
 
-	& > select {
-		height: 2rem;
-		grid-area: cat;
-		color: #0c0c0c;
-		border-radius: 0.3125rem;
-		background: transparent;
+		&:last-of-type {
+			grid-area: cat;
+		}
+
+		& > input {
+			height: 2rem;
+			padding: 0 4px;
+			width: 100%;
+			background: transparent;
+			color: #0c0c0c;
+			outline-color: transparent;
+			border: 0;
+
+			&:focus {
+				outline:none;
+			}
+		}
+
+  	& > select {
+			width: 100%;
+			height: 100%;
+  		color: #0c0c0c;
+			border: 0;
+  		background: transparent;
+
+			&:focus {
+				outline:none;
+			}
+		}
 	}
 	
  
