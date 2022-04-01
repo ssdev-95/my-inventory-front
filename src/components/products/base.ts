@@ -35,6 +35,11 @@ const Table = styled.table`
 
 const Row = styled.tr`
   width: 100%;
+
+	td, th {
+		flex: 1;
+		text-align: center;
+	}
 `
 
 export { Base, Table, Row }

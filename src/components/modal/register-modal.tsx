@@ -77,7 +77,7 @@ function ResisterProductModal({ toggle, isOpen }: IModalProps) {
 				 <fieldset>
 				  <legend>Category</legend>
 	 		 	  <select name="category" onChange={handleChange} >
-	  	 		   <option disabled selected value="">Categories</option>
+	  	 		   <option disabled selected value=""></option>
 		  		   <option value="food">Food</option>
 	  				 <option value="hygiene">Hygiene</option>
 		  			 <option value="cleaning">Cleaning</option>
