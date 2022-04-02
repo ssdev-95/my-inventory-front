@@ -35,6 +35,11 @@ const Table = styled.table`
 
 const Row = styled.tr`
   width: 100%;
+	margin-top: 2rem;
+
+	&:hover {
+		box-shadow: 2px 2px 2px 0 cyan;
+	}
 
 	td, th {
 		flex: 1;

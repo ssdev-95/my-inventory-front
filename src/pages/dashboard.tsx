@@ -17,9 +17,10 @@ const Dashboard: NextPage = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	async function getProducts() {
-	  const { data } = await api.get("/products")
+	  const res = await api.get("/products")
+		  .catch((err)=>alert(err))
 
-		setProducts(data.products)
+		setProducts(res?.data?.products??[])
 	}
 
 	function toggleModal() {
