@@ -4,8 +4,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
 
-import { setCookie } from "nookies";
-
+const apiUri = process.env.API_ENDPOINT as string;
 export default NextAuth({
   providers: [
     GoogleProvider({
@@ -23,11 +22,18 @@ export default NextAuth({
   ],
   callbacks: {
     async signIn({ user, account, profile }: SignInOptions) {
-      const token = "nrv3r3r3v8rv8re8vvvvevn4n4884nd";
-      setCookie(null, "@MyInventory:api-token", token);
-      return true;
+			/*try {
+				const token = "nww8xh38h38fushjwqq"
+				localStorage.setItem("@MyInventory:api-token", token)
+        return true;
+  		} catch {
+			 return false;
+		  }*/
+	    return true;
     },
     async session({ session }: { session: Session; user: User; token: any }) {
+			//const cookie = localStorage.getItem("@MyInventory:api-token")
+			//console.log(cookie)
       return session;
     },
     // async profile(profile:Partial<CallbacksOptions<Profile, Account>>) {

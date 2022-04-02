@@ -1,19 +1,27 @@
 import { NextApiRequest, NextApiResponse } from "next"
-import fs from 'fs'
-import path from 'path'
+import nookies from "nookies"
 
-const uri = path.join(process.cwd(), 'public/mock.json')
-export default function (req:NextApiRequest, res: NextApiResponse){
-  try {  	
-	  //const token = req.headers.cookie
-    //console.log(req)
+import { api } from "../../services/api"
 
-		const file = fs.readFileSync(uri) as string
-  	const { products } = JSON.parse(file)
+export default async function (
+	req:NextApiRequest, res: NextApiResponse
+){
+  try {
+		const endpoint = process.env.API_ENDPOINT as string;
+	  const token = nookies.get({ req })["@my_inventory:api_token"]
 
-  	if (!products.length) {
-  	  return res.status(404).end("No data found")
-  	}
+		const res = await api.get(`${endpoint}products`, {
+			headers: {
+				Authorization: `Bearer ${token}`
+			}
+		})
+
+		const products = res?.data?.products
+		console.log(products)
+
+  	if (!products?.length) {
+  	  return res.status(404).json({ products: [] })
+		}
 
   	return res.status(200).json({ products })
 	} catch(err) {
