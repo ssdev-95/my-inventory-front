@@ -24,7 +24,6 @@ const Base = styled.button`
 		background-size: cover;
 
 		& > img {
-			filter: invert(100%);
 			z-index: 3;
 		}
 	}

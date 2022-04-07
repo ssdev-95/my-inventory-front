@@ -1,4 +1,6 @@
-import { ButtonHTMLAttributes } from "react"
+import { useMemo, ButtonHTMLAttributes } from "react"
+
+import { useProduct } from "contexts"
 import { Base } from "./base"
 
 type ButtonAttributes = ButtonHTMLAttributes<HTMLButtonElement>
@@ -7,12 +9,25 @@ type TabButtonProps = ButtonAttributes & {
 }
 
 function TabButton({ category, ...props }: TabButtonProps) {
+	const { current } = useProduct()
+
+	const isActive = useMemo(()=>{
+	  return (current === category);
+	}, [current])
+
   return (
 	  <Base { ...props }>
-		  <img
-			  src={`/icons/${category}.svg`}
-				alt={`${category}_icon`}
-			/>
+		  {isActive ? (
+			  <img
+				  src={`/icons/${category}-active.svg`}
+					alt={`${category}_icon`}
+				/>
+			) :(
+  		  <img
+  			  src={`/icons/${category}.svg`}
+	  			alt={`${category}_icon`}
+		  	/>
+			)}
 		</Base>
 	)
 }

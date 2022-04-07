@@ -4,7 +4,7 @@ const Base = styled.header`
   width: 1240px;
 	max-width: 100vw;
 	height: 12vh;
-	padding: 0.25rem;
+	padding: 0.5rem;
 
 	display: flex;
 	align-items: center;
@@ -20,7 +20,7 @@ const Base = styled.header`
 		width: 40px;
 
 		background: transparent;
-		border: 2px solid white;
+		border: 2px solid #04AA79;
 		border-radius: 10px;
 
 		display: flex;
@@ -31,6 +31,7 @@ const Base = styled.header`
 			font-weight: 700;
 			font-size: 1.45rem;
 			line-height: 1.45rem;
+			color: #04AA79;
 		}
 	}
 
@@ -39,9 +40,12 @@ const Base = styled.header`
 		display: flex;
 		align-items: center;
 		gap: 1.35rem;
+
+		position: relative;
 	
 		p {
 	  	font-size: 1.45rem;
+			z-index: 5;
 			
 			@media(max-width:720px) {
 				display: none;
@@ -52,6 +56,26 @@ const Base = styled.header`
 			border-radius: 100%;
 			height: 70%;
 			width: auto;
+			z-index: 5;
+		}
+
+		&::after {
+			content: "";
+
+			height: calc(70% + 8px);
+		  width: calc(100% + 8px);
+
+			border-radius: 500px;
+
+			background: #04AA79;
+			position: absolute;
+			z-index: 1;
+
+			transform: translateX(-4px);
+
+			@media(min-width: 1024px) {
+				border-radius: 16px;
+			}
 		}
 	}
 

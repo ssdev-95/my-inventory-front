@@ -1,6 +1,6 @@
 import { useMemo } from "react"
 import { useProduct } from "../../contexts"
-import { Base, Table, Row } from "./base"
+import { Base, Table, THead, TBody, Row } from "./base"
 
 function Products() {
   const { products, current } = useProduct()
@@ -16,21 +16,21 @@ function Products() {
 		<Base>
 		  <span>{ current }</span>
   		<Table>
-  		  <thead>
+  		  <THead>
   			  <Row>
   				  <th>Product</th>
 	  				<th>Quantity</th>
 	  				<th>Expiration</th>
   				</Row>
-  			</thead>
+  			</THead>
 
-  			<tbody>{filtered.map(item=>(
+  			<TBody>{filtered.map(item=>(
   			  <Row id={item.id}>
   				  <td>{item.name}</td>
 	  				<td>{item.quantity}</td>
 	  				<td>{item.expiration}</td>
   				</Row>
-  			))}</tbody>
+  			))}</TBody>
   		</Table>
 		</Base>
 	)

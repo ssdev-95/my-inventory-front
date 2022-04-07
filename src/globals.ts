@@ -15,9 +15,6 @@ const GlobalCSS = createGlobalStyle`
 
 	button {
 		cursor: pointer;
-		&:hover {
-			filter: brightness(0.8);
-		}
 	}
 `
 
@@ -34,6 +31,10 @@ const HomeContainer = styled.main`
 	background: url("/icons/heavy_box.svg") no-repeat;
 	background-color: #0c0c0c;
 	background-position: bottom;
+
+	& > button:hover {
+		filter: brightness(0.8);
+	}
 
 	& > h1 {
 		margin-top: 15rem;
