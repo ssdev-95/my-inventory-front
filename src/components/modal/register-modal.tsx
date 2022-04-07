@@ -1,6 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react"
 import { ModalBase, Overlay, Form } from "./base"
 
+import { api } from "../../services/api"
+
 interface IModalProps {
   isOpen: boolean;
 	toggle: ()=>void;
@@ -18,10 +20,14 @@ function ResisterProductModal({ toggle, isOpen }: IModalProps) {
 		setTimeout(toggle, 1500)
 	}
 
-	function submit(e: FormEvent) {
+	async function submit(e: FormEvent) {
 	  e.preventDefault()
 
-		alert(JSON.stringify(product))
+		const { data } = await api.post("/posts", product)
+
+		if(!Object.entries(data).length) {
+		  alert("Registry failed ;C")
+		}
 
 		e.currentTarget.reset()
 		cleanUp(e)
