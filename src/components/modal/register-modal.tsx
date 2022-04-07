@@ -1,7 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from "react"
 import { ModalBase, Overlay, Form } from "./base"
 
-import { api } from "../../services/api"
+import { api } from "services/api"
+import { useProduct } from "contexts"
 
 interface IModalProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ const initialValue = {
 
 function ResisterProductModal({ toggle, isOpen }: IModalProps) {
   const [product, setProduct] = useState(initialValue)
+	const { products, setProducts } = useProduct()
 
 	function cleanUp() {
 		setProduct(initialValue)		
@@ -23,13 +25,18 @@ function ResisterProductModal({ toggle, isOpen }: IModalProps) {
 	async function submit(e: FormEvent) {
 	  e.preventDefault()
 
-		const { data } = await api.post("/posts", product)
+		const { data } = await api.post("/products", product)
 
-		if(!Object.entries(data).length) {
+		if(!Object.entries(data?.product).length) {
 		  alert("Registry failed ;C")
 		}
 
-		e.currentTarget.reset()
+		setProducts(prev => [
+		  ...prev,
+			data?.product
+		])
+
+		e.target.reset()
 		cleanUp(e)
 	}
 
