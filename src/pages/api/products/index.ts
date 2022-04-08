@@ -23,6 +23,9 @@ export default async function (
 			  })
 
 			  return res.status(200).json({ product })
+			case "DELETE":
+				console.log(req.query)
+				return res.status(200).json({ success: true })
 			default:
 				return res.status(666).end("Not allowed")
 		}
