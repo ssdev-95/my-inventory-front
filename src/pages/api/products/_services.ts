@@ -1,7 +1,8 @@
 import { api } from "services/api"
+import { IProduct } from "types"
 
 type AddProps = {
-	body: any;
+	body: IProduct;
 	endpoint: string;
 	token: string;
 }
@@ -24,12 +25,24 @@ const addProduct = async ({
 	return res?.data?.product;
 }
 
+const updateProduct = async ({
+	body, endpoint, token
+}: AddProps) => {
+	const res = await api.put(
+		endpoint, body, params(token)
+  )
+
+	console.log(res?.data)
+	return res?.data?.success;
+}
+
 const getProducts = async ({
 	endpoint, token
 }: GetProps) => {
 	const res = await api.get(endpoint, params(token))
 	return res?.data?.products;
 }
+
 const deleteProduct = async ({
 	endpoint, token
 }: GetProps) => {
@@ -37,4 +50,6 @@ const deleteProduct = async ({
 	return res?.data?.success;
 }
 
-export { addProduct, getProducts, deleteProduct }
+export {
+	addProduct, getProducts, deleteProduct, updateProduct
+}

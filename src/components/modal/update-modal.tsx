@@ -17,8 +17,9 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	const { products, setProducts } = useProduct()
 
 	function cleanUp() {
-	  const initialValue = {}
-		setProduct(initialValue)		
+	  const initialValue = { category: "default" }
+		setProduct(initialValue)
+		localStorage.removeItem("@my_inventory:updating_item")
 		setTimeout(toggle, 1500)
 	}
 
@@ -27,13 +28,14 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 
 		const res = await api.put("/products", product)
 
-		if(!Object.entries(res?.data?.product).length) {
-		  alert("Update failed ;C")
+		if(!res?.data?.success) {
+		  alert("Update failed")
+			return;
 		}
 
-		const updated = products.filter(prod => {
+		const updated = products.map(prod => {
 		  if (prod.id === product.id) {
-			  return { ...res?.data?.product };
+			  return { ...product };
 			}
 
 			return prod;
@@ -57,7 +59,6 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 		  .catch(err => alert(err))
 
 		if(res?.data?.success) {
-		  alert("Deu bom")
 		  const filtered = products.filter(prod => prod.id !== product.id)
 			setProducts(filtered)
 		}
@@ -68,7 +69,8 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 
 	useEffect(()=>{
 	  const stored = localStorage.getItem("@my_inventory:updating_item")
-    setProduct(JSON.parse(stored) as IProduct)
+		const parsed = JSON.parse(stored) as IProduct;
+    setProduct(parsed)
   }, [isOpen])
 
   return (
@@ -117,7 +119,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 				 </fieldset>
 				 <fieldset>
 				  <legend>Category</legend>
-	 		 	  <select name="category" defaultValue={product?.category ?? "default"} onChange={handleChange} >
+	 		 	  <select name="category" defaultValue={product?.category} onChange={handleChange} >
 	  	 		   <option disabled value="default">Category</option>
 		  		   <option value="food">Food</option>
 	  				 <option value="hygiene">Hygiene</option>

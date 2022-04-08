@@ -1,7 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import nookies from "nookies"
 
-import { addProduct, getProducts, deleteProduct } from "./_services"
+import {
+	addProduct, getProducts, deleteProduct, updateProduct
+} from "./_services"
 
 const endpoint = `${process.env.API_ENDPOINT}products`
 export default async function (
@@ -9,7 +11,8 @@ export default async function (
 ){
 	const token = nookies.get({ req })["@my_inventory:api_token"]
   try {
-		switch(req.method) {
+		const { body, method } = req
+		switch(method) {
 			case "GET":
     		const products = await getProducts({
     			endpoint, token
@@ -17,18 +20,22 @@ export default async function (
 
       	return res.status(200).json({ products })
 			case "POST":
-				const { body } = req
 				const product = await addProduct({
 				  endpoint, body,	token
 			  })
 
 			  return res.status(200).json({ product })
+			case "PUT":
+				const success = await updateProduct({
+				  endpoint, body, token
+			  })
+			  return res.status(200).json({ success })
 			case "DELETE":
 				const uri = `${endpoint}?id=${req?.query?.id}`
-				const success = await deleteProduct({
+				const succeed = await deleteProduct({
 					endpoint: uri, token
 				})
-				return res.status(200).json({ success })
+				return res.status(200).json({ success: succeed })
 			default:
 				return res.status(666).end("Not allowed")
 		}
