@@ -13,7 +13,7 @@ const initialValue = {
   name:"", category:"", expiration:"", quantity:0
 }
 
-function ResisterProductModal({ toggle, isOpen }: IModalProps) {
+function RegisterProductModal({ toggle, isOpen }: IModalProps) {
   const [product, setProduct] = useState(initialValue)
 	const { products, setProducts } = useProduct()
 
@@ -105,4 +105,4 @@ function ResisterProductModal({ toggle, isOpen }: IModalProps) {
 	)
 }
 
-export { ResisterProductModal }
+export { RegisterProductModal }
