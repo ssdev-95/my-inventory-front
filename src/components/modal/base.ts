@@ -51,6 +51,24 @@ const Form = styled.form`
 	                     "date date qtd qtd"
 											 "cat cat cat cat"
 											 "cancel cancel submit submit";
+
+  &.update {
+		grid-template-areas: "name name name name"
+		                     "date date qtd qtd"
+												 "cat cat cat cat"
+												 "act act act act";
+		& > div.actions {
+			grid-area: act;
+
+			display: flex;
+			gap: 1.5rem;
+
+			& > button {
+				flex: 1;
+				height: 100%;
+			}
+		}   
+	}
 		
 	& > fieldset {
 		background: transparent;
@@ -107,7 +125,7 @@ const Form = styled.form`
 	}
 	
  
-	& > button {
+	& button {
 		height: 2rem;
 		background: none;
 		widtth: 40%;
