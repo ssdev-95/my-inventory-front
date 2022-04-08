@@ -28,8 +28,13 @@ const getProducts = async ({
 	endpoint, token
 }: GetProps) => {
 	const res = await api.get(endpoint, params(token))
-
 	return res?.data?.products;
 }
+const deleteProduct = async ({
+	endpoint, token
+}: GetProps) => {
+	const res = await api.delete(endpoint, params(token))
+	return res?.data?.success;
+}
 
-export { addProduct, getProducts }
+export { addProduct, getProducts, deleteProduct }

@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next"
 import nookies from "nookies"
 
-import { addProduct, getProducts } from "./_services"
+import { addProduct, getProducts, deleteProduct } from "./_services"
 
 const endpoint = `${process.env.API_ENDPOINT}products`
 export default async function (
@@ -24,8 +24,11 @@ export default async function (
 
 			  return res.status(200).json({ product })
 			case "DELETE":
-				console.log(req.query)
-				return res.status(200).json({ success: true })
+				const uri = `${endpoint}?id=${req?.query?.id}`
+				const success = await deleteProduct({
+					endpoint: uri, token
+				})
+				return res.status(200).json({ success })
 			default:
 				return res.status(666).end("Not allowed")
 		}

@@ -25,15 +25,15 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	async function submit(e: FormEvent) {
 	  e.preventDefault()
 
-		const { data } = await api.put("/products", product)
+		const res = await api.put("/products", product)
 
-		if(!Object.entries(data?.product).length) {
-		  alert("Registry failed ;C")
+		if(!Object.entries(res?.data?.product).length) {
+		  alert("Update failed ;C")
 		}
 
 		const updated = products.filter(prod => {
 		  if (prod.id === product.id) {
-			  return { ...product };
+			  return { ...res?.data?.product };
 			}
 
 			return prod;
@@ -53,11 +53,13 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	}
 
 	async function handleDelete() {
-	  const { data } = await api.delete(`/products&id=${product?.id}`)
+	  const res = await api.delete(`/products?id=${product?.id}`)
 		  .catch(err => alert(err))
 
-		if(data?.success) {
+		if(res?.data?.success) {
+		  alert("Deu bom")
 		  const filtered = products.filter(prod => prod.id !== product.id)
+			setProducts(filtered)
 		}
 
 		cleanUp()
@@ -67,7 +69,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	useEffect(()=>{
 	  const stored = localStorage.getItem("@my_inventory:updating_item")
     setProduct(JSON.parse(stored) as IProduct)
-  }, [])
+  }, [isOpen])
 
   return (
 	  <Overlay isOpen={isOpen}>
