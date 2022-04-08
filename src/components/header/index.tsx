@@ -9,6 +9,7 @@ interface HeaderProps {
 function Header({ toggle }: HeaderProps) {
   const { data: session } = useSession()
 	const router = useRouter()
+	const image = session?.user.image as string;
 
 	const logOut = () => {
 	  signOut()
@@ -28,7 +29,7 @@ function Header({ toggle }: HeaderProps) {
 		 <div>
   		  <img
 				  onClick={logOut}
-  			  src={session?.user.image}
+  			  src={image}
   				alt={session?.user.name}
   			/>
   			<p>{session?.user.name}</p>

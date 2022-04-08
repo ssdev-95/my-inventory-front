@@ -5,7 +5,7 @@ import { Base } from "./base"
 
 type ButtonAttributes = ButtonHTMLAttributes<HTMLButtonElement>
 type TabButtonProps = ButtonAttributes & {
-  caregory: string;
+  category: string;
 }
 
 function TabButton({ category, ...props }: TabButtonProps) {
