@@ -7,14 +7,16 @@ import { useProduct } from "../contexts"
 import { Header } from "../components/header"
 import { Footer } from "../components/footer"
 import { Products } from "../components/products"
-import { ResisterProductModal } from "../components/modal/register-modal"
+import { RegisterProductModal } from "../components/modal/register-modal"
+import { UpdateProductModal } from "../components/modal/update-modal"
 
 import { IProduct } from "../types"
 import { DashboardContainer } from "../globals"
 
 const Dashboard: NextPage = () => {
   const { setProducts } = useProduct()
-	const [isOpen, setIsOpen] = useState(false)
+	const [addProductModalOpen, setAddProductModalOpen] = useState(false)
+	const [updateProductModalOpen, setUpdateProductModalOpen] = useState(false)
 
 	async function getProducts() {
 	  const res = await api.get("/products")
@@ -23,9 +25,13 @@ const Dashboard: NextPage = () => {
 		setProducts(res?.data?.products??[])
 	}
 
-	function toggleModal() {
-	  setIsOpen(prev=>!prev)
+	function toggleAddProductModal() {
+	  setAddProductModalOpen(prev=>!prev)
 	}
+
+	function toggleUpdateProductModal() {
+	  setUpdateProductModalOpen(prev=>!prev)
+  }
 
   useEffect(()=>{
 	  getProducts()
@@ -33,12 +39,16 @@ const Dashboard: NextPage = () => {
 
   return (
 	  <DashboardContainer>
-		  <Header toggle={toggleModal} />
-			<Products	/>
+		  <Header toggle={toggleAddProductModal} />
+			<Products handler={toggleUpdateProductModal}	/>
 			<Footer />
-			<ResisterProductModal
-			  isOpen={isOpen}
-				toggle={toggleModal}
+			<RegisterProductModal
+			  isOpen={addProductModalOpen}
+				toggle={toggleAddProductModal}
+			/>
+			<UpdateProductModal
+			  isOpen={updateProductModalOpen}
+				toggle={toggleUpdateProductModal}              
 			/>
 		</DashboardContainer>
 	)
