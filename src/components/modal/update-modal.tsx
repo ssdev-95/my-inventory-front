@@ -12,12 +12,14 @@ interface IModalProps {
 	toggle: ()=>void;
 }
 
+type ChangeFunction = ChangeEvent<HTMLInputElement | HTMLSelectElement>
+
 function UpdateProductModal({ toggle, isOpen }: IModalProps) {
   const [product, setProduct] = useState<IProduct>({} as IProduct)
 	const { products, setProducts } = useProduct()
 
 	function cleanUp() {
-	  const initialValue = { category: "default" }
+	  const initialValue:IProduct = { category: "default" } as IProduct
 		setProduct(initialValue)
 		localStorage.removeItem("@my_inventory:updating_item")
 		setTimeout(toggle, 1500)
@@ -33,7 +35,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 			return;
 		}
 
-		const updated = products.map(prod => {
+		const updated = products.map((prod:IProduct) => {
 		  if (prod.id === product.id) {
 			  return { ...product };
 			}
@@ -45,7 +47,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 		cleanUp()
 	}
 
-	function handleChange(e: ChangeEvent) {
+	function handleChange(e: ChangeFunction) {
 	  const temp = {
 		  ...product,
 	    [e.currentTarget.name]: e.currentTarget.value
@@ -59,7 +61,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 		  .catch(err => alert(err))
 
 		if(res?.data?.success) {
-		  const filtered = products.filter(prod => prod.id !== product.id)
+		  const filtered = products.filter((prod:IProduct)=> prod.id !== product.id)
 			setProducts(filtered)
 		}
 
@@ -68,7 +70,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	}
 
 	useEffect(()=>{
-	  const stored = localStorage.getItem("@my_inventory:updating_item")
+	  const stored:string = localStorage.getItem("@my_inventory:updating_item") as string
 		const parsed = JSON.parse(stored) as IProduct;
     setProduct(parsed)
   }, [isOpen])
@@ -88,7 +90,7 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 	  		   type="text"
    				 name="name"
 					 defaultValue={product?.name}
-  			   maxLength="30"
+  			   maxLength={30}
 	  			 onChange={handleChange}
   			  />
 		 		 </fieldset>
@@ -112,8 +114,8 @@ function UpdateProductModal({ toggle, isOpen }: IModalProps) {
 			  	 name="quantity"
 		  		 placeholder="999"
 					 defaultValue={product?.quantity}
-		  		 min="1"
-		  		 max="999"
+		  		 min={1}
+		  		 max={999}
 		  		 onChange={handleChange}
 				  />
 				 </fieldset>

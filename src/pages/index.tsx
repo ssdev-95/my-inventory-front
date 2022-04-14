@@ -53,8 +53,8 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 	if(session) {
   	const { data } = await api.post(`${endpoint}authenticate`, {
-  	  login: session?.user.name,
-  		email: session?.user.email
+  	  login: session?.user?.name,
+  		email: session?.user?.email
   	})
 
 		nookies.set(ctx, "@my_inventory:api_token", data?.token)

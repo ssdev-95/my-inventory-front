@@ -1,3 +1,4 @@
+import { useMemo } from "react"
 import { useSession, signOut } from "next-auth/react"
 import { useRouter } from "next/router"
 import { Base } from "./base"
@@ -9,7 +10,11 @@ interface HeaderProps {
 function Header({ toggle }: HeaderProps) {
   const { data: session } = useSession()
 	const router = useRouter()
-	const image = session?.user.image as string;
+
+	const isLoggedIn = useMemo(()=> {
+	  const _temp = (session !== undefined || session !== null)
+	  return _temp;
+	}, [session])
 
 	const logOut = () => {
 	  signOut()
@@ -26,14 +31,22 @@ function Header({ toggle }: HeaderProps) {
 		 <button className="add-button" onClick={toggle}>
 		   <span>+</span>
 		 </button>
-		 <div>
-  		  <img
-				  onClick={logOut}
-  			  src={image}
-  				alt={session?.user.name}
-  			/>
-  			<p>{session?.user.name}</p>
-			</div>
+	   { isLoggedIn ? (
+		   <div>
+		 		  <img
+			  	  onClick={logOut}
+  		  	  src={`${session?.user?.image}`}
+  		  		alt={`${session?.user?.name}`}
+  		  	/>
+  		  	<p>{`${session?.user?.name}`}</p>
+			  </div>) : (
+				  <div>
+					  <img
+						  src="/icons/discord.svg"
+							alt="not logged"
+						/>
+					</div>
+				)}
 		</Base>
 	)
 }

@@ -4,17 +4,23 @@ import { ModalBase, Overlay, Form } from "./base"
 import { api } from "services/api"
 import { useProduct } from "contexts"
 
+import { IProduct } from "../../types"
+
 interface IModalProps {
   isOpen: boolean;
 	toggle: ()=>void;
 }
 
+type ChangeFunction = ChangeEvent<HTMLInputElement | HTMLSelectElement>
+
+type Product = Omit<IProduct, 'id' | 'owner_id'>
+
 const initialValue = {
-  name:"", category:"", expiration:"", quantity:0
+  name:"", category:"", expiration:"", quantity:""
 }
 
 function RegisterProductModal({ toggle, isOpen }: IModalProps) {
-  const [product, setProduct] = useState(initialValue)
+  const [product, setProduct] = useState<Product>(initialValue)
 	const { products, setProducts } = useProduct()
 
 	function cleanUp() {
@@ -31,16 +37,17 @@ function RegisterProductModal({ toggle, isOpen }: IModalProps) {
 		  alert("Registry failed ;C")
 		}
 
-		setProducts(prev => [
+		setProducts((prev:IProduct[]) => [
 		  ...prev,
 			data?.product
 		])
 
-		e.target.reset()
-		cleanUp(e)
+    const target = e.target as HTMLFormElement
+		target.reset()
+		cleanUp()
 	}
 
-	function handleChange(e: ChangeEvent) {
+	function handleChange(e: ChangeFunction) {
 	  const temp = {
 		  ...product,
 	    [e.currentTarget.name]: e.currentTarget.value
@@ -60,7 +67,7 @@ function RegisterProductModal({ toggle, isOpen }: IModalProps) {
 	  			 required
 	  		   type="text"
    				 name="name"
-  			   maxLength="30"
+  			   maxLength={30}
 	  			 onChange={handleChange}
   			  />
 		 		 </fieldset>
@@ -82,8 +89,8 @@ function RegisterProductModal({ toggle, isOpen }: IModalProps) {
 			  	 type="number"
 			  	 name="quantity"
 		  		 placeholder="999"
-		  		 min="1"
-		  		 max="999"
+		  		 min={1}
+		  		 max={999}
 		  		 onChange={handleChange}
 				  />
 				 </fieldset>
