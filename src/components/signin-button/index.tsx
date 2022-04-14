@@ -17,7 +17,11 @@ function SigninButton({ provider, toggle, ...props }: any) {
 	}
 
   return (
-		<ButtonBase { ...props } onClick={login} >
+		<ButtonBase
+		  { ...props }
+			onClick={login}
+			disabled={provider === "Google"}
+		>
 		  <img
 			  src={src}
 				alt="social icon"

@@ -17,6 +17,11 @@ const ButtonBase = styled.button`
 	align-items: center;
 	justify-content: space-between;
 
+	&:disabled {
+		filter: brightness(0.48);
+		cursor: not-allowed;
+	}
+
 	& > img {
 		filter: invert(100%);
 		height: 80%;
