@@ -6,14 +6,21 @@ interface ProdProps {
   handler: () => void;
 }
 
+const beautify = (str: string) => {
+  return str.split("-").reverse().join("/")
+}
+
 function Products({ handler }: ProdProps) {
   const { products, current } = useProduct()
 
 	const filtered = useMemo(()=>{
 	  const filterings = products
-		  .filter(item=>item.category === current)
+		  .filter(item=> item.category === current)
 
-		return filterings
+		return filterings.map(item => ({
+		  ...item,
+		  expiration: beautify(item.expiration)
+	  }))
 	},[current, products])
 
 	function handleClick(id: string) {
