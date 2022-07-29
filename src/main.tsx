@@ -4,11 +4,7 @@ import eruda from 'eruda'
 import { App } from './App'
 import './globals.css'
 
-if(
-  !!document &&
-	window.innerWidth <= 860 &&
-	import.meta.env.DEV
-) {
+if (!!document && window.innerWidth <= 860 && import.meta.env.DEV) {
   eruda.init()
 }
 
