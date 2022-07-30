@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://raw.githubusercontent.com/xSallus/my-inventory-front/main/public/icons/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/xSallus/my-inventory-front/e14c6e42773e21a87c6ab60dd5cc4ffe67836bbf/public/icons/app_icon.svg" height="35" align="center"/>&nbsp;&nbsp;My Inventory</h1>
 <h3>v4.0</h3>
 <p align="center">
     <img src="https://raw.githubusercontent.com/xSallus/my-inventory-front/e14c6e42773e21a87c6ab60dd5cc4ffe67836bbf/public/icons/heavy_box.svg" height="200px" width="auto" alt="Mockup"/>
