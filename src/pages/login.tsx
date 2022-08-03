@@ -1,16 +1,16 @@
 import { useState, FormEvent } from 'react'
-import { auth, signInWithEmailAndPassword } from '../services/firebase'
+import { Navigate } from 'react-router-dom'
+import {Loading} from '../components/loading'
 
-type User = {
-  id: string
-  nick: string
-}
+import { useAuth } from '../contexts/auth'
 
 export function Signin() {
-  const [error, setError] = useState<string | null>(null)
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [user, setUser] = useState<User | null>(null)
+	const [password, setPassword] = useState('')
+
+	const [error, setError] = useState<string | null | any>(null)
+
+  const { user, onSignInRequested, toggleLoading, isLoading } = useAuth()
 
   function resetFields() {
     setEmail('')
@@ -20,7 +20,9 @@ export function Signin() {
 
   async function handleSignin(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault()
+		toggleLoading()
 
+    try {
     if (!email || !password) {
       setError('Invalid credentials')
 
@@ -28,34 +30,37 @@ export function Signin() {
       return
     }
 
-    const res = await signInWithEmailAndPassword(auth, email, password)
-
-    setUser({
-      id: res.user.uid,
-      nick: email.split('@')[0],
-    })
+    await onSignInRequested('credentials', {
+		  email,
+			password
+		})
+		} catch (err:any) {
+		  setError(err.message.split('/')[1].replace(').',''))
+		}
 
     setTimeout(resetFields, 700)
   }
 
-  if (user) {
+  if (!!user) {
     return (
-      <button className="mt-4 p-3 w-full bg-blue-800 text-blue-100 rounded-md">
-        {user.nick}
-      </button>
+		  <Navigate to="/home" />
     )
   }
 
   return (
     <div className="flex-1 flex items-center justify-center w-[1100px] max-w-full">
       <div className="w-[300px] relative flex flex-col gap-6">
-        <button className="mt-2 p-3 w-full bg-blue-900 text-blue-100 rounded-md">
+        <button
+					onClick={()=>onSignInRequested('github')}
+					className="mt-2 p-3 w-full bg-blue-900 text-blue-100 rounded-md"
+				>
           Enter with Github
         </button>
         <strong className="mx-auto text-blue-100 text-lg">~ or ~</strong>
         <form onSubmit={handleSignin}>
           <input
             type="email"
+						required
             className="p-3 w-full rounded-md"
             placeholder="salame@developing.comma"
             value={email}
@@ -63,6 +68,7 @@ export function Signin() {
           />
           <input
             type="password"
+						required
             className="my-2 p-3 w-full rounded-md"
             placeholder="Do you remekber you password, right?"
             value={password}
@@ -70,9 +76,15 @@ export function Signin() {
           />
           <button
             type="submit"
-            className="mt-4 p-3 w-full bg-blue-800 text-blue-100 rounded-md"
+						disabled={!email && !password}
+            className="mt-4 p-3 w-full bg-blue-800 text-blue-100 rounded-md disabled:bg-red-800 flex items-center justify-center"
           >
-            Enter with credentials
+            {isLoading ? (
+						  <Loading
+							  color="bg-blue-800"
+								gradient="bg-grad-alt"
+							/>
+						) : 'Enter with credentials'}
           </button>
 
           {error && (
