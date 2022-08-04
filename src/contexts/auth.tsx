@@ -1,5 +1,5 @@
 import {
-  useState, useContext, createContext, ReactNode
+  useState, useContext, createContext
 } from 'react'
 
 import {
@@ -8,34 +8,15 @@ import {
 	signInWithEmailAndPassword
 } from '../services/firebase'
 
-type ProviderProps = {
-  children:ReactNode
-}
+import { DefaultContext, AuthContext } from './context'
 
-type User = {
-	id: string
-	nick: string
-}
-
-type SigninPayload = {
-	email:string
-	password:string
-}
-
-type ContextData = {
-  user:User|null
-	isLoading:boolean
-
-	toggleLoading:() => void
-	updateUser: (authUser:User|null) => void
-
-	onSignOutRequested: () => Promise<void>
-	onSignInRequested: (method:SigninMethodType, payload?:SigninPayload) => Promise<void>
-}
-
+type ProviderProps = DefaultContext.ProviderProps
+type User = AuthContext.User
+type SigninPayload = AuthContext.SigninPayload
+type ContextData = AuthContext.ContextData
 type SigninMethodType = 'github' | 'credentials'
 
-const AuthContext = createContext({} as ContextData)
+const AuthCtx = createContext({} as ContextData)
 
 export function AuthProvider({children}:ProviderProps) {
 	const [isLoading, setIsLoading] = useState(false)
@@ -90,7 +71,7 @@ export function AuthProvider({children}:ProviderProps) {
 	}
 
 	return (
-	  <AuthContext.Provider value={{
+	  <AuthCtx.Provider value={{
 		  user,
 			isLoading,
 			updateUser,
@@ -99,10 +80,10 @@ export function AuthProvider({children}:ProviderProps) {
 			onSignOutRequested
 		}}>
 		  {children}
-		</AuthContext.Provider>
+		</AuthCtx.Provider>
 	)
 }
 
 export function useAuth() {
-  return useContext(AuthContext)
+  return useContext(AuthCtx)
 }

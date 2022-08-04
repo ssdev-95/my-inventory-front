@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { onAuthStateChanged, auth } from './services/firebase'
 
 import { useAuth } from './contexts/auth'
+import { ProductProvider } from './contexts/product'
 import { DefaultLayout } from './layouts/default'
 import { Signin } from './pages/login'
 import { Home } from './pages/home'
@@ -40,14 +41,16 @@ export function App() {
 	}, [])
 
   return (
-	  <BrowserRouter>
-		  <Routes>
-			  <Route path="/" element={<DefaultLayout />}>
-				  <Route path="/" element={<Signin />} />
+	  <ProductProvider>
+  	  <BrowserRouter>
+	  	  <Routes>
+		  	  <Route path="/" element={<DefaultLayout />}>
+			  	  <Route path="/" element={<Signin />} />
 
-					<Route path="/home" element={<Home />} />
-	  		</Route>
-			</Routes>
-			</BrowserRouter>
+				  	<Route path="/home" element={<Home />} />
+	    		</Route>
+  			</Routes>
+  			</BrowserRouter>
+			</ProductProvider>
   )
 }

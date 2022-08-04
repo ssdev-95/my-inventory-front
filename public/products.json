@@ -1,0 +1,24 @@
+{
+	"products": [{
+		"id":"sjdjwo927ruu3nmwlw",
+		"name":"xMiseria",
+		"amount":2,
+		"unity":"und",
+		"category":"food",
+		"expiration":"2022-08-05"
+	}, {
+	  "id":"fhqo28rudhekwlwkrk",
+		"name":"Shampoo",
+		"amount":2,
+		"unity":"und",
+		"category":"hygiene",
+		"expiration":"2024-12-31"
+	}, {
+	  "id":"kqtudjenwksifjdjjj"
+		,"name":"Sanity water",
+		"amount":2,
+		"unity":"und",
+		"category":"cleaning",
+		"expiration":"2024-12-31"
+	}]
+}

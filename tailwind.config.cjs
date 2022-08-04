@@ -3,6 +3,9 @@ module.exports = {
   content: ['./index.html', './src/**/*.tsx'],
   theme: {
     extend: {
+			screens: {
+				'mb': { 'max': '720px' }
+			},
 			backgroundImage: {
 				grad: 'linear-gradient(90deg, white, transparent)',
 				'grad-alt': 'linear-gradient(90deg, blue-800, transparent)'
